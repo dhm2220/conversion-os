@@ -1,0 +1,223 @@
+{
+  "id": "steelcon",
+  "brand": "SteelCon",
+  "industry": "Manufacturing",
+  "headline": "SteelCon Built a $10M+ Pipeline in 26 Days",
+  "hook": "How a Canadian steel manufacturer built an 8-figure pipeline in 26 days, without referrals.",
+  "krs": [
+    {
+      "value": "$10M+",
+      "label": "Pipeline value"
+    },
+    {
+      "value": "2 days",
+      "label": "To first lead"
+    },
+    {
+      "value": "12+",
+      "label": "Qualified leads"
+    }
+  ],
+  "bonus": "Get the exact SteelCon sales outreach sequence",
+  "liveUrl": "https://differenthunger.com/p/manufacturing-lead-generation-case-study-steelcon",
+  "ctaDomain": "0hr.app",
+  "source": "Content Management OS \u00b7 Case Studies tab (SteelCon)",
+  "video": "../source/steelcon-scroll.mov",
+  "crop": {
+    "top": 100,
+    "bottom": 80
+  },
+  "shots": [
+    {
+      "id": "hero",
+      "t": 0.5
+    },
+    {
+      "id": "leads",
+      "t": 1.25
+    },
+    {
+      "id": "pipeline",
+      "t": 1.5
+    },
+    {
+      "id": "bonus",
+      "t": 2.0
+    },
+    {
+      "id": "modal",
+      "t": 3.5
+    },
+    {
+      "id": "before",
+      "t": 4.0
+    },
+    {
+      "id": "after",
+      "t": 4.5
+    },
+    {
+      "id": "problem",
+      "t": 4.75
+    },
+    {
+      "id": "solution",
+      "t": 5.25
+    },
+    {
+      "id": "research",
+      "t": 5.75
+    },
+    {
+      "id": "strategy",
+      "t": 6.25
+    },
+    {
+      "id": "deliverables",
+      "t": 6.5
+    },
+    {
+      "id": "tech-stack",
+      "t": 7.25
+    },
+    {
+      "id": "results",
+      "t": 8.0
+    },
+    {
+      "id": "launch",
+      "t": 8.5
+    },
+    {
+      "id": "first-lead",
+      "t": 9.0
+    },
+    {
+      "id": "pipeline-proof",
+      "t": 9.5
+    },
+    {
+      "id": "start-now",
+      "t": 10.5
+    }
+  ],
+  "carousel": [
+    {
+      "type": "cover",
+      "shots": [
+        "hero",
+        "leads",
+        "pipeline"
+      ]
+    },
+    {
+      "type": "chapter",
+      "kicker": "The transformation",
+      "title": "Stuck on referrals \u2192 a pipeline outside their network",
+      "shots": [
+        {
+          "id": "before",
+          "label": "Before"
+        },
+        {
+          "id": "after",
+          "label": "After"
+        },
+        {
+          "id": "problem",
+          "label": "The problem"
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "kicker": "The play",
+      "title": "One go-to-market. One targeted outbound campaign.",
+      "shots": [
+        {
+          "id": "solution",
+          "label": "The solution"
+        },
+        {
+          "id": "research",
+          "label": "Research & targeting"
+        },
+        {
+          "id": "strategy",
+          "label": "Campaign blueprint"
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "kicker": "What we built",
+      "title": "Sequence, tech stack, launch.",
+      "shots": [
+        {
+          "id": "deliverables",
+          "label": "Outreach sequence"
+        },
+        {
+          "id": "tech-stack",
+          "label": "Tech stack"
+        },
+        {
+          "id": "launch",
+          "label": "Launch \u00b7 Day 59"
+        }
+      ]
+    },
+    {
+      "type": "chapter",
+      "kicker": "The results",
+      "title": "First lead in 2 days. $10M+ pipeline in 26.",
+      "shots": [
+        {
+          "id": "results",
+          "label": "Results"
+        },
+        {
+          "id": "first-lead",
+          "label": "First lead"
+        },
+        {
+          "id": "pipeline-proof",
+          "label": "$10M+ pipeline"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "kicker": "Bonus",
+      "title": "Steal the exact outreach sequence SteelCon used.",
+      "shots": [
+        {
+          "id": "bonus",
+          "label": "Bonus content"
+        },
+        {
+          "id": "modal",
+          "label": "Instant access"
+        },
+        {
+          "id": "start-now",
+          "label": "Your turn"
+        }
+      ]
+    }
+  ],
+  "storyMap": [
+    "hero",
+    "leads",
+    "pipeline",
+    "bonus",
+    "before",
+    "after",
+    "solution",
+    "strategy",
+    "tech-stack",
+    "results",
+    "first-lead",
+    "start-now"
+  ]
+}

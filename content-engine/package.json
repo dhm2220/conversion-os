@@ -1,0 +1,16 @@
+{
+  "name": "dh-content-engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "One source (a case study page) -> reels, stacked carousels, story maps.",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "frames": "node src/frames-from-video.mjs",
+    "carousel": "node src/render-carousel.mjs"
+  },
+  "dependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "playwright": "1.56.1"
+  }
+}
