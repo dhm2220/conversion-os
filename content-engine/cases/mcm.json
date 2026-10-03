@@ -1,0 +1,17 @@
+{
+  "id": "mcm",
+  "url": "https://mcmprivatecare.com/case-studies",
+  "brand": { "name": "MCM", "sub": "Private Care" },
+  "industry": "Home Care",
+  "headline": "Trusted by Over 1,000+ Families Since 2004.",
+  "krs": [
+    { "value": "1,000+", "label": "Families cared for" },
+    { "value": "Since 2004", "label": "Montgomery County" },
+    { "value": "6+ years", "label": "Marmerstein family at home" }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "source": "Draft copy from [MASTER] MCM Private Care Brand OS v1 (May 2026). Check against the live page after capture.",
+  "shots": [],
+  "carousel": [],
+  "storyMap": []
+}

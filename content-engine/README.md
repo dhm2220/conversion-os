@@ -42,6 +42,14 @@ npm run build -- cases/steelcon.json
 
 ## Add a case study
 
+**From a URL** (no recording needed): set `"url"` in the case file and run
+`npm run build -- cases/<id>.json`. It captures the page as phone screens, reads the site's own
+colors into `brand.json` (so the slides come out in that brand), writes a contact sheet, and
+stops until you pick shots. Shots then pick screens by number: `{ "id": "hero", "screen": 1 }`.
+`cases/mcm.json` is set up this way.
+
+**From a phone recording:**
+
 1. Record the page on a phone (scroll top to bottom, ~12s) and drop it in `source/<id>-scroll.mov`.
 2. Copy `cases/steelcon.json` to `cases/<id>.json` and fill in the copy fields from the
    **Case Studies** tab of the Content Management OS (headline, industry, KR1–3, Live URL).
@@ -56,9 +64,12 @@ keyboard or a typed email.
 
 ## Files
 
+- `src/capture-url.mjs`: loads a URL at phone size, screenshots it screen by screen, and
+  reads its colors into `brand.json`
 - `src/frames-from-video.mjs`: samples the recording onto a fixed 8fps timeline, crops the
   phone status bar and browser bar, and writes `<shot id>.png`
-- `src/templates/stack.mjs`: the slide templates (brand tokens at the top of the CSS)
+- `src/templates/stack.mjs`: the slide templates. Brand defaults are Different Hunger's; a
+  case file's `brand` or the captured `brand.json` overrides them
 - `src/render-carousel.mjs`: renders each template to PNG with headless Chromium
 - `src/build.mjs`: runs both for one case file
 - `fonts/`: Plus Jakarta Sans + JetBrains Mono (OFL), vendored so renders work offline

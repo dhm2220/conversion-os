@@ -20,9 +20,9 @@ const CSS = /* css */ `
   --line: rgba(255, 255, 255, 0.12);
   --text: #f4f4f8;
   --muted: #8b8ba3;
-  --indigo: #5b5bff;
-  --magenta: #ec1f80;
-  --grad: linear-gradient(90deg, var(--indigo), var(--magenta));
+  --accent-a: #5b5bff;
+  --accent-b: #ec1f80;
+  --grad: linear-gradient(90deg, var(--accent-a), var(--accent-b));
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--text); }
@@ -32,8 +32,8 @@ body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif
 }
 .slide::before { /* brand glow */
   content: ''; position: absolute; inset: auto -20% -35% -20%; height: 75%;
-  background: radial-gradient(closest-side, rgba(236, 31, 128, 0.22), transparent),
-              radial-gradient(closest-side at 30% 60%, rgba(91, 91, 255, 0.25), transparent);
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--accent-b) 22%, transparent), transparent),
+              radial-gradient(closest-side at 30% 60%, color-mix(in srgb, var(--accent-a) 25%, transparent), transparent);
   filter: blur(20px); pointer-events: none;
 }
 .feed { width: 1080px; height: 1350px; }
@@ -58,7 +58,7 @@ h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; text-wrap: ba
 .phone {
   position: relative; border-radius: 34px; overflow: hidden; background: #000;
   border: 2px solid var(--line);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 8px rgba(255, 255, 255, 0.03), 0 0 60px rgba(91, 91, 255, 0.18);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 8px rgba(255, 255, 255, 0.03), 0 0 60px color-mix(in srgb, var(--accent-a) 18%, transparent);
 }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
@@ -88,7 +88,7 @@ h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; text-wrap: ba
 .swipe b { color: var(--text); }
 .bar { width: 220px; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
 .bar i { display: block; height: 100%; background: var(--grad); }
-.btn { display: inline-flex; align-items: center; gap: 14px; padding: 22px 34px; border-radius: 16px; background: var(--grad); font-size: 26px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: 0 10px 40px rgba(236, 31, 128, 0.35); }
+.btn { display: inline-flex; align-items: center; gap: 14px; padding: 22px 34px; border-radius: 16px; background: var(--grad); font-size: 26px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: 0 10px 40px color-mix(in srgb, var(--accent-b) 35%, transparent); }
 
 /* maps: the whole page in one image */
 .grid { position: relative; display: grid; gap: 16px; padding: 36px 40px 0; }
@@ -103,9 +103,9 @@ h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; text-wrap: ba
 .map-feed .kr .v { font-size: 40px; }
 `;
 
-const top = (i, total) => `
+const top = (kase, i, total) => `
   <div class="top">
-    <div class="brand">DIFFERENT <span>HUNGER</span></div>
+    <div class="brand">${brandMark(kase)}</div>
     <div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div>
   </div>`;
 
@@ -120,7 +120,7 @@ const phone = (src, extra = '') => `<div class="phone ${extra}"><img src="${src}
 function cover(kase, slide, i, total, img) {
   return `
 <section class="slide feed cover">
-  ${top(i, total)}
+  ${top(kase, i, total)}
   <div class="head">
     <div class="kicker mono">Case study · ${esc(kase.industry)}</div>
     <h1>${accent(kase.headline)}</h1>
@@ -137,7 +137,7 @@ function chapter(kase, slide, i, total, img) {
   const isCta = slide.type === 'cta';
   return `
 <section class="slide feed chapter">
-  ${top(i, total)}
+  ${top(kase, i, total)}
   <div class="head">
     <div class="kicker mono"><span class="n">●</span>${esc(slide.kicker)}</div>
     <h1>${accent(slide.title)}</h1>
@@ -158,7 +158,7 @@ function map(kase, ids, img, format) {
   return `
 <section class="slide ${story ? 'story' : 'feed map-feed'}">
   <div class="top">
-    <div class="brand">DIFFERENT <span>HUNGER</span></div>
+    <div class="brand">${brandMark(kase)}</div>
     <div class="mono">Case study · ${esc(kase.industry)}</div>
   </div>
   <div class="head">
@@ -177,9 +177,23 @@ function map(kase, ids, img, format) {
 </section>`;
 }
 
-const doc = (body, fontsCss) => `<!doctype html><html><head><meta charset="utf-8">
+// Brand defaults are Different Hunger's. A case file's "brand" (or the colors capture-url
+// reads off the live page) overrides them: name, sub, bg, text, muted, accentA, accentB.
+const DH = { name: 'DIFFERENT', sub: 'HUNGER', bg: '#07070c', text: '#f4f4f8', muted: '#8b8ba3', accentA: '#5b5bff', accentB: '#ec1f80' };
+const brandOf = (kase) => ({ ...DH, ...kase.brand });
+const brandMark = (kase) => {
+  const b = brandOf(kase);
+  return `${esc(b.name)}${b.sub ? ` <span>${esc(b.sub)}</span>` : ''}`;
+};
+const brandVars = (kase) => {
+  const b = brandOf(kase);
+  return `:root { --bg: ${b.bg}; --text: ${b.text}; --muted: ${b.muted}; --accent-a: ${b.accentA}; --accent-b: ${b.accentB};
+  --panel: color-mix(in srgb, ${b.text} 5%, ${b.bg}); --line: color-mix(in srgb, ${b.text} 12%, transparent); }`;
+};
+
+const doc = (kase, body, fontsCss) => `<!doctype html><html><head><meta charset="utf-8">
 <link href="${fontsCss}" rel="stylesheet">
-<style>${CSS}</style></head><body>${body}</body></html>`;
+<style>${CSS}${brandVars(kase)}</style></head><body>${body}</body></html>`;
 
 // Returns [{ name, html }] — one HTML document per output image.
 // img(id) -> URL of a shot; fontsCss -> URL of fonts/fonts.css.
@@ -187,11 +201,11 @@ export function build(kase, img, fontsCss) {
   const total = kase.carousel.length;
   const slides = kase.carousel.map((slide, i) => ({
     name: `carousel-${String(i + 1).padStart(2, '0')}-${slide.type}`,
-    html: doc(slide.type === 'cover' ? cover(kase, slide, i, total, img) : chapter(kase, slide, i, total, img), fontsCss),
+    html: doc(kase, slide.type === 'cover' ? cover(kase, slide, i, total, img) : chapter(kase, slide, i, total, img), fontsCss),
   }));
   return [
     ...slides,
-    { name: 'map-story-9x16', html: doc(map(kase, kase.storyMap, img, 'story'), fontsCss) },
-    { name: 'map-feed-4x5', html: doc(map(kase, kase.storyMap.slice(0, 10), img, 'feed'), fontsCss) },
+    { name: 'map-story-9x16', html: doc(kase, map(kase, kase.storyMap, img, 'story'), fontsCss) },
+    { name: 'map-feed-4x5', html: doc(kase, map(kase, kase.storyMap.slice(0, 10), img, 'feed'), fontsCss) },
   ];
 }
