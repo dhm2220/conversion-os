@@ -102,7 +102,7 @@ const kase = {
   palette: spec.palette ?? (work.reduce((n, w) => n + w.images.length, 0) + (cover ? 1 : 0) >= 3 ? 'mono' : 'brand'),
   url: spec.playbook,
   ownBrand: true,
-  brand: { bg: '#08090b', logo: '../source/brand/dh-logo-dark.png', displayFont: '../source/brand/blanc-bold.woff2' },
+  brand: { bg: '#08090b', logo: '../source/brand/dh-logo-dark.png', displayFont: '../source/brand/blanc-bold.woff2', displayFontLight: '../source/brand/blanc-ultralight.woff2' },
   source: `Draft ${spec.draft} (source-traced) · playbook ${spec.playbook} · title = published tile title.`,
   industry: facts.find((f) => f.label === 'Industry')?.value ?? '',
   headline: spec.title,

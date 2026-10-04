@@ -72,6 +72,7 @@ const headline = (await text(hero.locator('h1'))).replace(/\s+/g, ' ');
 
 // Pill: "Industry: X Location: Y Type: Z Employees: N" -> [{label, value}]
 const pillRow = await text(hero.locator('dl').first());
+const scope = (await text(hero.locator('dl').nth(1))).replace(/^Scope:\s*/, '').split('·').map((x) => x.trim()).filter(Boolean);
 const context = [...pillRow.matchAll(/([A-Z][a-z]+):\s*(.+?)(?=\s+[A-Z][a-z]+:|$)/g)].map((m) => ({ label: m[1], value: m[2].trim() }));
 
 // Hero stat cards, the bonus bar under them.
@@ -160,7 +161,7 @@ const kase = {
   // Our own case study pages render in the Different Hunger brand, like cases/steelcon.json.
   ...(/(^|\.)(0hr\.app|differenthunger\.com)$/.test(new URL(url).hostname) && {
     ownBrand: true,
-    brand: { bg: '#08090b', logo: '../source/brand/dh-logo-dark.png', displayFont: '../source/brand/blanc-bold.woff2' },
+    brand: { bg: '#08090b', logo: '../source/brand/dh-logo-dark.png', displayFont: '../source/brand/blanc-bold.woff2', displayFontLight: '../source/brand/blanc-ultralight.woff2' },
   }),
   source: `Live page ${url}, captured ${new Date().toISOString().slice(0, 10)}. All slide copy is the page's own text.`,
   industry: context.find((c) => c.label === 'Industry')?.value ?? '',
@@ -169,6 +170,7 @@ const kase = {
   // Links point at our own brand domain, never 0hr.app.
   ctaDomain: /0hr\.app$/.test(new URL(url).hostname) ? 'differenthunger.com' : new URL(url).hostname,
   context,
+  scope,
   // No comment/DM keyword is on the page, so buttons carry the page's own labels.
   cta: { gift: giftShort, button: buttonLabel || 'GET INSTANT ACCESS', finalButton: finalButton || 'START NOW' },
   shots: [...mapShots, ...shots],

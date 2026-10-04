@@ -3,7 +3,8 @@
   "brand": {
     "bg": "#08090b",
     "logo": "../source/brand/dh-logo-dark.png",
-    "displayFont": "../source/brand/blanc-bold.woff2"
+    "displayFont": "../source/brand/blanc-bold.woff2",
+    "displayFontLight": "../source/brand/blanc-ultralight.woff2"
   },
   "industry": "Manufacturing",
   "headline": "How SteelCon Built a $10M+ Pipeline in 26 Days",
@@ -23,7 +24,7 @@
   ],
   "liveUrl": "https://differenthunger.com/p/manufacturing-lead-generation-case-study-steelcon",
   "ctaDomain": "differenthunger.com",
-  "source": "Content Management OS · Case Studies tab (SteelCon)",
+  "source": "Content Management OS \u00b7 Case Studies tab (SteelCon)",
   "video": "../source/steelcon-scroll.mov",
   "crop": {
     "top": 100,
@@ -195,14 +196,14 @@
       "quotes": [
         {
           "logo": "SteelCon",
-          "text": "“4 calls set up for sin beam with [Different Hunger] leads tomorrow!”",
+          "text": "\u201c4 calls set up for sin beam with [Different Hunger] leads tomorrow!\u201d",
           "name": "Bill Tishler",
           "role": "SteelCon",
           "avatar": "avatar-bill"
         },
         {
           "logo": "SteelCon",
-          "text": "“Just wanted to let you know that we have met with [a developer] (who you reached out to for us)… We are pricing 3 jobs for them.”",
+          "text": "\u201cJust wanted to let you know that we have met with [a developer] (who you reached out to for us)\u2026 We are pricing 3 jobs for them.\u201d",
           "name": "Bill Tishler",
           "role": "SteelCon",
           "avatar": "avatar-bill"
@@ -235,15 +236,15 @@
               },
               {
                 "label": "Target KPI",
-                "value": "$10,000,000 new business (1–10 deals)"
+                "value": "$10,000,000 new business (1\u201310 deals)"
               },
               {
                 "label": "Funnel",
-                "value": "Outreach + content + retargeting → appointment → offer & follow-up"
+                "value": "Outreach + content + retargeting \u2192 appointment \u2192 offer & follow-up"
               },
               {
                 "label": "Channels",
-                "value": "LinkedIn · Email · Facebook"
+                "value": "LinkedIn \u00b7 Email \u00b7 Facebook"
               },
               {
                 "label": "Advantage",
@@ -361,7 +362,7 @@
           ]
         },
         {
-          "value": "508 → 13",
+          "value": "508 \u2192 13",
           "title": "Emails sent, down to interested leads",
           "wide": true,
           "viz": "bars",
@@ -387,7 +388,7 @@
         },
         {
           "value": "30%",
-          "title": "Interested → qualified",
+          "title": "Interested \u2192 qualified",
           "viz": "bench",
           "actual": 30,
           "standard": 15
@@ -407,7 +408,7 @@
     {
       "type": "cta",
       "title": "Ready to be the next success story?",
-      "sub": "Comment or DM “SEQUENCE” and we’ll send you the exact outreach sequence behind SteelCon’s $10M+ pipeline."
+      "sub": "Comment or DM \u201cSEQUENCE\u201d and we\u2019ll send you the exact outreach sequence behind SteelCon\u2019s $10M+ pipeline."
     }
   ],
   "storyMap": [
@@ -435,11 +436,12 @@
     },
     {
       "label": "Employees",
-      "value": "500–1,000"
+      "value": "500\u20131,000"
     }
   ],
   "cta": {
     "keyword": "SEQUENCE",
     "gift": "The exact outreach sequence behind this $10M+ pipeline"
-  }
+  },
+  "scope": []
 }

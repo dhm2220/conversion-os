@@ -96,7 +96,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .stats.no-one figure:nth-child(3) img { object-fit: contain; object-position: center; }
 .stats img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; mix-blend-mode: lighten; }
 .stats .one { grid-column: 2; grid-row: 2; display: flex; align-items: center; padding: 26px 30px; border-radius: 26px; border: 1px solid var(--line); background: var(--panel);
-  font-family: var(--display); font-size: 34px; line-height: 1.2; }
+  font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1.2; }
 .gift { position: relative; display: flex; align-items: center; gap: 22px; margin: 0 48px 26px; padding: 22px 24px; border-radius: 22px;
   background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 2px solid transparent; }
 .gift > svg { flex: none; color: var(--accent-b); }
@@ -108,7 +108,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .blocks { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 30px; padding: 24px 64px; }
 .block { display: flex; gap: 26px; padding: 30px 32px; border: 1px solid var(--line); border-radius: 26px; background: var(--panel); }
 .block .badge { width: 64px; height: 64px; }
-.block h2 { font-family: var(--display); font-size: 38px; letter-spacing: -0.01em; margin-bottom: 12px; }
+.block h2 { font-family: var(--display); font-weight: 700; font-size: 38px; letter-spacing: -0.01em; margin-bottom: 12px; }
 .block p { font-size: 26px; line-height: 1.5; color: color-mix(in srgb, var(--text) 78%, transparent); }
 .block.warn .badge { color: #ffb020; }
 
@@ -127,11 +127,11 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .step { min-height: 0; display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); }
 .steps.n3 .step:nth-child(3) { grid-column: span 2; }
 .steps.n2 { grid-template-rows: 1fr; }
-.step h2 { font-family: var(--display); font-size: 30px; line-height: 1.15; }
+.step h2 { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1.15; }
 .step h2 span { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500; margin-right: 10px; }
 .step figure { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
 .step img { display: block; max-width: 100%; max-height: 100%; min-height: 0; object-fit: contain; mix-blend-mode: lighten; border-radius: 14px; }
-.step figcaption { font-family: var(--display); font-size: 22px; text-align: center; }
+.step figcaption { font-family: var(--display); font-weight: 700; font-size: 22px; text-align: center; }
 
 /* blueprint tile: light, like the Google Slides deck it comes from */
 .bp { flex: 1; min-height: 0; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #fbf7f8; color: #1a1416; }
@@ -176,8 +176,8 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
   background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--accent-b) 13%, transparent), transparent 60%),
               radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--accent-a) 12%, transparent), transparent 60%), var(--panel); }
 .card.w2 { grid-column: span 2; }
-.card .v { font-family: var(--display); font-size: 60px; line-height: 0.95; letter-spacing: -0.02em; }
-.card .t { margin-top: 8px; font-family: var(--display); font-size: 25px; line-height: 1.15; }
+.card .v { font-family: var(--display); font-weight: 700; font-size: 60px; line-height: 0.95; letter-spacing: -0.02em; }
+.card .t { margin-top: 8px; font-family: var(--display); font-weight: 700; font-size: 25px; line-height: 1.15; }
 .card .s { margin-top: 6px; font-size: 17px; color: var(--muted); }
 .card .viz { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; margin-top: 12px; }
 .card.side { flex-direction: row; align-items: stretch; gap: 30px; }
@@ -228,7 +228,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .ba h1 { font-size: 46px; text-align: center; margin-bottom: 6px; }
 .ba .col { padding: 26px 30px; border-radius: 26px; border: 1px solid var(--line); background: var(--panel); }
 .ba .col.after { background: radial-gradient(110% 120% at 0% 0%, color-mix(in srgb, var(--accent-a) 18%, transparent), transparent 60%), radial-gradient(110% 120% at 100% 100%, color-mix(in srgb, var(--accent-b) 16%, transparent), transparent 60%), var(--panel); border-color: color-mix(in srgb, var(--accent-b) 35%, transparent); }
-.ba h2 { font-family: var(--display); font-size: 32px; margin-bottom: 14px; }
+.ba h2 { font-family: var(--display); font-weight: 700; font-size: 32px; margin-bottom: 14px; }
 .ba ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .ba li { padding: 14px 18px; border-radius: 14px; background: color-mix(in srgb, var(--text) 6%, transparent); font-size: 22px; line-height: 1.4; color: color-mix(in srgb, var(--text) 72%, transparent); }
 .ba .after li { background: color-mix(in srgb, var(--text) 9%, transparent); color: var(--text); }
@@ -246,6 +246,25 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .media.row { flex-direction: row; align-items: stretch; }
 .media.row figure { min-width: 0; }
 .media img.cover { object-fit: cover; }
+
+
+/* production hero pill + headline (Blanc 700, -0.025em, 1.05; pill in Blanc 200) */
+.lpill { position: relative; display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 26px; font-family: var(--display); font-weight: 700; }
+.lpill dl { display: inline-flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px 16px; padding: 14px 24px; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 22px; background: rgba(255, 255, 255, 0.03); }
+.lpill dt { display: flex; align-items: center; gap: 8px; font-weight: 200; font-size: 19px; letter-spacing: 0.04em; color: rgba(255, 255, 255, 0.45); }
+.lpill dt svg { width: 21px; height: 21px; }
+.lpill dd { font-weight: 200; font-size: 23px; color: #fff; white-space: nowrap; }
+.lpill .k { color: rgba(255, 255, 255, 0.5); }
+.lpill .dot { margin-right: 14px; color: rgba(255, 255, 255, 0.35); }
+.heng h1.prod { font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; text-align: center; color: #fff; text-wrap: balance; }
+
+/* cover with the work behind the words: the marquee fills the slide, the copy sits on it */
+.heng.over .bgm { position: absolute; inset: 0; }
+.heng.over .bgm img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.heng.over .bgm::after { content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8, 9, 11, 0.94) 0%, rgba(8, 9, 11, 0.86) 34%, rgba(8, 9, 11, 0.35) 58%, rgba(8, 9, 11, 0.1) 72%, rgba(8, 9, 11, 0.85) 100%); }
+.heng.over .copy { position: relative; padding: 70px 56px 0; display: flex; flex-direction: column; align-items: center; }
+.heng.over h1.prod { padding: 0; font-size: 72px; }
 
 /* phone screens (maps) */
 .phone { position: relative; overflow: hidden; background: #000; }
@@ -319,12 +338,30 @@ const blueprint = (t) => `<div class="bp"><div class="bp-tabs">${t.tabs.map((x, 
 // The page's tech-stack tree, every tool lit (the page dims the last ones until they scroll in).
 const stackList = (items) => `<ul class="tstack">${items.map((t) => `<li><span class="ti">${esc(t.name[0])}</span><div><b>${esc(t.name)}</b><span>${esc(t.role)}</span></div></li>`).join('')}</ul>`;
 
+
+// The case study page's hero pill, cloned from production (app/case-studies/[slug]/page.tsx):
+// a facts row (building icon · Industry · Location · Type · Employees) and a scope row (bolt icon ·
+// "Scope:" · items split by "·"), Blanc ultralight, labels at 50% white. Mobile layout: one box per row.
+const LUCIDE = {
+  building: '<path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/>',
+  zap: '<path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/>',
+};
+const lucide = (n) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${LUCIDE[n]}</svg>`;
+const PILL_ORDER = ['Industry', 'Location', 'Type', 'Employees'];
+const heroPill = (kase, scope = []) => {
+  const facts = PILL_ORDER.map((l) => kase.context.find((c) => c.label === l)).filter(Boolean);
+  return `<div class="lpill">
+    <dl><dt>${lucide('building')}</dt>${facts.map((c) => `<dd><span class="k">${esc(c.label)}: </span><span>${esc(c.value)}</span></dd>`).join('')}</dl>
+    ${scope.length ? `<dl><dt>${lucide('zap')}Scope:</dt>${scope.map((x, n) => `<dd>${n ? '<span class="dot">·</span>' : ''}<span>${esc(x)}</span></dd>`).join('')}</dl>` : ''}
+  </div>`;
+};
+
 const SLIDES = {
   hook: (kase, slide, i, total, img, asset) => `
 <section class="slide feed hook">
   ${top(kase, i, total, asset)}
   <img class="headline" src="${img(slide.headline)}">
-  <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
+  ${heroPill(kase, kase.scope)}
   <div class="stats ${slide.oneLiner ? '' : 'no-one'}">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}${slide.oneLiner ? `<div class="one"><p>${accent(slide.oneLiner)}</p></div>` : ''}</div>
   <div class="gift">${icon('gift', 52)}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${cta(kase)}</div>
   ${foot(kase, asset, i, total)}
@@ -395,18 +432,24 @@ const SLIDES = {
 </section>`,
 
   // Engineering hook: the result as a headline, then the stat cards beside the cover.
-  hookEng: (kase, slide, i, total, img, asset) => `
+  hookEng: (kase, slide, i, total, img, asset) => slide.marquee ? `
+<section class="slide feed heng over">
+  <div class="bgm"><img src="${img(slide.marquee)}"></div>
+  <div class="copy">
+    <h1 class="prod">${accent(slide.title)}</h1>
+    ${heroPill(kase, slide.scope)}
+  </div>
+  <div style="flex:1"></div>
+  ${foot(kase, asset, i, total)}
+</section>` : `
 <section class="slide feed heng">
   ${top()}
-  <h1>${accent(slide.title)}</h1>
-  <div class="pill ${kase.context.length > 4 ? 'many' : ''}">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
-  ${slide.scope?.length ? `<div class="scope">${slide.scope.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}
-  ${slide.marquee
-    ? `<div class="hmarq"><img src="${img(slide.marquee)}"></div>`
-    : `<div class="hgrid">
+  <h1 class="prod">${accent(slide.title)}</h1>
+  ${heroPill(kase, slide.scope)}
+  <div class="hgrid">
     <div class="hcards">${slide.cards.map(card).join('')}</div>
     ${slide.image ? `<div class="hero"><img src="${img(slide.image)}"></div>` : ''}
-  </div>`}
+  </div>
   ${foot(kase, asset, i, total)}
 </section>`,
 
@@ -472,7 +515,10 @@ const brandMark = (kase, asset) => {
 };
 const brandCss = (kase, asset) => {
   const b = brandOf(kase);
-  const font = b.displayFont ? `@font-face { font-family: 'Brand Display'; font-weight: 700; src: url('${asset(b.displayFont)}') format('woff2'); }` : '';
+  const font = [
+    b.displayFont && `@font-face { font-family: 'Brand Display'; font-weight: 700; src: url('${asset(b.displayFont)}') format('woff2'); }`,
+    b.displayFontLight && `@font-face { font-family: 'Brand Display'; font-weight: 200; src: url('${asset(b.displayFontLight)}') format('woff2'); }`,
+  ].filter(Boolean).join('\n');
   return `${font}
 :root { --bg: ${b.bg}; --text: ${b.text}; --muted: ${b.muted}; --accent-a: ${b.accentA}; --accent-b: ${b.accentB};
   --grad: linear-gradient(90deg, var(--accent-a), var(--accent-b));

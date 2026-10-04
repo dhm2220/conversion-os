@@ -7,7 +7,8 @@
   "brand": {
     "bg": "#08090b",
     "logo": "../source/brand/dh-logo-dark.png",
-    "displayFont": "../source/brand/blanc-bold.woff2"
+    "displayFont": "../source/brand/blanc-bold.woff2",
+    "displayFontLight": "../source/brand/blanc-ultralight.woff2"
   },
   "source": "Draft ~/0-hr/tools/case-study-gen/out/dream-payments/draft.json (source-traced) · playbook https://differenthunger.com/p/financial-services-website-design-case-study-dream-payments · title = published tile title.",
   "industry": "FinTech",
