@@ -111,24 +111,28 @@
       "src": "../source/dream-payments/avatar-2.jpg"
     },
     {
-      "id": "work-1-1",
-      "src": "../source/dream-payments/work-1-1.jpg"
-    },
-    {
-      "id": "work-1-2",
-      "src": "../source/dream-payments/work-1-2.jpg"
-    },
-    {
-      "id": "work-2-1",
-      "src": "../source/dream-payments/work-2-1.jpg"
-    },
-    {
-      "id": "work-2-2",
-      "src": "../source/dream-payments/work-2-2.jpg"
-    },
-    {
       "id": "cover",
       "src": "../source/dream-payments/cover.jpg"
+    },
+    {
+      "id": "deck-1",
+      "src": "../source/dream-payments/deck-1.jpg"
+    },
+    {
+      "id": "deck-2",
+      "src": "../source/dream-payments/deck-2.jpg"
+    },
+    {
+      "id": "deck-3",
+      "src": "../source/dream-payments/deck-3.jpg"
+    },
+    {
+      "id": "deck-4",
+      "src": "../source/dream-payments/deck-4.jpg"
+    },
+    {
+      "id": "deck-5",
+      "src": "../source/dream-payments/deck-5.jpg"
     }
   ],
   "carousel": [
@@ -253,24 +257,94 @@
       ]
     },
     {
-      "type": "section",
-      "icon": "image",
-      "kicker": "The work · website",
-      "images": [
-        "work-1-1",
-        "work-1-2"
-      ],
-      "row": false
+      "type": "deck",
+      "kicker": "6 days after sign-up · 01 / 05",
+      "title": "Discovery",
+      "text": "We kicked off the engagement by understanding Dream's current UX, brand challenges, and market expansion goals.",
+      "image": "deck-1"
     },
     {
-      "type": "section",
-      "icon": "image",
-      "kicker": "The work · product",
-      "images": [
-        "work-2-1",
-        "work-2-2"
+      "type": "deck",
+      "kicker": "About 13 weeks after sign-up · 02 / 05",
+      "title": "Overhaul of Their Product UX",
+      "text": "We designed a user experience flow that aligned with U.S. market expectations and clearly communicated Dream's value to new users and stakeholders.",
+      "image": "deck-2"
+    },
+    {
+      "type": "deck",
+      "kicker": "Brand Engineering · 03 / 05",
+      "title": "Design",
+      "text": "We applied a modern, premium visual identity across all core assets",
+      "image": "deck-3"
+    },
+    {
+      "type": "deck",
+      "kicker": "About 29 weeks after sign-up · 04 / 05",
+      "title": "Full Website Redesign",
+      "text": "U.S. website kicked off on Day 151; final U.S. site designs and the Canada site UI guide delivered on Day 204",
+      "image": "deck-4"
+    },
+    {
+      "type": "deck",
+      "kicker": "Brand Engineering · 05 / 05",
+      "title": "Development",
+      "text": "All approved designs were handed off for development to ensure continuity and performance across platforms.",
+      "image": "deck-5"
+    },
+    {
+      "type": "data",
+      "icon": "chart",
+      "kicker": "The timeline",
+      "cards": [
+        {
+          "value": "6",
+          "title": "Days to Kickoff",
+          "viz": "progress",
+          "from": "Sign-Up",
+          "to": "Kickoff"
+        },
+        {
+          "value": "10",
+          "title": "Projects in 6 Months",
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Web",
+              "n": 3
+            },
+            {
+              "label": "Portals",
+              "n": 3
+            },
+            {
+              "label": "Product UX",
+              "n": 3
+            },
+            {
+              "label": "Print",
+              "n": 1
+            }
+          ]
+        }
       ],
-      "row": false
+      "milestones": [
+        {
+          "when": "6 days after sign-up",
+          "title": "Discovery"
+        },
+        {
+          "when": "About 13 weeks after sign-up",
+          "title": "Overhaul of Their Product UX"
+        },
+        {
+          "when": "About 29 weeks after sign-up",
+          "title": "Full Website Redesign"
+        },
+        {
+          "when": "Over a six-month partnership",
+          "title": "Close to a Dozen Projects"
+        }
+      ]
     },
     {
       "type": "proof",

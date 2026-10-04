@@ -89,7 +89,10 @@ const carousel = [
   // over the deck's own visual for it).
   ...(spec.deckSlides
     ? [
-        spec.deckProcess && { type: 'section', icon: 'build', kicker: 'What we built', images: [shot('deck-process', spec.deckProcess)] },
+        // Overview: the deck's process slide when there is one, else the build-steps grid.
+        spec.deckProcess
+          ? { type: 'section', icon: 'build', kicker: 'What we built', images: [shot('deck-process', spec.deckProcess)] }
+          : steps.length && { type: 'built', icon: 'build', kicker: 'What we built', steps: steps.slice(0, 6) },
         ...spec.deckSlides.map((x, n, all) => ({
           type: 'deck', kicker: `${x.eyebrow} · ${String(n + 1).padStart(2, '0')} / ${String(all.length).padStart(2, '0')}`,
           title: x.title, text: x.text, image: shot(`deck-${n + 1}`, x.image),
