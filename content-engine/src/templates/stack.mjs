@@ -51,7 +51,7 @@ body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif
 .grad { background: var(--grad); -webkit-background-clip: text; color: transparent; }
 h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.04; text-wrap: balance; }
 
-.top { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 44px 64px 0; }
+.top { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 44px 64px 0; min-height: 44px; }
 .brand { font-weight: 800; letter-spacing: 0.04em; font-size: 26px; }
 .brand span { font-weight: 400; color: var(--muted); }
 .brand img { display: block; height: 40px; width: auto; }
@@ -72,7 +72,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .dhbtn::after { content: ''; position: absolute; inset: 0; z-index: -1; background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.18) 0 1px, transparent 1px 3px); mix-blend-mode: multiply; opacity: 0.55; }
 
 .foot { position: relative; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 0 64px 48px; }
-.swipe { font-size: 24px; color: var(--muted); }
+.swipe { display: flex; align-items: baseline; gap: 22px; font-size: 24px; color: var(--muted); }
 .swipe b { color: var(--text); }
 .bar { width: 220px; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
 .foot .nav { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
@@ -92,6 +92,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .stats figure { min-height: 0; overflow: hidden; border-radius: 26px; }
 .stats figure:nth-child(3) { grid-column: 2; grid-row: 1; }
 .stats.no-one figure:nth-child(3) { grid-row: 1 / span 2; }
+.stats.no-one figure:nth-child(3) img { object-fit: contain; object-position: center; }
 .stats img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; mix-blend-mode: lighten; }
 .stats .one { grid-column: 2; grid-row: 2; display: flex; align-items: center; padding: 26px 30px; border-radius: 26px; border: 1px solid var(--line); background: var(--panel);
   font-family: var(--display); font-size: 34px; line-height: 1.2; }
@@ -225,17 +226,15 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .map-feed .kr .v { font-size: 40px; }
 `;
 
-// Top: slide counter only. Bottom: the brand logo left, the swipe prompt + progress right.
-const top = (kase, i, total) => `
-  <div class="top">
-    <div></div>
-    <div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div>
-  </div>`;
+// Top: spacing only. Bottom: the brand logo left; the slide counter, swipe prompt and
+// progress right.
+const top = () => `<div class="top"></div>`;
+const counter = (i, total) => `<span class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</span>`;
 
 const foot = (kase, asset, i, total, last = false) => `
   <div class="foot">
     <div class="brand">${brandMark(kase, asset)}</div>
-    ${last ? '' : `<div class="nav"><div class="swipe"><b>Swipe →</b></div><div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div></div>`}
+    <div class="nav"><div class="swipe">${counter(i, total)}${last ? '' : '<b>Swipe →</b>'}</div>${last ? '' : `<div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div>`}</div>
   </div>`;
 
 const kick = (slide) => `<div class="kick"><span class="badge">${icon(slide.icon)}</span>${esc(slide.kicker)}</div>`;
@@ -347,7 +346,7 @@ const SLIDES = {
   // Title top left, logo bottom left, CTA bottom right.
   wall: (kase, slide, i, total, img, asset) => `
 <section class="slide feed wall">
-  <div class="top"><h1 class="wtitle">${esc(slide.title)}</h1><div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div></div>
+  <div class="top"><h1 class="wtitle">${esc(slide.title)}</h1></div>
   <div class="grid4">${slide.cards.map(card).join('')}</div>
   ${foot(kase, asset, i, total)}
 </section>`,
