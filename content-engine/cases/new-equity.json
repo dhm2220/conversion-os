@@ -1,0 +1,236 @@
+{
+  "id": "new-equity",
+  "url": "https://0hr.app/case-studies/new-equity",
+  "ownBrand": true,
+  "brand": {
+    "bg": "#08090b",
+    "logo": "../source/brand/dh-logo-dark.png",
+    "displayFont": "../source/brand/blanc-bold.woff2"
+  },
+  "source": "Live page https://0hr.app/case-studies/new-equity, captured 2026-10-04. All slide copy is the page's own text.",
+  "industry": "Finance",
+  "headline": "New Equity Closed $100K in 93 Days with Cold Outreach",
+  "krs": [],
+  "ctaDomain": "differenthunger.com",
+  "context": [
+    {
+      "label": "Industry",
+      "value": "Finance"
+    },
+    {
+      "label": "Location",
+      "value": "USA"
+    },
+    {
+      "label": "Type",
+      "value": "Consulting"
+    },
+    {
+      "label": "Employees",
+      "value": "11–50"
+    }
+  ],
+  "cta": {
+    "gift": "Get the Exact Email Sequence Used",
+    "button": "GET INSTANT ACCESS",
+    "finalButton": "▶ START NOW"
+  },
+  "shots": [
+    {
+      "id": "screen-01",
+      "screen": 1
+    },
+    {
+      "id": "screen-02",
+      "screen": 2
+    },
+    {
+      "id": "screen-03",
+      "screen": 3
+    },
+    {
+      "id": "screen-05",
+      "screen": 5
+    },
+    {
+      "id": "screen-06",
+      "screen": 6
+    },
+    {
+      "id": "screen-07",
+      "screen": 7
+    },
+    {
+      "id": "screen-08",
+      "screen": 8
+    },
+    {
+      "id": "screen-09",
+      "screen": 9
+    },
+    {
+      "id": "screen-10",
+      "screen": 10
+    },
+    {
+      "id": "screen-12",
+      "screen": 12
+    },
+    {
+      "id": "screen-13",
+      "screen": 13
+    },
+    {
+      "id": "screen-14",
+      "screen": 14
+    },
+    {
+      "id": "stat-1",
+      "src": "../source/new-equity/stat-1.png"
+    },
+    {
+      "id": "stat-2",
+      "src": "../source/new-equity/stat-2.png"
+    },
+    {
+      "id": "stat-3",
+      "src": "../source/new-equity/stat-3.png"
+    },
+    {
+      "id": "headline",
+      "src": "../source/new-equity/headline.png"
+    },
+    {
+      "id": "transformation",
+      "src": "../source/new-equity/transformation.png"
+    },
+    {
+      "id": "avatar-1",
+      "src": "../source/new-equity/avatar-1.png"
+    },
+    {
+      "id": "avatar-2",
+      "src": "../source/new-equity/avatar-2.png"
+    },
+    {
+      "id": "built-1",
+      "src": "../source/new-equity/built-1.png"
+    },
+    {
+      "id": "built-2",
+      "src": "../source/new-equity/built-2.png"
+    },
+    {
+      "id": "built-3",
+      "src": "../source/new-equity/built-3.png"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hook",
+      "headline": "headline",
+      "stats": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ]
+    },
+    {
+      "type": "section",
+      "icon": "shift",
+      "kicker": "The transformation",
+      "images": [
+        "transformation"
+      ]
+    },
+    {
+      "type": "context",
+      "icon": "info",
+      "kicker": "Business - Problem - Solution",
+      "blocks": [
+        {
+          "icon": "persona",
+          "title": "Business",
+          "text": "New Equity Consulting, a financial consulting firm that matches qualified investors with pre-IPO investments into unicorn companies like Discord, OpenSea, Udemy, Klarna, Kraken, Lyft and more."
+        },
+        {
+          "icon": "warning",
+          "title": "Problem",
+          "text": "As an independent consulting partner within the firm, Rohan was responsible for sourcing his own deals but deal flow was inconsistent."
+        },
+        {
+          "icon": "bulb",
+          "title": "Solution",
+          "text": "We worked with Rohan to build out his entire client acquisition system. This included helping him establish his positioning, messaging, refining his offer and developing direct response copy that generated interest from qualified investors. After launching our campaign, we monitored all campaign responses and set appointments directly [on] his team's calendar."
+        }
+      ]
+    },
+    {
+      "type": "proof",
+      "icon": "quote",
+      "kicker": "Social proof",
+      "quotes": [
+        {
+          "logo": "New Equity Consulting",
+          "text": "“Prior to signing up we're really looking for a partner that could help us with lead generation, but not only just lead [gen] but the quality, really talking to people that we should be in front of. That [way], you know, everyone's making the best use of their time.”",
+          "name": "Rohan Bhatia",
+          "role": "Executive Director, New Equity Consulting",
+          "avatar": "avatar-1"
+        },
+        {
+          "logo": "New Equity Consulting",
+          "text": "“Can't recommend these guys enough and looking forward to continue crushing it with them.”",
+          "name": "Rohan Bhatia",
+          "role": "Executive Director, New Equity Consulting",
+          "avatar": "avatar-2"
+        }
+      ]
+    },
+    {
+      "type": "built",
+      "icon": "build",
+      "kicker": "What we built",
+      "steps": [
+        {
+          "title": "Research & Targeting",
+          "image": "built-1"
+        },
+        {
+          "title": "Campaign Strategy Blueprint",
+          "image": "built-2"
+        },
+        {
+          "title": "Campaign Deliverables",
+          "image": "built-3"
+        }
+      ]
+    },
+    {
+      "type": "tease",
+      "icon": "gift",
+      "kicker": "Bonus content",
+      "title": "Get the Email Sequence that New Equity Consulting Used to Close $100K in 93 Days",
+      "images": [
+        "built-3"
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Ready to Be the Next Success Story?"
+    }
+  ],
+  "storyMap": [
+    "screen-01",
+    "screen-02",
+    "screen-03",
+    "screen-05",
+    "screen-06",
+    "screen-07",
+    "screen-08",
+    "screen-09",
+    "screen-10",
+    "screen-12",
+    "screen-13",
+    "screen-14"
+  ]
+}

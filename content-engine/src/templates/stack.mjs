@@ -91,6 +91,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .stats { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; padding: 26px 48px; }
 .stats figure { min-height: 0; overflow: hidden; border-radius: 26px; }
 .stats figure:nth-child(3) { grid-column: 2; grid-row: 1; }
+.stats.no-one figure:nth-child(3) { grid-row: 1 / span 2; }
 .stats img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; mix-blend-mode: lighten; }
 .stats .one { grid-column: 2; grid-row: 2; display: flex; align-items: center; padding: 26px 30px; border-radius: 26px; border: 1px solid var(--line); background: var(--panel);
   font-family: var(--display); font-size: 34px; line-height: 1.2; }
@@ -122,6 +123,8 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 /* built: the page's four build steps, each with its own visual */
 .steps { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; padding: 24px 48px; }
 .step { min-height: 0; display: flex; flex-direction: column; gap: 14px; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); }
+.steps.n3 .step:nth-child(3) { grid-column: span 2; }
+.steps.n2 { grid-template-rows: 1fr; }
 .step h2 { font-family: var(--display); font-size: 30px; line-height: 1.15; }
 .step h2 span { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500; margin-right: 10px; }
 .step figure { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
@@ -236,7 +239,9 @@ const foot = (kase, asset, i, total, last = false) => `
   </div>`;
 
 const kick = (slide) => `<div class="kick"><span class="badge">${icon(slide.icon)}</span>${esc(slide.kicker)}</div>`;
-const cta = (kase) => `<div class="dhbtn">Comment or DM “${esc(kase.cta.keyword)}”</div>`;
+// A comment/DM keyword when the case has one, otherwise the page's own button label.
+const cta = (kase, label = kase.cta.button) =>
+  `<div class="dhbtn">${kase.cta.keyword ? `Comment or DM “${esc(kase.cta.keyword)}”` : esc(label)}</div>`;
 const media = (slide, img) =>
   `<div class="media">${slide.images.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>`;
 
@@ -278,7 +283,7 @@ const SLIDES = {
   ${top(kase, i, total, asset)}
   <img class="headline" src="${img(slide.headline)}">
   <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
-  <div class="stats">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}${slide.oneLiner ? `<div class="one"><p>${accent(slide.oneLiner)}</p></div>` : ''}</div>
+  <div class="stats ${slide.oneLiner ? '' : 'no-one'}">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}${slide.oneLiner ? `<div class="one"><p>${accent(slide.oneLiner)}</p></div>` : ''}</div>
   <div class="gift">${icon('gift', 52)}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${cta(kase)}</div>
   ${foot(kase, asset, i, total)}
 </section>`,
@@ -320,7 +325,7 @@ const SLIDES = {
 <section class="slide feed">
   ${top(kase, i, total, asset)}
   ${kick(slide)}
-  <div class="steps">
+  <div class="steps n${slide.steps.length}">
     ${slide.steps
       .map((s, n) => `<div class="step"><h2><span class="grad">${String(n + 1).padStart(2, '0')}</span>${esc(s.title)}</h2>
         ${s.tile ? blueprint(s.tile) : s.stack ? stackList(s.stack) : `<figure class="${s.cta ? 'even' : ''}"><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
@@ -354,7 +359,7 @@ const SLIDES = {
   <div class="fbody">
     <h1>${accent(slide.title)}</h1>
     ${slide.sub ? `<p>${esc(slide.sub)}</p>` : ''}
-    <div class="fbtn">${cta(kase)}</div>
+    <div class="fbtn">${cta(kase, kase.cta.finalButton)}</div>
     <div class="mono">${esc(kase.ctaDomain)}</div>
   </div>
   ${foot(kase, asset, i, total, true)}

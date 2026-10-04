@@ -35,7 +35,8 @@ if (!kase.carousel?.length || !kase.shots?.length) {
 // Colors read off the live page fill in whatever the case file's "brand" leaves out.
 const captured = resolve(shots, 'brand.json');
 const renderCase = resolve(out, 'case.json');
-const brand = existsSync(captured) ? JSON.parse(readFileSync(captured, 'utf8')) : {};
+// A case that sets "ownBrand" keeps its brand as given (e.g. our own pages, which the reader gets wrong).
+const brand = !kase.ownBrand && existsSync(captured) ? JSON.parse(readFileSync(captured, 'utf8')) : {};
 // The render copy lives in output/, so paths in the case file are made absolute first.
 const abs = (p) => resolve(dirname(casePath), p);
 const shotList = kase.shots.map((s) => (s.src ? { ...s, src: abs(s.src) } : s));

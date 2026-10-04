@@ -7,7 +7,9 @@
   "scripts": {
     "build": "node src/build.mjs",
     "frames": "node src/frames-from-video.mjs",
-    "carousel": "node src/render-carousel.mjs"
+    "carousel": "node src/render-carousel.mjs",
+    "bulk": "node src/bulk.mjs",
+    "from-page": "node src/from-page.mjs"
   },
   "dependencies": {
     "ffmpeg-static": "^5.2.0",

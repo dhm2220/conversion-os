@@ -40,6 +40,19 @@ npm run build -- cases/steelcon.json
 
 `source/` (recordings) and `output/` are gitignored.
 
+## Bulk: every live case study page
+
+```bash
+npm run bulk -- https://0hr.app/case-studies/new-equity https://0hr.app/case-studies/ansel --keep steelcon
+```
+
+`src/from-page.mjs` reads a live short-form case study page and writes `cases/<id>.json` with no
+hand-picking. Every page uses the same template, so each section is cropped by its place in it
+(headline, hero stat cards, before/after, quotes and avatars, the What We Built steps, the bonus
+doc). Slide copy is the page's own text, word for word. A slide whose source isn't on the page is
+left out, and buttons use the page's own labels unless the case sets a `cta.keyword`. `--keep <id>`
+rebuilds a hand-tuned case file without regenerating it.
+
 ## Add a case study
 
 **From a URL** (no recording needed): set `"url"` in the case file and run
