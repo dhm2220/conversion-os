@@ -1,0 +1,286 @@
+{
+  "id": "lateral",
+  "variant": "engineering",
+  "url": "https://differenthunger.com/p/lateral-fullfillment-case-study",
+  "ownBrand": true,
+  "brand": {
+    "bg": "#08090b",
+    "logo": "../source/brand/dh-logo-dark.png",
+    "displayFont": "../source/brand/blanc-bold.woff2"
+  },
+  "source": "Draft ~/0-hr/tools/case-study-gen/out/lateral/draft.json (source-traced) · playbook https://differenthunger.com/p/lateral-fullfillment-case-study · title = published tile title.",
+  "industry": "Logistics",
+  "headline": "How to Create Your Content, Funnel and Website from 0 to Launch without Hiring in Under 3 Months",
+  "krs": [],
+  "ctaDomain": "differenthunger.com",
+  "context": [
+    {
+      "label": "Location",
+      "value": "San Diego, CA"
+    },
+    {
+      "label": "Industry",
+      "value": "Logistics"
+    },
+    {
+      "label": "Type",
+      "value": "B2B"
+    },
+    {
+      "label": "Stage",
+      "value": "7 Figures"
+    },
+    {
+      "label": "Employees",
+      "value": "501–1,000"
+    }
+  ],
+  "cta": {
+    "button": "START NOW",
+    "finalButton": "START NOW"
+  },
+  "shots": [
+    {
+      "id": "screen-01",
+      "screen": 1
+    },
+    {
+      "id": "screen-02",
+      "screen": 2
+    },
+    {
+      "id": "screen-03",
+      "screen": 3
+    },
+    {
+      "id": "screen-05",
+      "screen": 5
+    },
+    {
+      "id": "screen-06",
+      "screen": 6
+    },
+    {
+      "id": "screen-07",
+      "screen": 7
+    },
+    {
+      "id": "screen-08",
+      "screen": 8
+    },
+    {
+      "id": "screen-09",
+      "screen": 9
+    },
+    {
+      "id": "screen-10",
+      "screen": 10
+    },
+    {
+      "id": "screen-12",
+      "screen": 12
+    },
+    {
+      "id": "screen-13",
+      "screen": 13
+    },
+    {
+      "id": "screen-14",
+      "screen": 14
+    },
+    {
+      "id": "work-1-1",
+      "src": "../source/lateral/work-1-1.png"
+    },
+    {
+      "id": "work-2-1",
+      "src": "../source/lateral/work-2-1.png"
+    },
+    {
+      "id": "work-2-2",
+      "src": "../source/lateral/work-2-2.png"
+    },
+    {
+      "id": "work-2-3",
+      "src": "../source/lateral/work-2-3.png"
+    },
+    {
+      "id": "cover",
+      "src": "../source/lateral/cover.jpg"
+    },
+    {
+      "id": "transformation",
+      "src": "../source/lateral/transformation.png"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "title": "How to Create Your Content, Funnel and Website from 0 to Launch without Hiring in Under 3 Months",
+      "cards": [
+        {
+          "value": "11",
+          "title": "Weeks from 0 to Launch",
+          "viz": "progress",
+          "from": "Sign-Up",
+          "to": "Launch"
+        },
+        {
+          "value": "14",
+          "title": "Deliverables in One Sprint",
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Brand Foundation",
+              "n": 3
+            },
+            {
+              "label": "UX & Design System",
+              "n": 4
+            },
+            {
+              "label": "Conversion Infrastructure",
+              "n": 4
+            },
+            {
+              "label": "Tech Stack Installation",
+              "n": 3
+            }
+          ]
+        }
+      ],
+      "image": "cover",
+      "scope": [
+        "Content",
+        "Funnel",
+        "Website"
+      ]
+    },
+    {
+      "type": "section",
+      "icon": "shift",
+      "kicker": "The transformation",
+      "images": [
+        "transformation"
+      ]
+    },
+    {
+      "type": "context",
+      "icon": "info",
+      "kicker": "Business - Problem - Solution",
+      "blocks": [
+        {
+          "icon": "persona",
+          "title": "Business",
+          "text": "Lateral Fulfillment, owned by a private equity firm, needed to build a high-converting, premium brand to attract top-tier ecommerce partners in the U.S."
+        },
+        {
+          "icon": "warning",
+          "title": "Problem",
+          "text": "They needed clarity in messaging, credibility in presentation, and a complete go-to-market system that could generate and close deals."
+        },
+        {
+          "icon": "bulb",
+          "title": "Solution",
+          "text": "We refined their positioning to stand out in a crowded market while speaking directly to fast growth DTC ecommerce brands looking to grow by optimizing fulfillment through Section 321."
+        }
+      ]
+    },
+    {
+      "type": "built",
+      "icon": "build",
+      "kicker": "What we built",
+      "steps": [
+        {
+          "title": "Brand Foundation",
+          "items": [
+            "Market Research & Persona Definition",
+            "Brand Positioning & Messaging",
+            "Website Copy & Wireframes"
+          ]
+        },
+        {
+          "title": "UX & Design System",
+          "items": [
+            "Branded Icons",
+            "Isometric Fulfillment Process Graphic",
+            "Full Website Design",
+            "Interactive Animations"
+          ]
+        },
+        {
+          "title": "Conversion Infrastructure",
+          "items": [
+            "Explainer Video",
+            "Lead Magnets & Resources",
+            "3-Page Funnel",
+            "Product Demo"
+          ]
+        },
+        {
+          "title": "Deploy Tech Stack",
+          "stack": [
+            {
+              "name": "Google Slides",
+              "role": "Website Strategy"
+            },
+            {
+              "name": "Webflow",
+              "role": "Website Builder & Host"
+            },
+            {
+              "name": "Google Analytics",
+              "role": "Analytics"
+            },
+            {
+              "name": "HubSpot",
+              "role": "Calendar Booking"
+            },
+            {
+              "name": "Gmail",
+              "role": "Lead Magnet Delivery"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "icon": "image",
+      "kicker": "The work · brand + website guide",
+      "images": [
+        "work-1-1"
+      ],
+      "row": false
+    },
+    {
+      "type": "section",
+      "icon": "image",
+      "kicker": "The work · guide pages",
+      "images": [
+        "work-2-1",
+        "work-2-2",
+        "work-2-3"
+      ],
+      "row": true
+    },
+    {
+      "type": "cta",
+      "title": "Ready to Be the Next Success Story?"
+    }
+  ],
+  "storyMap": [
+    "screen-01",
+    "screen-02",
+    "screen-03",
+    "screen-05",
+    "screen-06",
+    "screen-07",
+    "screen-08",
+    "screen-09",
+    "screen-10",
+    "screen-12",
+    "screen-13",
+    "screen-14"
+  ]
+}

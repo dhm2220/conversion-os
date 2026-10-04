@@ -1,0 +1,13 @@
+{
+  "id": "lateral",
+  "title": "How to Create Your Content, Funnel and Website from 0 to Launch without Hiring in Under 3 Months",
+  "draft": "~/0-hr/tools/case-study-gen/out/lateral/draft.json",
+  "publicDir": "~/0-hr/apps/portal/public",
+  "playbook": "https://differenthunger.com/p/lateral-fullfillment-case-study",
+  "cover": "/showcase/lateral-cover.jpg",
+  "transformImage": "playbook/02.png",
+  "work": [
+    { "kicker": "The work · brand + website guide", "images": ["playbook/03.png"] },
+    { "kicker": "The work · guide pages", "images": ["playbook/04.png", "playbook/05.png", "playbook/06.png"], "row": true }
+  ]
+}

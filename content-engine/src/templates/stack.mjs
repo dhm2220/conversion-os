@@ -31,6 +31,7 @@ const ICONS = {
   build: '<path d="m12 2 9 5-9 5-9-5 9-5z"/><path d="m3 12 9 5 9-5M3 17l9 5 9-5"/>',
   gift: '<rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/>',
   chart: '<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-7"/>',
+  image: '<rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/>',
 };
 const icon = (name, size = 30) =>
   `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]}</svg>`;
@@ -204,6 +205,45 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .wall .go .dhbtn { font-size: 21px; padding: 20px 26px; letter-spacing: 0.1em; }
 .wall .top { padding: 44px 40px 0; }
 
+
+/* engineering variant: hook = headline + pill + scope, stat cards left, the cover right */
+.heng h1 { position: relative; padding: 26px 64px 0; font-size: 64px; }
+.heng .pill { margin-top: 22px; }
+.pill span { white-space: nowrap; }
+.pill.many { gap: 16px; padding: 12px 22px; font-size: 18px; }
+.heng .scope { position: relative; display: flex; justify-content: center; gap: 10px; margin-top: 14px; }
+.heng .scope span { padding: 8px 16px; border-radius: 999px; font-size: 19px; font-weight: 600; background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 1.5px solid transparent; }
+.heng .hgrid { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1.25fr; gap: 20px; padding: 26px 48px; }
+.heng .hcards { min-height: 0; display: grid; grid-auto-rows: 1fr; gap: 20px; }
+.heng .hcards .card .v { font-size: 76px; }
+.heng .hcards .card .t { font-size: 28px; }
+.heng .hero { min-height: 0; border-radius: 26px; overflow: hidden; border: 1px solid var(--line); }
+.heng .hero img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* before / after lists, the page's transformation block */
+.ba { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 18px 64px; }
+.ba h1 { font-size: 46px; text-align: center; margin-bottom: 6px; }
+.ba .col { padding: 26px 30px; border-radius: 26px; border: 1px solid var(--line); background: var(--panel); }
+.ba .col.after { background: radial-gradient(110% 120% at 0% 0%, color-mix(in srgb, var(--accent-a) 18%, transparent), transparent 60%), radial-gradient(110% 120% at 100% 100%, color-mix(in srgb, var(--accent-b) 16%, transparent), transparent 60%), var(--panel); border-color: color-mix(in srgb, var(--accent-b) 35%, transparent); }
+.ba h2 { font-family: var(--display); font-size: 32px; margin-bottom: 14px; }
+.ba ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.ba li { padding: 14px 18px; border-radius: 14px; background: color-mix(in srgb, var(--text) 6%, transparent); font-size: 22px; line-height: 1.4; color: color-mix(in srgb, var(--text) 72%, transparent); }
+.ba .after li { background: color-mix(in srgb, var(--text) 9%, transparent); color: var(--text); }
+.ba li::first-letter { text-transform: uppercase; }
+
+/* build steps that carry text instead of a visual */
+.step ul.items { list-style: none; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.step ul.items li { font-size: 21px; line-height: 1.45; color: color-mix(in srgb, var(--text) 78%, transparent); }
+.steps.n5, .steps.n6 { grid-template-rows: repeat(3, 1fr); }
+.steps.n5 .step:nth-child(5) { grid-column: span 2; }
+.steps.n5 .step h2, .steps.n6 .step h2 { font-size: 26px; }
+.steps.n5 ul.items li, .steps.n6 ul.items li { font-size: 18px; }
+
+/* work images side by side (tall pages, guide spreads) */
+.media.row { flex-direction: row; align-items: stretch; }
+.media.row figure { min-width: 0; }
+.media img.cover { object-fit: cover; }
+
 /* phone screens (maps) */
 .phone { position: relative; overflow: hidden; background: #000; }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
@@ -242,7 +282,7 @@ const kick = (slide) => `<div class="kick"><span class="badge">${icon(slide.icon
 const cta = (kase, label = kase.cta.button) =>
   `<div class="dhbtn">${kase.cta.keyword ? `Comment or DM “${esc(kase.cta.keyword)}”` : esc(label)}</div>`;
 const media = (slide, img) =>
-  `<div class="media">${slide.images.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>`;
+  `<div class="media ${slide.row ? 'row' : ''}">${slide.images.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>`;
 
 // One stat card. Every chart is drawn from the numbers in the case file.
 const VIZ = {
@@ -327,7 +367,7 @@ const SLIDES = {
   <div class="steps n${slide.steps.length}">
     ${slide.steps
       .map((s, n) => `<div class="step"><h2><span class="grad">${String(n + 1).padStart(2, '0')}</span>${esc(s.title)}</h2>
-        ${s.tile ? blueprint(s.tile) : s.stack ? stackList(s.stack) : `<figure class="${s.cta ? 'even' : ''}"><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
+        ${s.tile ? blueprint(s.tile) : s.stack ? stackList(s.stack) : s.items ? `<ul class="items">${s.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : `<figure class="${s.cta ? 'even' : ''}"><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
       .join('')}
   </div>
   ${foot(kase, asset, i, total)}
@@ -348,6 +388,32 @@ const SLIDES = {
 <section class="slide feed wall">
   <div class="top"><h1 class="wtitle">${esc(slide.title)}</h1></div>
   <div class="grid4">${slide.cards.map(card).join('')}</div>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
+  // Engineering hook: the result as a headline, then the stat cards beside the cover.
+  hookEng: (kase, slide, i, total, img, asset) => `
+<section class="slide feed heng">
+  ${top()}
+  <h1>${accent(slide.title)}</h1>
+  <div class="pill ${kase.context.length > 4 ? 'many' : ''}">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
+  ${slide.scope?.length ? `<div class="scope">${slide.scope.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}
+  <div class="hgrid">
+    <div class="hcards">${slide.cards.map(card).join('')}</div>
+    ${slide.image ? `<div class="hero"><img src="${img(slide.image)}"></div>` : ''}
+  </div>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
+  ba: (kase, slide, i, total, img, asset) => `
+<section class="slide feed">
+  ${top()}
+  ${kick(slide)}
+  <div class="ba">
+    <h1>${esc(slide.title)}</h1>
+    <div class="col"><h2>Before</h2><ul>${slide.before.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="col after"><h2>After</h2><ul>${slide.after.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+  </div>
   ${foot(kase, asset, i, total)}
 </section>`,
 

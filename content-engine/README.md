@@ -53,6 +53,20 @@ doc). Slide copy is the page's own text, word for word. A slide whose source isn
 left out, and buttons use the page's own labels unless the case sets a `cta.keyword`. `--keep <id>`
 rebuilds a hand-tuned case file without regenerating it.
 
+## Engineering variant (build cases, from a draft + playbook)
+
+```bash
+node src/from-draft.mjs specs/dream-payments.json && npm run build -- cases/dream-payments.json
+```
+
+For brand / website / product UX cases the story is the work, not leads. `src/from-draft.mjs`
+reads the case-study generator's source-traced `draft.json` (no live short-form page needed), the
+spec's title (the published tile title) and images from the long-form playbook on
+differenthunger.com, and writes: hook (stat cards + cover) · before/after · business/problem/
+solution · what we built (process steps + stack) · the work (playbook images) · proof · CTA. Story
+maps are the playbook page as phone screens. Download the playbook images into
+`source/<id>/playbook/` first (see specs/*.json for which go where).
+
 ## Add a case study
 
 **From a URL** (no recording needed): set `"url"` in the case file and run
