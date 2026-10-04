@@ -1,8 +1,12 @@
-// "Stack" templates: instead of one idea per slide, every slide stacks several real screens
-// from the source page, so each swipe shows what comes next on the page (first-person POV).
+// Case study templates. The page itself is the content: carousel slides put real sections of
+// the case study page straight onto the canvas (no device frames), in the order the story is
+// told, so each swipe shows what comes next on the page.
+//
+// Carousel structure (every case): hook (hero stat + freebie) -> before/after -> problem/
+// solution -> social proof -> what we built (1-2 slides) -> content upgrade tease -> final CTA.
 //
 // Formats
-//   carousel slides  1080x1350 (4:5)  cover / chapter / cta
+//   carousel slides  1080x1350 (4:5)  hook / section / tease / final
 //   story map        1080x1920 (9:16) the whole page as a 4x3 grid of screens
 //   feed map         1080x1350 (4:5)  the whole page as a 5x2 grid of screens
 
@@ -51,44 +55,52 @@ body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif
 .kicker .n { background: var(--grad); -webkit-background-clip: text; color: transparent; font-weight: 700; margin-right: 14px; }
 h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; text-wrap: balance; }
 .feed h1 { font-size: 70px; }
-.chapter h1 { font-size: 60px; max-width: 940px; }
 .grad { background: var(--grad); -webkit-background-clip: text; color: transparent; }
 
-/* phone screen */
-.phone {
-  position: relative; border-radius: 34px; overflow: hidden; background: #000;
-  border: 2px solid var(--line);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 8px rgba(255, 255, 255, 0.03), 0 0 60px color-mix(in srgb, var(--accent-a) 18%, transparent);
-}
-.phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
-
-/* cover: three screens fanned out, bleeding off the bottom edge */
-.krs { position: relative; display: flex; gap: 18px; padding: 36px 72px 0; }
-.kr { flex: 1; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); border-radius: 22px; padding: 22px 24px; }
-.kr .v { font-size: 46px; font-weight: 800; letter-spacing: -0.02em; }
-.kr .l { margin-top: 6px; font-size: 20px; color: var(--muted); }
-.fan { position: relative; flex: 1; }
-.cover .foot { margin-top: -180px; padding-top: 140px; background: linear-gradient(transparent, var(--bg) 55%); }
-.fan .phone { position: absolute; width: 360px; height: 705px; }
-.fan .p0 { left: 70px;  top: 110px; transform: rotate(-7deg); }
-.fan .p1 { left: 360px; top: 50px;  z-index: 2; }
-.fan .p2 { left: 650px; top: 110px; transform: rotate(7deg); }
-
-/* chapter: three consecutive screens, stepping down like a scroll */
-.row { position: relative; flex: 1; display: flex; justify-content: center; gap: 28px; padding: 48px 32px 0; }
-.step { width: 330px; display: flex; flex-direction: column; align-items: flex-start; }
-.step:nth-child(2) { margin-top: 50px; }
-.step:nth-child(3) { margin-top: 100px; }
-.step .phone { width: 330px; height: 647px; }
-.label { margin-top: 22px; display: flex; align-items: center; gap: 12px; font-size: 24px; font-weight: 700; }
-.dot { width: 34px; height: 34px; border-radius: 50%; background: var(--grad); display: grid; place-items: center; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #fff; flex: none; }
-
-.foot { position: relative; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 0 72px 52px; }
+/* carousel: page sections on the canvas. Images blend with "lighten" so the page's own
+   near-black background disappears into the slide and only its content shows. */
+.kick { position: relative; padding: 28px 64px 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.kick::before { content: '●'; margin-right: 14px; background: var(--grad); -webkit-background-clip: text; color: transparent; }
+.media { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 24px 48px; }
+.media figure { flex: 1 1 0; min-height: 0; width: 100%; display: flex; align-items: center; justify-content: center; }
+.media img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: lighten; border-radius: 24px; }
+.foot { position: relative; z-index: 5; display: flex; justify-content: space-between; align-items: center; padding: 0 64px 48px; }
 .swipe { font-size: 24px; color: var(--muted); }
 .swipe b { color: var(--text); }
 .bar { width: 220px; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
 .bar i { display: block; height: 100%; background: var(--grad); }
-.btn { display: inline-flex; align-items: center; gap: 14px; padding: 22px 34px; border-radius: 16px; background: var(--grad); font-size: 26px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: 0 10px 40px color-mix(in srgb, var(--accent-b) 35%, transparent); }
+.btn { display: inline-flex; align-items: center; gap: 14px; padding: 26px 40px; border-radius: 18px; background: var(--grad); font-size: 30px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: 0 10px 40px color-mix(in srgb, var(--accent-b) 35%, transparent); }
+
+/* hook: the page's own headline, a context pill, the hero stat, and the freebie */
+.hook .headline { position: relative; display: block; width: 960px; margin: 28px auto 0; mix-blend-mode: lighten; }
+.pill { position: relative; align-self: center; display: flex; gap: 26px; margin-top: 18px; padding: 14px 28px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); font-size: 22px; color: var(--muted); }
+.pill b { color: var(--text); font-weight: 600; }
+.gift { position: relative; display: flex; align-items: center; gap: 24px; margin: 0 48px 28px; padding: 24px 28px; border-radius: 22px;
+  background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 2px solid transparent; }
+.gift svg { flex: none; }
+.gift .what { flex: 1; font-size: 25px; line-height: 1.3; font-weight: 700; }
+.gift .what small { display: block; font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.dm { flex: none; padding: 16px 22px; border-radius: 14px; background: var(--grad); font-size: 22px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+
+/* tease: the content upgrade, faded out before it gives everything away */
+.tease h1 { position: relative; padding: 18px 64px 0; font-size: 56px; }
+.tease .media img { -webkit-mask-image: linear-gradient(#000 45%, transparent 92%); mask-image: linear-gradient(#000 45%, transparent 92%); }
+.unlock { position: relative; align-self: center; margin: -40px 0 36px; }
+
+/* final: one call to action, the page's own words */
+.final .body { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 64px; gap: 40px; }
+.final h1 { font-size: 92px; }
+.final .krs { padding: 0; }
+.final .go { display: flex; align-items: center; gap: 32px; }
+.final .go .mono { font-size: 26px; }
+
+/* phone screens (maps) */
+.phone { position: relative; overflow: hidden; background: #000; }
+.phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.krs { position: relative; display: flex; gap: 18px; padding: 36px 72px 0; }
+.kr { flex: 1; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); border-radius: 22px; padding: 22px 24px; }
+.kr .v { font-size: 46px; font-weight: 800; letter-spacing: -0.02em; }
+.kr .l { margin-top: 6px; font-size: 20px; color: var(--muted); }
 
 /* maps: the whole page in one image */
 .grid { position: relative; display: grid; gap: 16px; padding: 36px 40px 0; }
@@ -115,43 +127,59 @@ const foot = (i, total, left) => `
     <div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div>
   </div>`;
 
-const phone = (src, extra = '') => `<div class="phone ${extra}"><img src="${src}"></div>`;
+const GIFT = `<svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="url(#g)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="var(--accent-a)"/><stop offset="1" stop-color="var(--accent-b)"/></linearGradient></defs><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>`;
 
-function cover(kase, slide, i, total, img) {
+const dm = (kase) => `<div class="dm">DM “${esc(kase.cta.keyword)}”</div>`;
+const media = (slide, img) =>
+  `<div class="media">${slide.images.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>`;
+
+function hook(kase, slide, i, total, img) {
   return `
-<section class="slide feed cover">
+<section class="slide feed hook">
   ${top(kase, i, total)}
-  <div class="head">
-    <div class="kicker mono">Case study · ${esc(kase.industry)}</div>
-    <h1>${accent(kase.headline)}</h1>
-  </div>
-  <div class="krs">
-    ${kase.krs.map((k) => `<div class="kr"><div class="v grad">${esc(k.value)}</div><div class="l">${esc(k.label)}</div></div>`).join('')}
-  </div>
-  <div class="fan">${slide.shots.map((id, n) => phone(img(id), `p${n}`)).join('')}</div>
-  ${foot(i, total, '<b>Swipe →</b> the whole case study, screen by screen')}
+  <img class="headline" src="${img(slide.headline)}">
+  <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
+  ${media(slide, img)}
+  <div class="gift">${GIFT}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${dm(kase)}</div>
+  ${foot(i, total, '<b>Swipe →</b> the whole case study')}
 </section>`;
 }
 
-function chapter(kase, slide, i, total, img) {
-  const isCta = slide.type === 'cta';
+function section(kase, slide, i, total, img) {
   return `
-<section class="slide feed chapter">
+<section class="slide feed section">
   ${top(kase, i, total)}
-  <div class="head">
-    <div class="kicker mono"><span class="n">●</span>${esc(slide.kicker)}</div>
+  <div class="kick">${esc(slide.kicker)}</div>
+  ${media(slide, img)}
+  ${foot(i, total, '<b>Swipe →</b> what happens next')}
+</section>`;
+}
+
+function tease(kase, slide, i, total, img) {
+  return `
+<section class="slide feed tease">
+  ${top(kase, i, total)}
+  <div class="kick">${esc(slide.kicker)}</div>
+  <h1>${accent(slide.title)}</h1>
+  ${media(slide, img)}
+  <div class="unlock">${dm(kase)}</div>
+  ${foot(i, total, '<b>Swipe →</b> one last thing')}
+</section>`;
+}
+
+function final(kase, slide, i, total) {
+  return `
+<section class="slide feed final">
+  ${top(kase, i, total)}
+  <div class="body">
     <h1>${accent(slide.title)}</h1>
+    <div class="krs">${kase.krs.map((k) => `<div class="kr"><div class="v grad">${esc(k.value)}</div><div class="l">${esc(k.label)}</div></div>`).join('')}</div>
+    <div class="go"><div class="btn">${esc(slide.button)} →</div><div class="mono">${esc(kase.ctaDomain)}</div></div>
   </div>
-  <div class="row">
-    ${slide.shots
-      .map((s, n) => `<div class="step">${phone(img(s.id))}<div class="label"><span class="dot">${n + 1}</span>${esc(s.label)}</div></div>`)
-      .join('')}
-  </div>
-  ${isCta
-    ? `<div class="foot"><div class="btn">Read the full story →</div><div class="mono">${esc(kase.ctaDomain)}</div></div>`
-    : foot(i, total, '<b>Swipe →</b> what happens next')}
 </section>`;
 }
+
+const SLIDES = { hook, section, tease, final };
 
 function map(kase, ids, img, format) {
   const story = format === 'story';
@@ -201,8 +229,9 @@ export function build(kase, img, fontsCss) {
   const total = kase.carousel.length;
   const slides = kase.carousel.map((slide, i) => ({
     name: `carousel-${String(i + 1).padStart(2, '0')}-${slide.type}`,
-    html: doc(kase, slide.type === 'cover' ? cover(kase, slide, i, total, img) : chapter(kase, slide, i, total, img), fontsCss),
+    html: doc(kase, SLIDES[slide.type](kase, slide, i, total, img), fontsCss),
   }));
+  if (!kase.storyMap?.length) return slides;
   return [
     ...slides,
     { name: 'map-story-9x16', html: doc(kase, map(kase, kase.storyMap, img, 'story'), fontsCss) },

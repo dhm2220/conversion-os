@@ -1,9 +1,10 @@
 {
   "id": "steelcon",
-  "brand": "SteelCon",
+  "brand": {
+    "bg": "#08090b"
+  },
   "industry": "Manufacturing",
-  "headline": "SteelCon Built a $10M+ Pipeline in 26 Days",
-  "hook": "How a Canadian steel manufacturer built an 8-figure pipeline in 26 days, without referrals.",
+  "headline": "How SteelCon Built a $10M+ Pipeline in 26 Days",
   "krs": [
     {
       "value": "$10M+",
@@ -18,10 +19,9 @@
       "label": "Qualified leads"
     }
   ],
-  "bonus": "Get the exact SteelCon sales outreach sequence",
   "liveUrl": "https://differenthunger.com/p/manufacturing-lead-generation-case-study-steelcon",
   "ctaDomain": "0hr.app",
-  "source": "Content Management OS \u00b7 Case Studies tab (SteelCon)",
+  "source": "Content Management OS · Case Studies tab (SteelCon)",
   "video": "../source/steelcon-scroll.mov",
   "crop": {
     "top": 100,
@@ -99,111 +99,100 @@
     {
       "id": "start-now",
       "t": 10.5
+    },
+    {
+      "id": "headline",
+      "src": "../source/steelcon/headline.jpg"
+    },
+    {
+      "id": "hero-stat",
+      "src": "../source/steelcon/hero-stat.jpg"
+    },
+    {
+      "id": "before-after",
+      "src": "../source/steelcon/before-after.jpg"
+    },
+    {
+      "id": "problem-solution",
+      "src": "../source/steelcon/problem-solution.jpg"
+    },
+    {
+      "id": "quote-1",
+      "src": "../source/steelcon/quote-1.jpg"
+    },
+    {
+      "id": "quote-2",
+      "src": "../source/steelcon/quote-2.jpg"
+    },
+    {
+      "id": "built-1",
+      "src": "../source/steelcon/built-1.jpg"
+    },
+    {
+      "id": "built-2",
+      "src": "../source/steelcon/built-2.jpg"
+    },
+    {
+      "id": "upgrade",
+      "src": "../source/steelcon/upgrade.jpg"
     }
   ],
   "carousel": [
     {
-      "type": "cover",
-      "shots": [
-        "hero",
-        "leads",
-        "pipeline"
+      "type": "hook",
+      "headline": "headline",
+      "images": [
+        "hero-stat"
       ]
     },
     {
-      "type": "chapter",
+      "type": "section",
       "kicker": "The transformation",
-      "title": "Stuck on referrals \u2192 a pipeline outside their network",
-      "shots": [
-        {
-          "id": "before",
-          "label": "Before"
-        },
-        {
-          "id": "after",
-          "label": "After"
-        },
-        {
-          "id": "problem",
-          "label": "The problem"
-        }
+      "images": [
+        "before-after"
       ]
     },
     {
-      "type": "chapter",
-      "kicker": "The play",
-      "title": "One go-to-market. One targeted outbound campaign.",
-      "shots": [
-        {
-          "id": "solution",
-          "label": "The solution"
-        },
-        {
-          "id": "research",
-          "label": "Research & targeting"
-        },
-        {
-          "id": "strategy",
-          "label": "Campaign blueprint"
-        }
+      "type": "section",
+      "kicker": "Problem → solution",
+      "images": [
+        "problem-solution"
       ]
     },
     {
-      "type": "chapter",
-      "kicker": "What we built",
-      "title": "Sequence, tech stack, launch.",
-      "shots": [
-        {
-          "id": "deliverables",
-          "label": "Outreach sequence"
-        },
-        {
-          "id": "tech-stack",
-          "label": "Tech stack"
-        },
-        {
-          "id": "launch",
-          "label": "Launch \u00b7 Day 59"
-        }
+      "type": "section",
+      "kicker": "Social proof",
+      "images": [
+        "quote-1",
+        "quote-2"
       ]
     },
     {
-      "type": "chapter",
-      "kicker": "The results",
-      "title": "First lead in 2 days. $10M+ pipeline in 26.",
-      "shots": [
-        {
-          "id": "results",
-          "label": "Results"
-        },
-        {
-          "id": "first-lead",
-          "label": "First lead"
-        },
-        {
-          "id": "pipeline-proof",
-          "label": "$10M+ pipeline"
-        }
+      "type": "section",
+      "kicker": "What we built · 1 of 2",
+      "images": [
+        "built-1"
       ]
     },
     {
-      "type": "cta",
-      "kicker": "Bonus",
-      "title": "Steal the exact outreach sequence SteelCon used.",
-      "shots": [
-        {
-          "id": "bonus",
-          "label": "Bonus content"
-        },
-        {
-          "id": "modal",
-          "label": "Instant access"
-        },
-        {
-          "id": "start-now",
-          "label": "Your turn"
-        }
+      "type": "section",
+      "kicker": "What we built · 2 of 2",
+      "images": [
+        "built-2"
       ]
+    },
+    {
+      "type": "tease",
+      "kicker": "Free content upgrade",
+      "title": "The exact sequence behind SteelCon’s $10M+ pipeline",
+      "images": [
+        "upgrade"
+      ]
+    },
+    {
+      "type": "final",
+      "title": "Ready to be the next success story?",
+      "button": "Start now"
     }
   ],
   "storyMap": [
@@ -219,5 +208,23 @@
     "results",
     "first-lead",
     "start-now"
-  ]
+  ],
+  "context": [
+    {
+      "label": "Industry",
+      "value": "Manufacturing"
+    },
+    {
+      "label": "Location",
+      "value": "Canada"
+    },
+    {
+      "label": "Employees",
+      "value": "500–1,000"
+    }
+  ],
+  "cta": {
+    "keyword": "SEQUENCE",
+    "gift": "The exact outreach sequence behind this $10M+ pipeline"
+  }
 }

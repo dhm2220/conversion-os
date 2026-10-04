@@ -33,6 +33,7 @@ const frames = readdirSync(samples).sort();
 const at = (i) => join(samples, frames[Math.min(Math.max(i, 0), frames.length - 1)]);
 
 for (const shot of kase.shots) {
+  if (shot.t == null) continue;
   const i = Math.round(shot.t * FPS);
   copyFileSync(at(i), join(outDir, `${shot.id}.png`));
   console.log(`${shot.id.padEnd(16)} t=${shot.t}s  <- sample ${i}`);

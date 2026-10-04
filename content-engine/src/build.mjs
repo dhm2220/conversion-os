@@ -36,6 +36,7 @@ if (!kase.carousel?.length || !kase.shots?.length) {
 const captured = resolve(shots, 'brand.json');
 const renderCase = resolve(out, 'case.json');
 const brand = existsSync(captured) ? JSON.parse(readFileSync(captured, 'utf8')) : {};
-writeFileSync(renderCase, JSON.stringify({ ...kase, brand: { ...brand, ...kase.brand } }, null, 2));
+const shotList = kase.shots.map((s) => (s.src ? { ...s, src: resolve(dirname(casePath), s.src) } : s));
+writeFileSync(renderCase, JSON.stringify({ ...kase, shots: shotList, brand: { ...brand, ...kase.brand } }, null, 2));
 run('render-carousel.mjs', renderCase, shots, out);
 console.log(`\ndone -> ${out}`);
