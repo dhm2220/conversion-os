@@ -103,6 +103,11 @@ const carousel = [
     rows: dd.rows.map((r, n) => { const [f, pos] = (r.image ?? '').split('@'); return { title: r.title, why: r.why, image: f ? shot(`deep-${k + 1}-${n + 1}`, f) : null, ...(pos && { pos }) }; }),
   })),
   ...work.map((w) => ({ type: 'section', icon: 'image', kicker: w.kicker ?? 'The work', images: w.images, row: !!w.row })),
+  // Some data for the visual variant: the case's stat cards and its milestone timeline (draft results).
+  spec.deckSlides && cards.length && {
+    type: 'data', icon: 'chart', kicker: 'The timeline', cards: cards.slice(0, 2),
+    milestones: (block('results').timeline ?? []).filter((t) => t.when).map((t) => ({ when: t.when, title: t.title })),
+  },
   quotes.length && { type: 'proof', icon: 'quote', kicker: 'Social proof', quotes: quotes.slice(0, 2) },
   { type: 'cta', title: spec.ctaTitle ?? 'Ready to Be the Next Success Story?' },
 ].filter(Boolean);

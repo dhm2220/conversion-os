@@ -1,0 +1,33 @@
+{
+  "id": "preview-dream-b",
+  "title": "Dream Payments Redesigned Their Brand & Product UX and Raised $11.9M",
+  "draft": "~/0-hr/tools/case-study-gen/out/dream-payments/draft.json",
+  "publicDir": "~/0-hr/apps/portal/public",
+  "playbook": "https://differenthunger.com/p/financial-services-website-design-case-study-dream-payments",
+  "cover": "/showcase/dream-payments-work.jpg",
+  "work": [
+    {
+      "kicker": "The work \u00b7 website",
+      "images": [
+        "pb-05.jpg",
+        "r265.jpg"
+      ]
+    },
+    {
+      "kicker": "The work \u00b7 product",
+      "images": [
+        "pb-04.jpg",
+        "pb-06.jpg"
+      ]
+    },
+    {
+      "kicker": "The work \u00b7 persona + UX",
+      "images": [
+        "pb-07.jpg",
+        "r266.jpg"
+      ],
+      "row": true
+    }
+  ],
+  "marquee": "marquee.png"
+}

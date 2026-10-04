@@ -314,6 +314,65 @@
       "image": "deck-14"
     },
     {
+      "type": "data",
+      "icon": "chart",
+      "kicker": "The timeline",
+      "cards": [
+        {
+          "value": "11",
+          "title": "Weeks from 0 to Launch",
+          "viz": "progress",
+          "from": "Sign-Up",
+          "to": "Launch"
+        },
+        {
+          "value": "14",
+          "title": "Deliverables in One Sprint",
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Brand Foundation",
+              "n": 3
+            },
+            {
+              "label": "UX & Design System",
+              "n": 4
+            },
+            {
+              "label": "Conversion Infrastructure",
+              "n": 4
+            },
+            {
+              "label": "Tech Stack Installation",
+              "n": 3
+            }
+          ]
+        }
+      ],
+      "milestones": [
+        {
+          "when": "1 week after sign-up",
+          "title": "Targeting & Positioning Strategy"
+        },
+        {
+          "when": "~2.5 weeks after sign-up",
+          "title": "Website Copy & Wireframes"
+        },
+        {
+          "when": "~5 weeks after sign-up",
+          "title": "Full Website Design"
+        },
+        {
+          "when": "11 weeks after sign-up",
+          "title": "Launch"
+        },
+        {
+          "when": "14 weeks after sign-up",
+          "title": "The Outcome"
+        }
+      ]
+    },
+    {
       "type": "cta",
       "title": "Ready to Be the Next Success Story?"
     }

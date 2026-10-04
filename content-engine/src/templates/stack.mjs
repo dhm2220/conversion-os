@@ -38,7 +38,7 @@ const icon = (name, size = 30) =>
 
 const CSS = /* css */ `
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: var(--text); }
+body { background: #000; font-family: 'Inter', system-ui, sans-serif; color: var(--text); }
 .slide { position: relative; overflow: hidden; background: var(--bg); display: flex; flex-direction: column; }
 .slide::before { /* brand glow */
   content: ''; position: absolute; inset: auto -20% -35% -20%; height: 75%;
@@ -48,7 +48,7 @@ body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif
 }
 .feed { width: 1080px; height: 1350px; }
 .story { width: 1080px; height: 1920px; }
-.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; text-transform: uppercase; letter-spacing: 0.18em; font-size: 22px; color: var(--muted); }
+.mono { font-family: ui-monospace, 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.18em; font-size: 22px; color: var(--muted); }
 .grad { background: var(--grad); -webkit-background-clip: text; color: transparent; }
 h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.04; text-wrap: balance; }
 
@@ -56,11 +56,11 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .brand { font-weight: 800; letter-spacing: 0.04em; font-size: 26px; }
 .brand span { font-weight: 400; color: var(--muted); }
 .brand img { display: block; height: 40px; width: auto; }
-.count { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 22px; color: var(--muted); }
+.count { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 22px; color: var(--muted); }
 .count b { color: var(--text); font-weight: 600; }
 
 /* section header: an icon badge + the section's name */
-.kick { position: relative; display: flex; align-items: center; gap: 18px; padding: 30px 64px 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
+.kick { position: relative; display: flex; align-items: center; gap: 18px; padding: 30px 64px 0; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 .badge { flex: none; display: grid; place-items: center; width: 60px; height: 60px; border-radius: 16px; color: var(--text);
   background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 2px solid transparent; }
 
@@ -101,7 +101,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
   background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 2px solid transparent; }
 .gift > svg { flex: none; color: var(--accent-b); }
 .gift .what { flex: 1; font-size: 25px; line-height: 1.3; font-weight: 700; }
-.gift .what small { display: block; font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.gift .what small { display: block; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .gift .dhbtn { font-size: 19px; padding: 16px 20px; letter-spacing: 0.1em; }
 
 /* context: the page's problem / solution copy, one icon per section */
@@ -116,7 +116,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .quotes { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 28px; padding: 24px 64px; }
 .tcard { padding: 40px 42px; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); }
 .tcard .logo { display: inline-block; padding: 8px 14px; border-radius: 8px; background: var(--text); color: var(--bg); font-weight: 800; font-size: 20px; letter-spacing: 0.02em; }
-.tcard blockquote { margin: 26px 0 30px; font-size: 38px; line-height: 1.38; font-weight: 500; }
+.tcard blockquote { margin: 26px 0 30px; font-family: var(--display); font-size: 40px; line-height: 1.32; font-weight: 200; letter-spacing: -0.025em; }
 .tcard .who { display: flex; align-items: center; gap: 18px; }
 .tcard .who img { width: 68px; height: 68px; border-radius: 12px; object-fit: cover; border: 1px solid var(--line); }
 .tcard .who b { display: block; font-size: 24px; }
@@ -128,7 +128,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .steps.n3 .step:nth-child(3) { grid-column: span 2; }
 .steps.n2 { grid-template-rows: 1fr; }
 .step h2 { font-family: var(--display); font-weight: 700; font-size: 30px; line-height: 1.15; }
-.step h2 span { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500; margin-right: 10px; }
+.step h2 span { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500; margin-right: 10px; }
 .step figure { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
 .step img { display: block; max-width: 100%; max-height: 100%; min-height: 0; object-fit: contain; mix-blend-mode: lighten; border-radius: 14px; }
 .step figcaption { font-family: var(--display); font-weight: 700; font-size: 22px; text-align: center; }
@@ -136,12 +136,12 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 /* blueprint tile: light, like the Google Slides deck it comes from */
 .bp { flex: 1; min-height: 0; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #fbf7f8; color: #1a1416; }
 .bp-tabs { display: flex; background: #f1e3e7; }
-.bp-tabs span { flex: 1; padding: 9px 4px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #8a6b74; }
+.bp-tabs span { flex: 1; padding: 9px 4px; text-align: center; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #8a6b74; }
 .bp-tabs span.on { background: var(--accent-b); color: #fff; font-weight: 700; }
 .bp-rows { flex: 1; display: flex; flex-direction: column; justify-content: space-around; padding: 6px 14px; }
 .bp-rows div { display: grid; grid-template-columns: 112px 1fr; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid #eadde1; }
 .bp-rows div:last-child { border-bottom: 0; }
-.bp-rows b { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9b7c85; }
+.bp-rows b { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9b7c85; }
 .bp-rows span { font-size: 15.5px; font-weight: 600; line-height: 1.3; }
 .step .dhbtn { font-size: 15px; padding: 12px 16px; letter-spacing: 0.08em; }
 
@@ -156,7 +156,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .tstack li::before { content: ''; position: absolute; left: -28px; top: 50%; width: 26px; border-top: 2px solid color-mix(in srgb, var(--text) 30%, transparent); }
 .tstack .ti { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; background: var(--grad); font-weight: 800; font-size: 16px; }
 .tstack b { display: block; font-size: 17px; }
-.tstack span { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.tstack span { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
 
 /* final CTA */
 .final .fbody { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 44px; padding: 0 64px; }
@@ -189,7 +189,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .card.side .ch { flex: 0 0 38%; }
 .card.side .viz { margin-top: 0; justify-content: center; }
 .card svg { display: block; width: 100%; height: 100%; }
-.lab { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.lab { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 .mrow { display: grid; grid-template-columns: 1fr auto; gap: 3px 10px; align-items: center; margin-top: 6px; }
 .mtrack { grid-column: 1 / -1; height: 10px; border-radius: 0 5px 5px 0; background: rgba(255, 255, 255, 0.06); position: relative; }
 .mfill { height: 100%; border-radius: 0 5px 5px 0; background: var(--grad); }
@@ -291,17 +291,27 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 
 /* one deliverable, the project deck's way: eyebrow, headline, what we did, then the deck's visual */
 .dk .dkt { position: relative; padding: 34px 60px 0; }
-.dk .eb { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--text) 60%, transparent); }
+.dk .eb { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--text) 60%, transparent); }
 .dk h1 { margin-top: 16px; font-size: 60px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; }
 .dk p { margin-top: 18px; max-width: 900px; font-size: 25px; line-height: 1.5; color: color-mix(in srgb, var(--text) 72%, transparent); }
 .dk .dkv { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 26px 40px 22px; }
 .dk .dkv img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 18px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55); }
 
+
+/* data: the stat cards on top, the milestone timeline under them */
+.data .dcards { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 26px 44px 0; height: 380px; }
+.data .tl { position: relative; flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: space-evenly; gap: 0; margin: 26px 44px 16px; padding: 10px 30px; border: 1px solid var(--line); border-radius: 24px; background: var(--panel); }
+.data .tl li { list-style: none; position: relative; display: grid; grid-template-columns: 370px 1fr; align-items: baseline; gap: 20px; padding: 18px 0 18px 30px; border-bottom: 1px solid var(--line); }
+.data .tl li:last-child { border-bottom: 0; }
+.data .tl li::before { content: ''; position: absolute; left: 0; top: 50%; width: 12px; height: 12px; border-radius: 50%; transform: translateY(-50%); background: var(--text); }
+.data .tl .w { white-space: nowrap; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--text) 60%, transparent); }
+.data .tl .m { font-family: var(--display); font-weight: 700; font-size: 34px; letter-spacing: -0.015em; }
+
 /* phone screens (maps) */
 .phone { position: relative; overflow: hidden; background: #000; }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 .head { position: relative; padding: 40px 72px 0; }
-.kicker { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; }
+.kicker { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 22px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 20px; }
 .kicker .n { background: var(--grad); -webkit-background-clip: text; color: transparent; font-weight: 700; margin-right: 14px; }
 .krs { position: relative; display: flex; gap: 18px; padding: 36px 72px 0; }
 .kr { flex: 1; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.03); border-radius: 22px; padding: 22px 24px; }
@@ -311,7 +321,7 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .story .grid { grid-template-columns: repeat(4, 1fr); }
 .feed .grid { grid-template-columns: repeat(5, 1fr); gap: 14px; }
 .grid .phone { border-radius: 18px; aspect-ratio: 888 / 1740; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55); }
-.grid .phone .n { position: absolute; left: 10px; bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; padding: 4px 8px; border-radius: 8px; background: rgba(7, 7, 12, 0.8); border: 1px solid var(--line); }
+.grid .phone .n { position: absolute; left: 10px; bottom: 10px; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 15px; font-weight: 700; padding: 4px 8px; border-radius: 8px; background: rgba(7, 7, 12, 0.8); border: 1px solid var(--line); }
 .story h1 { font-size: 68px; }
 .map-feed h1 { font-size: 60px; }
 .map-feed .krs { padding: 30px 40px 0; }
@@ -507,6 +517,15 @@ const SLIDES = {
   ${foot(kase, asset, i, total)}
 </section>`,
 
+  data: (kase, slide, i, total, img, asset) => `
+<section class="slide feed data">
+  ${top()}
+  ${kick(slide)}
+  <div class="dcards">${slide.cards.map(card).join('')}</div>
+  <ul class="tl">${slide.milestones.map((m) => `<li><span class="w">${esc(m.when)}</span><span class="m">${esc(m.title)}</span></li>`).join('')}</ul>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
   ba: (kase, slide, i, total, img, asset) => `
 <section class="slide feed">
   ${top()}
@@ -577,7 +596,7 @@ const brandCss = (kase, asset) => {
 :root { --bg: ${b.bg}; --text: ${b.text}; --muted: ${b.muted}; --accent-a: ${b.accentA}; --accent-b: ${b.accentB};
   --grad: linear-gradient(90deg, var(--accent-a), var(--accent-b));
   --panel: color-mix(in srgb, ${b.text} 5%, ${b.bg}); --line: color-mix(in srgb, ${b.text} 12%, transparent);
-  --display: ${b.displayFont ? "'Brand Display', " : ''}'Plus Jakarta Sans', system-ui, sans-serif; }`;
+  --display: ${b.displayFont ? "'Brand Display', " : ''}'Inter', system-ui, sans-serif; }`;
 };
 
 

@@ -99,4 +99,4 @@ keyboard or a typed email.
   case file's `brand` or the captured `brand.json` overrides them
 - `src/render-carousel.mjs`: renders each template to PNG with headless Chromium
 - `src/build.mjs`: runs both for one case file
-- `fonts/`: Plus Jakarta Sans + JetBrains Mono (OFL), vendored so renders work offline
+- `fonts/`: Inter (the exact files 0hr.app serves) + JetBrains Mono fallback (OFL), vendored so renders work offline; Blanc comes from source/brand
