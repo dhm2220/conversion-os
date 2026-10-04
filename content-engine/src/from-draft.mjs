@@ -94,6 +94,8 @@ const mapShots = pick.map((screen) => ({ id: `screen-${String(screen).padStart(2
 const kase = {
   id,
   variant: 'engineering',
+  // Enough real deliverables to show: black/white slides, the work carries the color.
+  palette: spec.palette ?? (work.reduce((n, w) => n + w.images.length, 0) + (cover ? 1 : 0) >= 3 ? 'mono' : 'brand'),
   url: spec.playbook,
   ownBrand: true,
   brand: { bg: '#08090b', logo: '../source/brand/dh-logo-dark.png', displayFont: '../source/brand/blanc-bold.woff2' },

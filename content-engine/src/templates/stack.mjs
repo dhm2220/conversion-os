@@ -475,9 +475,30 @@ const brandCss = (kase, asset) => {
   --display: ${b.displayFont ? "'Brand Display', " : ''}'Plus Jakarta Sans', system-ui, sans-serif; }`;
 };
 
+
+// Black/white palette: when a case has enough real deliverables, the slides go monochrome so
+// the work carries all the color. Set "palette": "mono" on the case (from-draft.mjs sets it
+// automatically when the spec has 3+ work images).
+const MONO = `
+:root { --accent-a: #ffffff; --accent-b: #ffffff; --grad: linear-gradient(90deg, #fff, #fff); }
+.slide::before { display: none; }
+.grad { background: none; -webkit-background-clip: initial; color: var(--text); }
+.dhbtn { color: #08090b; text-shadow: none; background: #ffffff; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4); }
+.dhbtn::after { display: none; }
+.badge, .gift, .heng .scope span { background: var(--panel); border: 1.5px solid color-mix(in srgb, var(--text) 35%, transparent); }
+.card, .ba .col.after { background: var(--panel); }
+.ba .col.after { border-color: color-mix(in srgb, var(--text) 30%, transparent); }
+.mfill, .bar i, .tstack .ti, .prog { background: #ffffff; }
+.tstack .ti { color: #08090b; }
+.mtick { background: #08090b; box-shadow: 0 0 0 1px #fff; }
+.prog::before, .prog::after { background: #ffffff; box-shadow: none; }
+.block.warn .badge { color: var(--text); }
+.bp-tabs span.on { background: #08090b; }
+`;
+
 const doc = (kase, body, fontsCss, asset) => `<!doctype html><html><head><meta charset="utf-8">
 <link href="${fontsCss}" rel="stylesheet">
-<style>${CSS}${brandCss(kase, asset)}</style></head><body>${body}</body></html>`;
+<style>${CSS}${brandCss(kase, asset)}${kase.palette === 'mono' ? MONO : ''}</style></head><body>${body}</body></html>`;
 
 // Returns [{ name, html }], one HTML document per output image.
 // img(id) -> URL of a shot; asset(path) -> URL of a brand file; fontsCss -> URL of fonts/fonts.css.
