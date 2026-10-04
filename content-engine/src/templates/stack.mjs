@@ -141,7 +141,8 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 /* tease */
 .tease h1 { position: relative; padding: 22px 64px 0; font-size: 56px; }
 .tease .media img { -webkit-mask-image: linear-gradient(#000 45%, transparent 92%); mask-image: linear-gradient(#000 45%, transparent 92%); }
-.unlock { position: relative; align-self: center; margin: 34px 0 0; }
+.unlock { position: relative; align-self: flex-start; margin: 34px 64px 0; }
+.unlock .dhbtn { font-size: 34px; padding: 30px 44px; border-radius: 16px; }
 
 /* wall: full-bleed bento of stat cards in the page's own card style (big gradient number,
    a title with the time frame, a small chart drawn from the case numbers) */
