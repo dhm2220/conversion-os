@@ -51,7 +51,7 @@ body { background: #000; font-family: 'Plus Jakarta Sans', system-ui, sans-serif
 .grad { background: var(--grad); -webkit-background-clip: text; color: transparent; }
 h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; line-height: 1.04; text-wrap: balance; }
 
-.top { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 52px 64px 0; }
+.top { position: relative; display: flex; justify-content: space-between; align-items: center; padding: 44px 64px 0; }
 .brand { font-weight: 800; letter-spacing: 0.04em; font-size: 26px; }
 .brand span { font-weight: 400; color: var(--muted); }
 .brand img { display: block; height: 40px; width: auto; }
@@ -75,6 +75,8 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .swipe { font-size: 24px; color: var(--muted); }
 .swipe b { color: var(--text); }
 .bar { width: 220px; height: 6px; border-radius: 3px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+.foot .nav { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+.foot .brand img { height: 52px; }
 .bar i { display: block; height: 100%; background: var(--grad); }
 
 /* page crops on the canvas. "lighten" lets the page's near-black background vanish into the slide */
@@ -202,16 +204,17 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .map-feed .kr .v { font-size: 40px; }
 `;
 
-const top = (kase, i, total, asset) => `
+// Top: slide counter only. Bottom: the brand logo left, the swipe prompt + progress right.
+const top = (kase, i, total) => `
   <div class="top">
-    <div class="brand">${brandMark(kase, asset)}</div>
+    <div></div>
     <div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div>
   </div>`;
 
-const foot = (i, total, left) => `
+const foot = (kase, asset, i, total, swipe) => `
   <div class="foot">
-    <div class="swipe">${left}</div>
-    <div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div>
+    <div class="brand">${brandMark(kase, asset)}</div>
+    <div class="nav"><div class="swipe">${swipe}</div><div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div></div>
   </div>`;
 
 const kick = (slide) => `<div class="kick"><span class="badge">${icon(slide.icon)}</span>${esc(slide.kicker)}</div>`;
@@ -256,7 +259,7 @@ const SLIDES = {
   <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
   <div class="stats">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}${slide.oneLiner ? `<div class="one"><p>${accent(slide.oneLiner)}</p></div>` : ''}</div>
   <div class="gift">${icon('gift', 52)}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${cta(kase)}</div>
-  ${foot(i, total, '<b>Swipe →</b> the whole case study')}
+  ${foot(kase, asset, i, total, '<b>Swipe →</b> the whole case study')}
 </section>`,
 
   section: (kase, slide, i, total, img, asset) => `
@@ -264,7 +267,7 @@ const SLIDES = {
   ${top(kase, i, total, asset)}
   ${kick(slide)}
   ${media(slide, img)}
-  ${foot(i, total, '<b>Swipe →</b> what happens next')}
+  ${foot(kase, asset, i, total, '<b>Swipe →</b> what happens next')}
 </section>`,
 
   context: (kase, slide, i, total, img, asset) => `
@@ -276,7 +279,7 @@ const SLIDES = {
       .map((b) => `<div class="block ${b.icon === 'warning' ? 'warn' : ''}"><span class="badge">${icon(b.icon, 32)}</span><div><h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div></div>`)
       .join('')}
   </div>
-  ${foot(i, total, '<b>Swipe →</b> what happens next')}
+  ${foot(kase, asset, i, total, '<b>Swipe →</b> what happens next')}
 </section>`,
 
   proof: (kase, slide, i, total, img, asset) => `
@@ -289,7 +292,7 @@ const SLIDES = {
         <div class="who"><img src="${img(q.avatar)}"><div><b>${esc(q.name)}</b><span>${esc(q.role)}</span></div></div></div>`)
       .join('')}
   </div>
-  ${foot(i, total, '<b>Swipe →</b> what we built')}
+  ${foot(kase, asset, i, total, '<b>Swipe →</b> what we built')}
 </section>`,
 
   built: (kase, slide, i, total, img, asset) => `
@@ -302,7 +305,7 @@ const SLIDES = {
         ${s.tile ? blueprint(s.tile) : `<figure><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
       .join('')}
   </div>
-  ${foot(i, total, '<b>Swipe →</b> get the sequence')}
+  ${foot(kase, asset, i, total, '<b>Swipe →</b> get the sequence')}
 </section>`,
 
   tease: (kase, slide, i, total, img, asset) => `
@@ -312,7 +315,7 @@ const SLIDES = {
   <h1>${accent(slide.title)}</h1>
   <div class="unlock">${cta(kase)}</div>
   ${media(slide, img)}
-  ${foot(i, total, '<b>Swipe →</b> every number')}
+  ${foot(kase, asset, i, total, '<b>Swipe →</b> every number')}
 </section>`,
 
   // Title top left, logo bottom left, CTA bottom right.
