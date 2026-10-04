@@ -133,12 +133,12 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 /* wall: full-bleed bento of stat cards in the page's own card style (big gradient number,
    a title with the time frame, a small chart drawn from the case numbers) */
 .wall .grid4 { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 16px; padding: 22px 32px 16px; }
-.card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 24px 26px; border-radius: 26px; border: 1px solid var(--line);
+.card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 22px 26px; border-radius: 26px; border: 1px solid var(--line);
   background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--accent-b) 13%, transparent), transparent 60%),
               radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--accent-a) 12%, transparent), transparent 60%), var(--panel); }
 .card.w2 { grid-column: span 2; }
-.card .v { font-family: var(--display); font-size: 66px; line-height: 0.95; letter-spacing: -0.02em; }
-.card .t { margin-top: 10px; font-family: var(--display); font-size: 25px; line-height: 1.15; }
+.card .v { font-family: var(--display); font-size: 60px; line-height: 0.95; letter-spacing: -0.02em; }
+.card .t { margin-top: 8px; font-family: var(--display); font-size: 25px; line-height: 1.15; }
 .card .s { margin-top: 6px; font-size: 17px; color: var(--muted); }
 .card .viz { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; margin-top: 12px; }
 .card.side { flex-direction: row; align-items: stretch; gap: 30px; }
@@ -156,8 +156,14 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .ends { display: flex; justify-content: space-between; }
 .chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .chips span { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); font-size: 16px; color: color-mix(in srgb, var(--text) 80%, transparent); }
-.wall .go { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 6px 32px 40px; }
+.wall .go { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 8px 40px 40px; }
 .wall .go .mono { font-size: 22px; color: var(--text); letter-spacing: 0.12em; }
+.wall .wtitle { font-size: 46px; }
+.wall .sign { display: flex; flex-direction: column; gap: 10px; }
+.wall .sign .brand { font-size: 28px; }
+.wall .sign .brand img { height: 44px; }
+.wall .sign .mono { font-size: 17px; color: var(--muted); }
+.wall .go .dhbtn { font-size: 21px; padding: 20px 26px; letter-spacing: 0.1em; }
 .wall .top { padding: 44px 40px 0; }
 
 /* phone screens (maps) */
@@ -290,11 +296,12 @@ const SLIDES = {
   ${foot(i, total, '<b>Swipe →</b> every number')}
 </section>`,
 
+  // Title top left, logo bottom left, CTA bottom right.
   wall: (kase, slide, i, total, img, asset) => `
 <section class="slide feed wall">
-  ${top(kase, i, total, asset)}
+  <div class="top"><h1 class="wtitle">${esc(slide.title)}</h1><div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div></div>
   <div class="grid4">${slide.cards.map(card).join('')}</div>
-  <div class="go">${cta(kase)}<div class="mono">${esc(kase.ctaDomain)}</div></div>
+  <div class="go"><div class="sign"><div class="brand">${brandMark(kase, asset)}</div><div class="mono">${esc(kase.ctaDomain)}</div></div>${cta(kase)}</div>
 </section>`,
 };
 

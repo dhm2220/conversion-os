@@ -243,6 +243,7 @@
     },
     {
       "type": "wall",
+      "title": "Campaign Results",
       "cards": [
         {
           "value": "$10M+",
