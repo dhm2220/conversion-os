@@ -28,7 +28,7 @@ const VIEWPORT = { width: 444, height: 870 };
 const STRIDE = Math.round(VIEWPORT.height * 0.8);
 
 const browser = await chromium.launch();
-const page = await (await browser.newContext({ ...devices['iPhone 14 Pro Max'], viewport: VIEWPORT, deviceScaleFactor: 2 })).newPage();
+const page = await (await browser.newContext({ ...devices['iPhone 14 Pro Max'], viewport: VIEWPORT, deviceScaleFactor: 2, colorScheme: 'dark' })).newPage();
 await page.goto(url, { waitUntil: 'load', timeout: 60_000 });
 await page.waitForLoadState('networkidle', { timeout: 15_000 }).catch(() => {});
 // Walk the page once so lazy images load and the scroll-lit timelines finish lighting up.
@@ -43,7 +43,9 @@ await page.waitForTimeout(800);
 await page.evaluate(() => {
   for (const el of document.querySelectorAll('body *')) {
     const pos = getComputedStyle(el).position;
-    if (pos === 'fixed' || pos === 'sticky') el.style.setProperty('visibility', 'hidden', 'important');
+    // Only bars and bubbles; a full-screen fixed layer is the page's backdrop (the dark sky) and stays.
+    const big = el.getBoundingClientRect().height > window.innerHeight * 0.6;
+    if ((pos === 'fixed' || pos === 'sticky') && !big) el.style.setProperty('visibility', 'hidden', 'important');
   }
 });
 
@@ -59,8 +61,12 @@ async function crop(name, loc, maxAspect) {
   const file = join(srcDir, `${name}.png`);
   const box = await el.boundingBox();
   if (maxAspect && box.height > box.width * maxAspect) {
-    const top = box.y + (await page.evaluate(() => window.scrollY));
-    await page.screenshot({ path: file, fullPage: true, animations: 'disabled', clip: { x: box.x, y: top, width: box.width, height: box.width * maxAspect } });
+    // Bring the element's top to the top of the screen and clip inside the viewport: a full-page
+    // capture would only paint the fixed backdrop (the dark sky) behind the first screen.
+    await el.evaluate((n) => n.scrollIntoView({ block: 'start' }));
+    await page.waitForTimeout(400);
+    const b = await el.boundingBox();
+    await page.screenshot({ path: file, animations: 'disabled', clip: { x: b.x, y: b.y, width: b.width, height: Math.min(b.width * maxAspect, VIEWPORT.height - b.y) } });
   } else await el.screenshot({ path: file, animations: 'disabled' });
   shots.push({ id: name, src: `../source/${id}/${name}.png` });
   return name;

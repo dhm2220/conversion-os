@@ -13,7 +13,7 @@ if (!out || !tiles.length) {
   process.exit(1);
 }
 const b = await chromium.launch();
-const p = await b.newPage({ viewport: { width: 1400, height: 1200 }, deviceScaleFactor: 2 });
+const p = await b.newPage({ viewport: { width: 1400, height: 1200 }, deviceScaleFactor: 2, colorScheme: 'dark' });
 await p.goto('https://0hr.app/showcase/marquee', { waitUntil: 'networkidle', timeout: 60_000 });
 const box = await p.evaluate(async (tiles) => {
   const imgs = [...document.querySelectorAll('img[data-tdm-src]')];
@@ -28,7 +28,8 @@ const box = await p.evaluate(async (tiles) => {
   for (const el of document.querySelectorAll('main > :not(:last-child)')) el.style.display = 'none';
   for (const el of document.querySelectorAll('body *')) {
     const pos = getComputedStyle(el).position;
-    if ((pos === 'fixed' || pos === 'sticky') && !el.contains(imgs[0])) el.style.visibility = 'hidden';
+    const big = el.getBoundingClientRect().height > window.innerHeight * 0.6;
+    if ((pos === 'fixed' || pos === 'sticky') && !big && !el.contains(imgs[0])) el.style.visibility = 'hidden';
   }
   const style = document.createElement('style');
   style.textContent = '.tdm-col-a,.tdm-col-b{animation:none!important}';

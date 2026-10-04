@@ -34,6 +34,8 @@ const context = await browser.newContext({
   ...devices['iPhone 14 Pro Max'],
   viewport: VIEWPORT,
   deviceScaleFactor: 2,
+  // The site has a light/dark toggle now; captures are always the dark theme the slides are built on.
+  colorScheme: 'dark',
 });
 const page = await context.newPage();
 await page.goto(url, { waitUntil: 'load', timeout: 60_000 });
