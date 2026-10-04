@@ -66,7 +66,11 @@ const work = (spec.work ?? []).map((group, g) => ({ ...group, images: group.imag
 const cover = spec.cover ? shot('cover', spec.cover) : null;
 
 const carousel = [
-  { type: 'hookEng', title: spec.title, cards: cards.slice(0, 2), image: cover, scope: d.scope ?? [] },
+  // A spec "marquee" (made by marquee-shot.mjs from the site's 3D marquee) replaces the stat cards:
+  // the hook shows the work, not the data.
+  spec.marquee
+    ? { type: 'hookEng', title: spec.title, marquee: shot('marquee', spec.marquee), scope: d.scope ?? [] }
+    : { type: 'hookEng', title: spec.title, cards: cards.slice(0, 2), image: cover, scope: d.scope ?? [] },
   spec.transformImage
     ? { type: 'section', icon: 'shift', kicker: 'The transformation', images: [shot('transformation', spec.transformImage)] }
     : { type: 'ba', icon: 'shift', kicker: 'The transformation', title: `${d.client}’s Transformation`, before: points('before'), after: points('after') },

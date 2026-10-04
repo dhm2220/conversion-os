@@ -110,6 +110,10 @@
       "src": "../source/lateral/cover.jpg"
     },
     {
+      "id": "marquee",
+      "src": "../source/lateral/marquee.png"
+    },
+    {
       "id": "transformation",
       "src": "../source/lateral/transformation.png"
     }
@@ -118,39 +122,7 @@
     {
       "type": "hookEng",
       "title": "How to Create Your Content, Funnel and Website from 0 to Launch without Hiring in Under 3 Months",
-      "cards": [
-        {
-          "value": "11",
-          "title": "Weeks from 0 to Launch",
-          "viz": "progress",
-          "from": "Sign-Up",
-          "to": "Launch"
-        },
-        {
-          "value": "14",
-          "title": "Deliverables in One Sprint",
-          "viz": "bars",
-          "rows": [
-            {
-              "label": "Brand Foundation",
-              "n": 3
-            },
-            {
-              "label": "UX & Design System",
-              "n": 4
-            },
-            {
-              "label": "Conversion Infrastructure",
-              "n": 4
-            },
-            {
-              "label": "Tech Stack Installation",
-              "n": 3
-            }
-          ]
-        }
-      ],
-      "image": "cover",
+      "marquee": "marquee",
       "scope": [
         "Content",
         "Funnel",

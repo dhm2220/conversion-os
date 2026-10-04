@@ -7,7 +7,32 @@
   "cover": "/showcase/lateral-cover.jpg",
   "transformImage": "playbook/02.png",
   "work": [
-    { "kicker": "The work · brand + website guide", "images": ["playbook/03.png"] },
-    { "kicker": "The work · guide pages", "images": ["playbook/04.png", "playbook/05.png", "playbook/06.png"], "row": true }
+    {
+      "kicker": "The work \u00b7 brand + website guide",
+      "images": [
+        "playbook/03.png"
+      ]
+    },
+    {
+      "kicker": "The work \u00b7 guide pages",
+      "images": [
+        "playbook/04.png",
+        "playbook/05.png",
+        "playbook/06.png"
+      ],
+      "row": true
+    }
+  ],
+  "marquee": "marquee.png",
+  "marqueeTiles": [
+    "https://0hr.app/showcase/templates/lateral/01.webp",
+    "https://0hr.app/showcase/templates/lateral/slide-09.webp",
+    "https://0hr.app/showcase/templates/lateral/02.webp",
+    "https://0hr.app/showcase/templates/lateral/slide-21.webp",
+    "https://0hr.app/showcase/templates/lateral/03.webp",
+    "https://0hr.app/showcase/templates/lateral/slide-30.webp",
+    "https://0hr.app/showcase/templates/lateral/05.webp",
+    "https://0hr.app/showcase/templates/lateral/06.webp",
+    "https://0hr.app/showcase/templates/lateral/07.webp"
   ]
 }

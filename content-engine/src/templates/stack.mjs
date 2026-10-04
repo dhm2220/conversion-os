@@ -218,6 +218,9 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .heng .hcards .card .v { font-size: 76px; }
 .heng .hcards .card .t { font-size: 28px; }
 .heng .hero { min-height: 0; border-radius: 26px; overflow: hidden; border: 1px solid var(--line); }
+.heng .hmarq { position: relative; flex: 1; min-height: 0; margin: 26px 0 18px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(transparent, #000 10%, #000 88%, transparent); mask-image: linear-gradient(transparent, #000 10%, #000 88%, transparent); }
+.heng .hmarq img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .heng .hero img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 /* before / after lists, the page's transformation block */
@@ -398,10 +401,12 @@ const SLIDES = {
   <h1>${accent(slide.title)}</h1>
   <div class="pill ${kase.context.length > 4 ? 'many' : ''}">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
   ${slide.scope?.length ? `<div class="scope">${slide.scope.map((x) => `<span>${esc(x)}</span>`).join('')}</div>` : ''}
-  <div class="hgrid">
+  ${slide.marquee
+    ? `<div class="hmarq"><img src="${img(slide.marquee)}"></div>`
+    : `<div class="hgrid">
     <div class="hcards">${slide.cards.map(card).join('')}</div>
     ${slide.image ? `<div class="hero"><img src="${img(slide.image)}"></div>` : ''}
-  </div>
+  </div>`}
   ${foot(kase, asset, i, total)}
 </section>`,
 
