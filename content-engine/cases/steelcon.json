@@ -242,71 +242,109 @@
       ]
     },
     {
-      "type": "data",
-      "icon": "chart",
-      "kicker": "The numbers",
-      "title": "Every number from SteelCon’s 26 days",
-      "data": {
-        "tiles": [
-          {
-            "value": "$10M+",
-            "label": "Pipeline in 26 days"
-          },
-          {
-            "value": "2 days",
-            "label": "To the first lead"
-          },
-          {
-            "value": "2,497",
-            "label": "Decision-makers targeted"
-          }
-        ],
-        "funnelTitle": "Campaign funnel",
-        "funnel": [
-          {
-            "label": "Sent",
-            "n": 508
-          },
-          {
-            "label": "Opened",
-            "n": 350,
-            "rate": "70%"
-          },
-          {
-            "label": "Replied",
-            "n": 52,
-            "rate": "14%"
-          },
-          {
-            "label": "Interested",
-            "n": 13,
-            "rate": "2%"
-          }
-        ],
-        "benchTitle": "Versus the industry standard",
-        "bench": [
-          {
-            "label": "Open rate",
-            "actual": 70,
-            "standard": 50
-          },
-          {
-            "label": "Reply rate",
-            "actual": 14,
-            "standard": 8
-          },
-          {
-            "label": "Interested rate",
-            "actual": 2,
-            "standard": 0.5
-          },
-          {
-            "label": "Interested → qualified",
-            "actual": 30,
-            "standard": 15
-          }
-        ]
-      }
+      "type": "wall",
+      "cards": [
+        {
+          "value": "$10M+",
+          "title": "Pipeline in 26 days",
+          "wide": true,
+          "viz": "line",
+          "from": "Launch",
+          "to": "Day 26"
+        },
+        {
+          "value": "2",
+          "title": "Days to first lead",
+          "viz": "progress",
+          "from": "Launch",
+          "to": "Lead #1"
+        },
+        {
+          "value": "13",
+          "title": "Interested leads",
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Email 1",
+              "n": 7
+            },
+            {
+              "label": "Email 2",
+              "n": 5
+            },
+            {
+              "label": "Email 3",
+              "n": 1
+            }
+          ]
+        },
+        {
+          "value": "70%",
+          "title": "Open rate",
+          "viz": "bench",
+          "actual": 70,
+          "standard": 50
+        },
+        {
+          "value": "14%",
+          "title": "Reply rate",
+          "viz": "bench",
+          "actual": 14,
+          "standard": 8
+        },
+        {
+          "value": "2,497",
+          "title": "Decision-makers targeted",
+          "viz": "chips",
+          "items": [
+            "B2B",
+            "USA & Canada",
+            "C-Level & VP"
+          ]
+        },
+        {
+          "value": "508 → 13",
+          "title": "Emails sent, down to interested leads",
+          "wide": true,
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Sent",
+              "n": 508
+            },
+            {
+              "label": "Opened",
+              "n": 350
+            },
+            {
+              "label": "Replied",
+              "n": 52
+            },
+            {
+              "label": "Interested",
+              "n": 13
+            }
+          ],
+          "side": true
+        },
+        {
+          "value": "30%",
+          "title": "Interested → qualified",
+          "viz": "bench",
+          "actual": 30,
+          "standard": 15
+        },
+        {
+          "value": "12+",
+          "title": "Qualified leads",
+          "sub": "Proposals worth over 8 figures"
+        },
+        {
+          "value": "3 jobs",
+          "title": "Priced, each 7+ figures",
+          "sub": "From one developer intro"
+        }
+      ]
     }
   ],
   "storyMap": [

@@ -3,10 +3,10 @@
 // told, so each swipe shows what comes next on the page.
 //
 // Carousel structure (every case): hook (hero stats + freebie) -> before/after -> problem/
-// solution -> social proof -> what we built -> content upgrade tease -> the numbers + CTA.
+// solution -> social proof -> what we built -> content upgrade tease -> stats wall + CTA.
 //
 // Formats
-//   carousel slides  1080x1350 (4:5)  hook / section / context / proof / built / tease / data
+//   carousel slides  1080x1350 (4:5)  hook / section / context / proof / built / tease / wall
 //   story map        1080x1920 (9:16) the whole page as a 4x3 grid of screens
 //   feed map         1080x1350 (4:5)  the whole page as a 5x2 grid of screens
 //
@@ -130,31 +130,35 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .tease .media img { -webkit-mask-image: linear-gradient(#000 45%, transparent 92%); mask-image: linear-gradient(#000 45%, transparent 92%); }
 .unlock { position: relative; align-self: center; margin: -40px 0 36px; }
 
-/* data: every number from the case, drawn */
-.data h1 { position: relative; padding: 22px 64px 0; font-size: 60px; }
-.data .wrap { position: relative; flex: 1; display: flex; flex-direction: column; gap: 22px; padding: 26px 64px 0; }
-.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.tile { padding: 20px 22px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
-.tile .v { font-family: var(--display); font-size: 50px; line-height: 1; }
-.tile .l { margin-top: 10px; font-size: 19px; color: var(--muted); }
-.panel { padding: 22px 26px; border: 1px solid var(--line); border-radius: 20px; background: var(--panel); }
-.panel h3 { font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-.funnel { display: grid; gap: 10px; }
-.frow { display: grid; grid-template-columns: 150px 1fr 150px; align-items: center; gap: 16px; font-size: 21px; }
-.frow .track { height: 26px; }
-.frow .fill { height: 100%; min-width: 6px; border-radius: 0 6px 6px 0; background: var(--accent-a); }
-.frow .n { font-family: var(--display); font-size: 26px; text-align: right; }
-.frow .n small { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 17px; color: var(--muted); margin-left: 8px; }
-.bench { display: grid; gap: 14px; }
-.brow { display: grid; grid-template-columns: 250px 1fr 84px; align-items: center; gap: 16px; font-size: 20px; }
-.brow .track { position: relative; height: 22px; border-radius: 0 6px 6px 0; background: rgba(255, 255, 255, 0.05); }
-.brow .fill { height: 100%; border-radius: 0 6px 6px 0; background: var(--accent-a); }
-.brow .tick { position: absolute; top: -6px; bottom: -6px; width: 3px; background: var(--text); border-radius: 2px; }
-.brow .n { font-family: var(--display); font-size: 26px; text-align: right; }
-.key { display: flex; gap: 24px; margin-top: 14px; font-size: 17px; color: var(--muted); }
-.key i { display: inline-block; vertical-align: middle; margin-right: 8px; }
-.data .go { display: flex; align-items: center; justify-content: space-between; padding: 26px 64px 48px; position: relative; }
-.data .go .mono { font-size: 24px; color: var(--text); letter-spacing: 0.12em; }
+/* wall: full-bleed bento of stat cards in the page's own card style (big gradient number,
+   a title with the time frame, a small chart drawn from the case numbers) */
+.wall .grid4 { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; gap: 16px; padding: 22px 32px 16px; }
+.card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 24px 26px; border-radius: 26px; border: 1px solid var(--line);
+  background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--accent-b) 13%, transparent), transparent 60%),
+              radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--accent-a) 12%, transparent), transparent 60%), var(--panel); }
+.card.w2 { grid-column: span 2; }
+.card .v { font-family: var(--display); font-size: 66px; line-height: 0.95; letter-spacing: -0.02em; }
+.card .t { margin-top: 10px; font-family: var(--display); font-size: 25px; line-height: 1.15; }
+.card .s { margin-top: 6px; font-size: 17px; color: var(--muted); }
+.card .viz { flex: 1; min-height: 0; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; margin-top: 12px; }
+.card.side { flex-direction: row; align-items: stretch; gap: 30px; }
+.card.side .ch { flex: 0 0 38%; }
+.card.side .viz { margin-top: 0; justify-content: center; }
+.card svg { display: block; width: 100%; height: 100%; }
+.lab { font-family: 'JetBrains Mono', monospace; font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+.mrow { display: grid; grid-template-columns: 1fr auto; gap: 3px 10px; align-items: center; margin-top: 6px; }
+.mtrack { grid-column: 1 / -1; height: 10px; border-radius: 0 5px 5px 0; background: rgba(255, 255, 255, 0.06); position: relative; }
+.mfill { height: 100%; border-radius: 0 5px 5px 0; background: var(--grad); }
+.mtick { position: absolute; top: -5px; bottom: -5px; width: 3px; border-radius: 2px; background: var(--text); }
+.prog { position: relative; height: 12px; border-radius: 6px; background: var(--grad); margin: 16px 14px 10px; }
+.prog::before, .prog::after { content: ''; position: absolute; top: 50%; width: 22px; height: 22px; border-radius: 50%; transform: translate(-50%, -50%); }
+.prog::before { left: 0; background: var(--accent-a); } .prog::after { left: 100%; background: var(--accent-b); box-shadow: 0 0 18px var(--accent-b); }
+.ends { display: flex; justify-content: space-between; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); font-size: 16px; color: color-mix(in srgb, var(--text) 80%, transparent); }
+.wall .go { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 6px 32px 40px; }
+.wall .go .mono { font-size: 22px; color: var(--text); letter-spacing: 0.12em; }
+.wall .top { padding: 44px 40px 0; }
 
 /* phone screens (maps) */
 .phone { position: relative; overflow: hidden; background: #000; }
@@ -194,6 +198,30 @@ const kick = (slide) => `<div class="kick"><span class="badge">${icon(slide.icon
 const cta = (kase) => `<div class="dhbtn">Comment or DM “${esc(kase.cta.keyword)}”</div>`;
 const media = (slide, img) =>
   `<div class="media">${slide.images.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>`;
+
+// One stat card. Every chart is drawn from the numbers in the case file.
+const VIZ = {
+  // a rising line from launch to the end value, like the page's pipeline card
+  line: (c) => `<svg viewBox="0 0 600 150" preserveAspectRatio="none"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="var(--accent-a)"/><stop offset="1" stop-color="var(--accent-b)"/></linearGradient>
+    <linearGradient id="la" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent-b)" stop-opacity=".28"/><stop offset="1" stop-color="var(--accent-b)" stop-opacity="0"/></linearGradient></defs>
+    <path d="M10 140 L590 12 L590 150 L10 150Z" fill="url(#la)"/><path d="M10 140 L590 12" stroke="url(#lg)" stroke-width="5" fill="none"/>
+    <circle cx="10" cy="140" r="8" fill="var(--accent-a)"/><circle cx="590" cy="12" r="9" fill="var(--accent-b)"/></svg>
+    <div class="ends lab"><span>${esc(c.from)}</span><span>${esc(c.to)}</span></div>`,
+  // launch -> first lead, like the page's first-lead card
+  progress: (c) => `<div class="prog"></div><div class="ends lab"><span>${esc(c.from)}</span><span>${esc(c.to)}</span></div>`,
+  // one bar per item, scaled to the largest
+  bars: (c) => {
+    const most = Math.max(...c.rows.map((r) => r.n));
+    return c.rows.map((r) => `<div class="mrow"><span class="lab">${esc(r.label)}</span><span class="lab">${r.n.toLocaleString('en-US')}</span><div class="mtrack"><div class="mfill" style="width:${Math.max((r.n / most) * 100, 2)}%"></div></div></div>`).join('');
+  },
+  // actual vs the industry minimum (the white tick)
+  bench: (c) => {
+    const max = Math.max(c.actual, c.standard) * 1.15;
+    return `<div class="mrow"><span class="lab">vs standard &gt;${c.standard}%</span><span></span><div class="mtrack"><div class="mfill" style="width:${(c.actual / max) * 100}%"></div><i class="mtick" style="left:${(c.standard / max) * 100}%"></i></div></div>`;
+  },
+  chips: (c) => `<div class="chips">${c.items.map((x) => `<span>${esc(x)}</span>`).join('')}</div>`,
+};
+const card = (c) => `<div class="card ${c.wide ? 'w2' : ''} ${c.side ? 'side' : ''}"><div class="ch"><div class="v grad">${esc(c.value)}</div><div class="t">${esc(c.title)}</div>${c.sub ? `<div class="s">${esc(c.sub)}</div>` : ''}</div>${c.viz ? `<div class="viz">${VIZ[c.viz](c)}</div>` : ''}</div>`;
 
 const SLIDES = {
   hook: (kase, slide, i, total, img, asset) => `
@@ -262,31 +290,12 @@ const SLIDES = {
   ${foot(i, total, '<b>Swipe →</b> every number')}
 </section>`,
 
-  data: (kase, slide, i, total, img, asset) => {
-    const d = slide.data;
-    const most = Math.max(...d.funnel.map((f) => f.n));
-    return `
-<section class="slide feed data">
+  wall: (kase, slide, i, total, img, asset) => `
+<section class="slide feed wall">
   ${top(kase, i, total, asset)}
-  ${kick(slide)}
-  <h1>${accent(slide.title)}</h1>
-  <div class="wrap">
-    <div class="tiles">${d.tiles.map((t) => `<div class="tile"><div class="v grad">${esc(t.value)}</div><div class="l">${esc(t.label)}</div></div>`).join('')}</div>
-    <div class="panel"><h3>${esc(d.funnelTitle)}</h3><div class="funnel">
-      ${d.funnel.map((f) => `<div class="frow"><span>${esc(f.label)}</span><div class="track"><div class="fill" style="width:${(f.n / most) * 100}%"></div></div><span class="n">${f.n.toLocaleString('en-US')}${f.rate ? `<small>${esc(f.rate)}</small>` : ''}</span></div>`).join('')}
-    </div></div>
-    <div class="panel"><h3>${esc(d.benchTitle)}</h3><div class="bench">
-      ${d.bench.map((b) => {
-        const max = Math.max(b.actual, b.standard) * 1.15;
-        return `<div class="brow"><span>${esc(b.label)}</span><div class="track"><div class="fill" style="width:${(b.actual / max) * 100}%"></div><i class="tick" style="left:${(b.standard / max) * 100}%"></i></div><span class="n">${b.actual}%</span></div>`;
-      }).join('')}
-      </div>
-      <div class="key"><span><i style="width:22px;height:12px;background:var(--accent-a);border-radius:0 3px 3px 0"></i>SteelCon actual</span><span><i style="width:3px;height:20px;background:var(--text)"></i>Industry standard (minimum)</span></div>
-    </div>
-  </div>
+  <div class="grid4">${slide.cards.map(card).join('')}</div>
   <div class="go">${cta(kase)}<div class="mono">${esc(kase.ctaDomain)}</div></div>
-</section>`;
-  },
+</section>`,
 };
 
 function map(kase, ids, img, format, asset) {
