@@ -72,7 +72,7 @@ h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; text-wrap: ba
 .btn { display: inline-flex; align-items: center; gap: 14px; padding: 26px 40px; border-radius: 18px; background: var(--grad); font-size: 30px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; box-shadow: 0 10px 40px color-mix(in srgb, var(--accent-b) 35%, transparent); }
 
 /* hook: the page's own headline, a context pill, the hero stat, and the freebie */
-.hook .headline { position: relative; display: block; width: 960px; margin: 28px auto 0; mix-blend-mode: lighten; }
+.hook .headline { position: relative; display: block; width: 960px; margin: 28px auto 0; mix-blend-mode: lighten; border-radius: 24px; }
 .pill { position: relative; align-self: center; display: flex; gap: 26px; margin-top: 18px; padding: 14px 28px; border: 1px solid var(--line); border-radius: 999px; background: var(--panel); font-size: 22px; color: var(--muted); }
 .pill b { color: var(--text); font-weight: 600; }
 .gift { position: relative; display: flex; align-items: center; gap: 24px; margin: 0 48px 28px; padding: 24px 28px; border-radius: 22px;
@@ -81,6 +81,13 @@ h1 { font-weight: 800; letter-spacing: -0.03em; line-height: 1.02; text-wrap: ba
 .gift .what { flex: 1; font-size: 25px; line-height: 1.3; font-weight: 700; }
 .gift .what small { display: block; font-family: 'JetBrains Mono', monospace; font-size: 17px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .dm { flex: none; padding: 16px 22px; border-radius: 14px; background: var(--grad); font-size: 22px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; }
+
+/* hook stat cards: the page's own 3 hero cards, one tall on the right, two stacked left */
+.stats { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; padding: 28px 48px; }
+.stats figure { min-height: 0; overflow: hidden; border-radius: 26px; }
+.stats figure:nth-child(3) { grid-column: 2; grid-row: 1 / 3; display: flex; align-items: center; }
+.stats img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; mix-blend-mode: lighten; }
+.stats figure:nth-child(3) img { height: auto; }
 
 /* tease: the content upgrade, faded out before it gives everything away */
 .tease h1 { position: relative; padding: 18px 64px 0; font-size: 56px; }
@@ -139,7 +146,9 @@ function hook(kase, slide, i, total, img) {
   ${top(kase, i, total)}
   <img class="headline" src="${img(slide.headline)}">
   <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
-  ${media(slide, img)}
+  ${slide.stats
+    ? `<div class="stats">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>`
+    : media(slide, img)}
   <div class="gift">${GIFT}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${dm(kase)}</div>
   ${foot(i, total, '<b>Swipe →</b> the whole case study')}
 </section>`;

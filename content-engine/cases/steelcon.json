@@ -135,14 +135,28 @@
     {
       "id": "upgrade",
       "src": "../source/steelcon/upgrade.jpg"
+    },
+    {
+      "id": "stat-first-lead",
+      "src": "../source/steelcon/stat-first-lead.jpg"
+    },
+    {
+      "id": "stat-leads",
+      "src": "../source/steelcon/stat-leads.jpg"
+    },
+    {
+      "id": "stat-pipeline",
+      "src": "../source/steelcon/stat-pipeline.jpg"
     }
   ],
   "carousel": [
     {
       "type": "hook",
       "headline": "headline",
-      "images": [
-        "hero-stat"
+      "stats": [
+        "stat-first-lead",
+        "stat-leads",
+        "stat-pipeline"
       ]
     },
     {
