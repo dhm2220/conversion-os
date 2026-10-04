@@ -1,7 +1,9 @@
 {
   "id": "steelcon",
   "brand": {
-    "bg": "#08090b"
+    "bg": "#08090b",
+    "logo": "../source/brand/dh-logo-dark.png",
+    "displayFont": "../source/brand/blanc-bold.woff2"
   },
   "industry": "Manufacturing",
   "headline": "How SteelCon Built a $10M+ Pipeline in 26 Days",
@@ -20,7 +22,7 @@
     }
   ],
   "liveUrl": "https://differenthunger.com/p/manufacturing-lead-generation-case-study-steelcon",
-  "ctaDomain": "0hr.app",
+  "ctaDomain": "differenthunger.com",
   "source": "Content Management OS · Case Studies tab (SteelCon)",
   "video": "../source/steelcon-scroll.mov",
   "crop": {
@@ -105,38 +107,6 @@
       "src": "../source/steelcon/headline.jpg"
     },
     {
-      "id": "hero-stat",
-      "src": "../source/steelcon/hero-stat.jpg"
-    },
-    {
-      "id": "before-after",
-      "src": "../source/steelcon/before-after.jpg"
-    },
-    {
-      "id": "problem-solution",
-      "src": "../source/steelcon/problem-solution.jpg"
-    },
-    {
-      "id": "quote-1",
-      "src": "../source/steelcon/quote-1.jpg"
-    },
-    {
-      "id": "quote-2",
-      "src": "../source/steelcon/quote-2.jpg"
-    },
-    {
-      "id": "built-1",
-      "src": "../source/steelcon/built-1.jpg"
-    },
-    {
-      "id": "built-2",
-      "src": "../source/steelcon/built-2.jpg"
-    },
-    {
-      "id": "upgrade",
-      "src": "../source/steelcon/upgrade.jpg"
-    },
-    {
       "id": "stat-first-lead",
       "src": "../source/steelcon/stat-first-lead.jpg"
     },
@@ -147,6 +117,34 @@
     {
       "id": "stat-pipeline",
       "src": "../source/steelcon/stat-pipeline.jpg"
+    },
+    {
+      "id": "before-after",
+      "src": "../source/steelcon/before-after.jpg"
+    },
+    {
+      "id": "avatar-bill",
+      "src": "../source/steelcon/avatar-bill.jpg"
+    },
+    {
+      "id": "w-research",
+      "src": "../source/steelcon/w-research.jpg"
+    },
+    {
+      "id": "w-blueprint",
+      "src": "../source/steelcon/w-blueprint.jpg"
+    },
+    {
+      "id": "w-deliverables",
+      "src": "../source/steelcon/w-deliverables.jpg"
+    },
+    {
+      "id": "w-stack",
+      "src": "../source/steelcon/w-stack.jpg"
+    },
+    {
+      "id": "upgrade",
+      "src": "../source/steelcon/upgrade.jpg"
     }
   ],
   "carousel": [
@@ -161,42 +159,82 @@
     },
     {
       "type": "section",
+      "icon": "shift",
       "kicker": "The transformation",
       "images": [
         "before-after"
       ]
     },
     {
-      "type": "section",
+      "type": "context",
+      "icon": "info",
       "kicker": "Problem → solution",
-      "images": [
-        "problem-solution"
+      "blocks": [
+        {
+          "icon": "persona",
+          "title": "About SteelCon",
+          "text": "SteelCon is an innovative family-owned steel engineering and manufacturing firm based in Canada. Their product SinBeam is up to 30% lighter weight than traditional steel allowing for higher cost effectiveness and faster project implementation while minimizing the carbon footprint of commercial development projects."
+        },
+        {
+          "icon": "warning",
+          "title": "The challenge",
+          "text": "Despite having a revolutionary industry and world-changing product, SteelCon was struggling to generate new business outside of referrals from their immediate, local network."
+        },
+        {
+          "icon": "bulb",
+          "title": "The solution",
+          "text": "We did our initial research to develop and implement a go to market and lead generation strategy that allowed them to expand and grow their client base in Canada and the USA."
+        }
       ]
     },
     {
-      "type": "section",
+      "type": "proof",
+      "icon": "quote",
       "kicker": "Social proof",
-      "images": [
-        "quote-1",
-        "quote-2"
+      "quotes": [
+        {
+          "logo": "SteelCon",
+          "text": "“4 calls set up for sin beam with [Different Hunger] leads tomorrow!”",
+          "name": "Bill Tishler",
+          "role": "SteelCon",
+          "avatar": "avatar-bill"
+        },
+        {
+          "logo": "SteelCon",
+          "text": "“Just wanted to let you know that we have met with [a developer] (who you reached out to for us)… We are pricing 3 jobs for them.”",
+          "name": "Bill Tishler",
+          "role": "SteelCon",
+          "avatar": "avatar-bill"
+        }
       ]
     },
     {
-      "type": "section",
-      "kicker": "What we built · 1 of 2",
-      "images": [
-        "built-1"
-      ]
-    },
-    {
-      "type": "section",
-      "kicker": "What we built · 2 of 2",
-      "images": [
-        "built-2"
+      "type": "built",
+      "icon": "build",
+      "kicker": "What we built",
+      "steps": [
+        {
+          "title": "Research & targeting",
+          "image": "w-research"
+        },
+        {
+          "title": "Campaign strategy blueprint",
+          "image": "w-blueprint"
+        },
+        {
+          "title": "Campaign deliverables",
+          "image": "w-deliverables",
+          "caption": "SteelCon Sales Outreach Sequence"
+        },
+        {
+          "title": "Deploy tech stack",
+          "image": "w-stack"
+        }
       ]
     },
     {
       "type": "tease",
+      "icon": "gift",
       "kicker": "Free content upgrade",
       "title": "The exact sequence behind SteelCon’s $10M+ pipeline",
       "images": [
@@ -204,9 +242,71 @@
       ]
     },
     {
-      "type": "final",
-      "title": "Ready to be the next success story?",
-      "button": "Start now"
+      "type": "data",
+      "icon": "chart",
+      "kicker": "The numbers",
+      "title": "Every number from SteelCon’s 26 days",
+      "data": {
+        "tiles": [
+          {
+            "value": "$10M+",
+            "label": "Pipeline in 26 days"
+          },
+          {
+            "value": "2 days",
+            "label": "To the first lead"
+          },
+          {
+            "value": "2,497",
+            "label": "Decision-makers targeted"
+          }
+        ],
+        "funnelTitle": "Campaign funnel",
+        "funnel": [
+          {
+            "label": "Sent",
+            "n": 508
+          },
+          {
+            "label": "Opened",
+            "n": 350,
+            "rate": "70%"
+          },
+          {
+            "label": "Replied",
+            "n": 52,
+            "rate": "14%"
+          },
+          {
+            "label": "Interested",
+            "n": 13,
+            "rate": "2%"
+          }
+        ],
+        "benchTitle": "Versus the industry standard",
+        "bench": [
+          {
+            "label": "Open rate",
+            "actual": 70,
+            "standard": 50
+          },
+          {
+            "label": "Reply rate",
+            "actual": 14,
+            "standard": 8
+          },
+          {
+            "label": "Interested rate",
+            "actual": 2,
+            "standard": 0.5
+          },
+          {
+            "label": "Interested → qualified",
+            "actual": 30,
+            "standard": 15
+          }
+        ]
+      }
     }
   ],
   "storyMap": [

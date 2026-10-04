@@ -24,13 +24,15 @@ const img = (id) => {
   return pathToFileURL(src ? resolve(dirname(casePath), src) : resolve(shotsDir, `${id}.png`)).href;
 };
 const fontsCss = new URL('../fonts/fonts.css', import.meta.url).href;
+// Brand files (logo, display font) named in the case's "brand", relative to the case file.
+const asset = (path) => pathToFileURL(resolve(dirname(casePath), path)).href;
 mkdirSync(outDir, { recursive: true });
 // Clear the last render so slides dropped from the case don't linger.
 for (const f of readdirSync(outDir)) if (/^(carousel|map)-.*\.(png|html)$/.test(f)) rmSync(join(outDir, f));
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 } });
-for (const { name, html } of build(kase, img, fontsCss)) {
+for (const { name, html } of build(kase, img, fontsCss, asset)) {
   const htmlPath = resolve(outDir, `${name}.html`);
   writeFileSync(htmlPath, html);
   await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'load' });

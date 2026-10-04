@@ -36,7 +36,10 @@ if (!kase.carousel?.length || !kase.shots?.length) {
 const captured = resolve(shots, 'brand.json');
 const renderCase = resolve(out, 'case.json');
 const brand = existsSync(captured) ? JSON.parse(readFileSync(captured, 'utf8')) : {};
-const shotList = kase.shots.map((s) => (s.src ? { ...s, src: resolve(dirname(casePath), s.src) } : s));
-writeFileSync(renderCase, JSON.stringify({ ...kase, shots: shotList, brand: { ...brand, ...kase.brand } }, null, 2));
+// The render copy lives in output/, so paths in the case file are made absolute first.
+const abs = (p) => resolve(dirname(casePath), p);
+const shotList = kase.shots.map((s) => (s.src ? { ...s, src: abs(s.src) } : s));
+const brandFiles = Object.fromEntries(['logo', 'displayFont'].filter((k) => kase.brand?.[k]).map((k) => [k, abs(kase.brand[k])]));
+writeFileSync(renderCase, JSON.stringify({ ...kase, shots: shotList, brand: { ...brand, ...kase.brand, ...brandFiles } }, null, 2));
 run('render-carousel.mjs', renderCase, shots, out);
 console.log(`\ndone -> ${out}`);
