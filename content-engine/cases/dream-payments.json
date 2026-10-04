@@ -87,6 +87,22 @@
       "screen": 16
     },
     {
+      "id": "step-1",
+      "src": "../source/dream-payments/step-1.jpg"
+    },
+    {
+      "id": "step-2",
+      "src": "../source/dream-payments/step-2.jpg"
+    },
+    {
+      "id": "step-3",
+      "src": "../source/dream-payments/step-3.jpg"
+    },
+    {
+      "id": "step-5",
+      "src": "../source/dream-payments/step-5.jpg"
+    },
+    {
       "id": "avatar-1",
       "src": "../source/dream-payments/avatar-1.jpg"
     },
@@ -202,21 +218,18 @@
       "steps": [
         {
           "title": "Discovery",
-          "items": [
-            "We kicked off the engagement by understanding Dream's current UX, brand challenges, and market expansion goals."
-          ]
+          "image": "step-1",
+          "fill": true
         },
         {
           "title": "UX",
-          "items": [
-            "We designed a user experience flow that aligned with U.S. market expectations and clearly communicated Dream's value to new users and stakeholders."
-          ]
+          "image": "step-2",
+          "fill": true
         },
         {
           "title": "Design",
-          "items": [
-            "We applied a modern, premium visual identity across all core assets"
-          ]
+          "image": "step-3",
+          "fill": true
         },
         {
           "title": "Deploy Tech Stack",
@@ -233,9 +246,9 @@
         },
         {
           "title": "Development",
-          "items": [
-            "All approved designs were handed off for development to ensure continuity and performance across platforms."
-          ]
+          "image": "step-5",
+          "fill": true,
+          "pos": "center 40%"
         }
       ]
     },
@@ -252,12 +265,12 @@
     {
       "type": "section",
       "icon": "image",
-      "kicker": "The work · product + persona",
+      "kicker": "The work · product",
       "images": [
         "work-2-1",
         "work-2-2"
       ],
-      "row": true
+      "row": false
     },
     {
       "type": "proof",

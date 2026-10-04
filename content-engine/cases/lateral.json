@@ -91,8 +91,24 @@
       "screen": 14
     },
     {
+      "id": "step-1",
+      "src": "../source/lateral/step-1.png"
+    },
+    {
+      "id": "step-2",
+      "src": "../source/lateral/step-2.png"
+    },
+    {
+      "id": "step-3",
+      "src": "../source/lateral/step-3.png"
+    },
+    {
       "id": "work-1-1",
       "src": "../source/lateral/work-1-1.png"
+    },
+    {
+      "id": "work-1-2",
+      "src": "../source/lateral/work-1-2.png"
     },
     {
       "id": "work-2-1",
@@ -167,29 +183,18 @@
       "steps": [
         {
           "title": "Brand Foundation",
-          "items": [
-            "Market Research & Persona Definition",
-            "Brand Positioning & Messaging",
-            "Website Copy & Wireframes"
-          ]
+          "image": "step-1",
+          "fill": true
         },
         {
           "title": "UX & Design System",
-          "items": [
-            "Branded Icons",
-            "Isometric Fulfillment Process Graphic",
-            "Full Website Design",
-            "Interactive Animations"
-          ]
+          "image": "step-2",
+          "fill": true
         },
         {
           "title": "Conversion Infrastructure",
-          "items": [
-            "Explainer Video",
-            "Lead Magnets & Resources",
-            "3-Page Funnel",
-            "Product Demo"
-          ]
+          "image": "step-3",
+          "fill": true
         },
         {
           "title": "Deploy Tech Stack",
@@ -221,9 +226,10 @@
     {
       "type": "section",
       "icon": "image",
-      "kicker": "The work · brand + website guide",
+      "kicker": "The work · website on every device",
       "images": [
-        "work-1-1"
+        "work-1-1",
+        "work-1-2"
       ],
       "row": false
     },

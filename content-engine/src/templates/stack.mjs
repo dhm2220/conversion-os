@@ -147,6 +147,8 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 
 /* step visuals spaced evenly (thumbnail, caption, CTA) */
 .step figure.even { justify-content: space-evenly; }
+.step figure.fill { border-radius: 14px; overflow: hidden; }
+.step figure.fill img { width: 100%; height: 100%; max-height: none; object-fit: cover; object-position: top; mix-blend-mode: normal; border-radius: 14px; }
 .step figure.even .dhbtn { font-size: 20px; padding: 18px 24px; letter-spacing: 0.08em; }
 /* tech stack tree */
 .tstack { list-style: none; flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 0 4px 26px; border-left: 2px solid color-mix(in srgb, var(--text) 30%, transparent); margin-left: 8px; }
@@ -176,6 +178,9 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
   background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--accent-b) 13%, transparent), transparent 60%),
               radial-gradient(90% 80% at 0% 100%, color-mix(in srgb, var(--accent-a) 12%, transparent), transparent 60%), var(--panel); }
 .card.w2 { grid-column: span 2; }
+.card.full { grid-column: 1 / -1; flex-direction: row; align-items: baseline; gap: 26px; }
+.grid4.has-full { grid-template-rows: 1fr 1fr auto; }
+.card.full .t { margin-top: 0; }
 .card .v { font-family: var(--display); font-weight: 700; font-size: 60px; line-height: 0.95; letter-spacing: -0.02em; }
 .card .t { margin-top: 8px; font-family: var(--display); font-weight: 700; font-size: 25px; line-height: 1.15; }
 .card .s { margin-top: 6px; font-size: 17px; color: var(--muted); }
@@ -328,7 +333,7 @@ const VIZ = {
   },
   chips: (c) => `<div class="chips">${c.items.map((x) => `<span>${esc(x)}</span>`).join('')}</div>`,
 };
-const card = (c) => `<div class="card ${c.wide ? 'w2' : ''} ${c.side ? 'side' : ''}"><div class="ch"><div class="v grad">${esc(c.value)}</div><div class="t">${esc(c.title)}</div>${c.sub ? `<div class="s">${esc(c.sub)}</div>` : ''}</div>${c.viz ? `<div class="viz">${VIZ[c.viz](c)}</div>` : ''}</div>`;
+const card = (c) => `<div class="card ${c.full ? 'full' : c.wide ? 'w2' : ''} ${c.side ? 'side' : ''}"><div class="ch"><div class="v grad">${esc(c.value)}</div><div class="t">${esc(c.title)}</div>${c.sub ? `<div class="s">${esc(c.sub)}</div>` : ''}</div>${c.viz ? `<div class="viz">${VIZ[c.viz](c)}</div>` : ''}</div>`;
 
 // A filled-out page of the campaign blueprint (Google Slides), redrawn flat: the section tabs
 // along the top, then its fields as label / value rows.
@@ -407,7 +412,7 @@ const SLIDES = {
   <div class="steps n${slide.steps.length}">
     ${slide.steps
       .map((s, n) => `<div class="step"><h2><span class="grad">${String(n + 1).padStart(2, '0')}</span>${esc(s.title)}</h2>
-        ${s.tile ? blueprint(s.tile) : s.stack ? stackList(s.stack) : s.items ? `<ul class="items">${s.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : `<figure class="${s.cta ? 'even' : ''}"><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
+        ${s.tile ? blueprint(s.tile) : s.stack ? stackList(s.stack) : s.items ? `<ul class="items">${s.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : `<figure class="${s.cta ? 'even' : ''} ${s.fill ? 'fill' : ''}"><img src="${img(s.image)}"${s.pos ? ` style="object-position:${esc(s.pos)}"` : ''}>${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
       .join('')}
   </div>
   ${foot(kase, asset, i, total)}
@@ -427,7 +432,7 @@ const SLIDES = {
   wall: (kase, slide, i, total, img, asset) => `
 <section class="slide feed wall">
   <div class="top"><h1 class="wtitle">${esc(slide.title)}</h1></div>
-  <div class="grid4">${slide.cards.map(card).join('')}</div>
+  <div class="grid4 ${slide.cards.some((c) => c.full) ? 'has-full' : ''}">${slide.cards.map(card).join('')}</div>
   ${foot(kase, asset, i, total)}
 </section>`,
 

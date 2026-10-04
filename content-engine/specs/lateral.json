@@ -8,9 +8,10 @@
   "transformImage": "playbook/02.png",
   "work": [
     {
-      "kicker": "The work \u00b7 brand + website guide",
+      "kicker": "The work \u00b7 website on every device",
       "images": [
-        "playbook/03.png"
+        "v/devices.png",
+        "v/mobile.png"
       ]
     },
     {
@@ -42,5 +43,10 @@
     "https://0hr.app/playbooks/lateral/05.png",
     "https://0hr.app/showcase/templates/lateral/07.webp",
     "https://0hr.app/showcase/templates/lateral/slide-30.webp"
-  ]
+  ],
+  "stepVisuals": {
+    "Brand Foundation": "v/brand-guide.png",
+    "UX & Design System": "v/wireframes.png",
+    "Conversion Infrastructure": "v/funnel.png"
+  }
 }

@@ -6,7 +6,25 @@
   "playbook": "https://differenthunger.com/p/financial-services-website-design-case-study-dream-payments",
   "cover": "/showcase/dream-payments-work.jpg",
   "work": [
-    { "kicker": "The work · website", "images": ["playbook/03.jpg", "playbook/04.jpg"] },
-    { "kicker": "The work · product + persona", "images": ["playbook/05.jpg", "playbook/06.jpg"], "row": true }
-  ]
+    {
+      "kicker": "The work \u00b7 website",
+      "images": [
+        "v/site.jpg",
+        "v/pages.jpg"
+      ]
+    },
+    {
+      "kicker": "The work \u00b7 product",
+      "images": [
+        "v/webapp.jpg",
+        "v/pos.jpg"
+      ]
+    }
+  ],
+  "stepVisuals": {
+    "Discovery": "v/persona.jpg",
+    "UX": "v/how-it-works.jpg",
+    "Design": "v/site.jpg",
+    "Development": "v/pages.jpg@center 40%"
+  }
 }

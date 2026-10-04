@@ -54,8 +54,13 @@ const cards = d.highlights.map((h) => {
 
 const points = (side) => (d.transformation?.[side]?.points ?? []).map((p) => p.body);
 const solution = block('solution');
-const steps = (solution.timeline ?? []).map((t) =>
-  t.stack ? { title: t.title, stack: t.stack.map((s) => ({ name: s.name, role: s.role })) } : { title: t.title, items: t.items ?? [] },
+// Each build step shows its deliverable when the spec names one ("stepVisuals"), the stack as its
+// tool list, and only falls back to the step's text when there is nothing to show.
+const steps = (solution.timeline ?? []).map((t, n) =>
+  t.stack ? { title: t.title, stack: t.stack.map((s) => ({ name: s.name, role: s.role })) }
+  // "file@position" picks the crop point, e.g. "v/pages.jpg@center" (default: the top of the image).
+  : spec.stepVisuals?.[t.title] ? (([f, pos]) => ({ title: t.title, image: shot(`step-${n + 1}`, f), fill: true, ...(pos && { pos }) }))(spec.stepVisuals[t.title].split('@'))
+  : { title: t.title, items: t.items ?? [] },
 );
 const quotes = [...(block('problem').quotes ?? []), ...(block('results').quotes ?? [])].map((q, n) => {
   const [name, ...role] = q.author.split(',').map((s) => s.trim());
