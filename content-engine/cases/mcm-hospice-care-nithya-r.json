@@ -1,0 +1,120 @@
+{
+  "id": "mcm-hospice-care-nithya-r",
+  "url": "https://mcmprivatecare.com/case-studies/hospice-care-nithya-r",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "We Vetted Many Agencies. With MCM, Both Our Moms Passed Peacefully at Home.",
+  "krs": [
+    {
+      "value": "10+ yrs",
+      "label": "Living together"
+    },
+    {
+      "value": "Both moms",
+      "label": "Dementia & hospice"
+    },
+    {
+      "value": "24/7",
+      "label": "Until they passed"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "We Vetted Many Agencies. With MCM, Both Our Moms Passed Peacefully at Home.",
+      "stats": [
+        {
+          "value": "10+ yrs",
+          "label": "Living together",
+          "source": "testimonial"
+        },
+        {
+          "value": "Both moms",
+          "label": "Dementia & hospice",
+          "source": "testimonial"
+        },
+        {
+          "value": "24/7",
+          "label": "Until they passed",
+          "source": "testimonial"
+        }
+      ]
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "Nithya R.",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "The family had already watched a relative test the field.",
+        "Multiple · Agencies vetted by a relative first",
+        "Not suitable · The ones tried before MCM"
+      ],
+      "after": [
+        "Two mothers, cared for at home through hospice, surrounded by family.",
+        "24/7 · Care for both moms",
+        "Quick rematch · When an aide wasn't the fit",
+        "At home · Where both moms passed"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they trusted MCM · 01 / 04",
+      "title": "The vetting was already done.",
+      "text": "A family member had researched and used multiple agencies before landing on MCM, so the family skipped the trial and error: \"MCM was the only agency we talked with.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they trusted MCM · 02 / 04",
+      "title": "They matched until it was right.",
+      "text": "\"When one was found incompatible, they were quick to replace them with another more suitable aide...",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they trusted MCM · 03 / 04",
+      "title": "Both mothers passed at home, surrounded by family.",
+      "text": "\"Both our moms breathed their last at our home, surrounded by loved ones and knowing that they were well taken care of, thanks to Team MCM.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they trusted MCM · 04 / 04",
+      "title": "The care was personal, even after.",
+      "text": "\"Both Steve and Andrea attended their memorial services and came home to comfort us, talk of personalized care!!\"",
+      "image": null
+    },
+    {
+      "type": "quote",
+      "text": "Staying in your home and being cared for in the familiar surroundings of one's home is the best possible outcome! ... Thank you MCM for your years of service to our family and friends.",
+      "by": "Nithya R."
+    },
+    {
+      "type": "cta",
+      "title": "Caring for a parent through hospice or long-term decline at home?"
+    }
+  ]
+}

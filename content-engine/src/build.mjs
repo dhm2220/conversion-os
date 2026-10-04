@@ -27,7 +27,7 @@ const run = (script, ...args) =>
 if (kase.url) run('capture-url.mjs', kase.url, casePath, shots, '--sheet');
 else run('frames-from-video.mjs', resolve(dirname(casePath), kase.video), casePath, shots, '--sheet');
 
-if (!kase.carousel?.length || !kase.shots?.length) {
+if (!kase.carousel?.length) {
   console.log(`\nNo shots picked yet. Open ${resolve(shots, 'contact.jpg')}, fill in "shots", "carousel" and "storyMap" in ${casePath}, then run this again.`);
   process.exit(0);
 }

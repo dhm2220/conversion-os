@@ -307,6 +307,28 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .data .tl .w { white-space: nowrap; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 18px; letter-spacing: 0.08em; text-transform: uppercase; color: color-mix(in srgb, var(--text) 60%, transparent); }
 .data .tl .m { font-family: var(--display); font-weight: 700; font-size: 34px; letter-spacing: -0.015em; }
 
+
+/* cover extras: eyebrow + 3 stats; copy at the bottom over a photo; text-only cover */
+.heb { font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 20px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent-a); margin-bottom: 18px; }
+.hstats { display: flex; justify-content: center; gap: 44px; margin-top: 30px; }
+.hstats div { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.hstats b { font-family: var(--display); font-weight: 700; font-size: 38px; }
+.hstats span { font-size: 18px; color: var(--muted); }
+.heng.over.bottom .bgm::after { background: linear-gradient(180deg, rgba(8, 9, 11, 0.15) 0%, rgba(8, 9, 11, 0.05) 30%, color-mix(in srgb, var(--bg) 70%, transparent) 55%, var(--bg) 78%, var(--bg) 100%); }
+.heng.over.bottom .copy { padding: 0 56px 34px; }
+.heng.over.bottom .bgm img { object-position: center 18%; }
+.heng.textonly .copy { position: relative; padding: 0 64px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.heng.textonly h1.prod { font-size: 84px; }
+/* a deliverable / beat with no visual: the text is the card */
+.dk.noimg .dkt { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 70px; }
+.dk.noimg h1 { font-size: 96px; }
+.dk.noimg p { margin-top: 30px; font-size: 34px; line-height: 1.45; }
+/* anchor quote */
+.qslide .qbody { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 80px; }
+.qslide .qmark { font-family: var(--display); font-weight: 700; font-size: 150px; line-height: 0.6; color: var(--accent-a); }
+.qslide blockquote { margin-top: 30px; font-family: var(--display); font-weight: 700; font-size: 50px; line-height: 1.25; letter-spacing: -0.01em; }
+.qslide .qby { margin-top: 34px; font-family: ui-monospace, 'JetBrains Mono', monospace; font-size: 19px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-a); }
+
 /* phone screens (maps) */
 .phone { position: relative; overflow: hidden; background: #000; }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
@@ -473,16 +495,25 @@ const SLIDES = {
 </section>`,
 
   // Engineering hook: the result as a headline, then the stat cards beside the cover.
-  hookEng: (kase, slide, i, total, img, asset) => slide.marquee ? `
-<section class="slide feed heng over">
+  hookEng: (kase, slide, i, total, img, asset) => {
+    const eb = slide.eyebrow ? `<div class="heb">${esc(slide.eyebrow)}</div>` : '';
+    const under = slide.stats ? `<div class="hstats">${slide.stats.map((x) => `<div><b>${esc(x.value)}</b><span>${esc(x.label)}</span></div>`).join('')}</div>` : heroPill(kase, slide.scope);
+    if (slide.marquee) return `
+<section class="slide feed heng over ${slide.textBottom ? 'bottom' : ''}">
   <div class="bgm"><img src="${img(slide.marquee)}"></div>
-  <div class="copy">
-    <h1 class="prod">${accent(slide.title)}</h1>
-    ${heroPill(kase, slide.scope)}
-  </div>
+  ${slide.textBottom ? '<div style="flex:1"></div>' : ''}
+  <div class="copy">${eb}<h1 class="prod">${accent(slide.title)}</h1>${under}</div>
+  ${slide.textBottom ? '' : '<div style="flex:1"></div>'}
+  ${foot(kase, asset, i, total)}
+</section>`;
+    if (!slide.cards) return `
+<section class="slide feed heng textonly">
+  <div style="flex:1"></div>
+  <div class="copy">${eb}<h1 class="prod">${accent(slide.title)}</h1>${under}</div>
   <div style="flex:1"></div>
   ${foot(kase, asset, i, total)}
-</section>` : `
+</section>`;
+    return `
 <section class="slide feed heng">
   ${top()}
   <h1 class="prod">${accent(slide.title)}</h1>
@@ -492,28 +523,18 @@ const SLIDES = {
     ${slide.image ? `<div class="hero"><img src="${img(slide.image)}"></div>` : ''}
   </div>
   ${foot(kase, asset, i, total)}
-</section>`,
-
-  deep: (kase, slide, i, total, img, asset) => `
-<section class="slide feed deep">
-  ${top()}
-  ${kick(slide)}
-  <div class="dhead"><h1>${esc(slide.title)}</h1>${slide.when ? `<span class="when">${esc(slide.when)}</span>` : ''}</div>
-  <div class="dgrid n${slide.rows.length}">
-    ${slide.rows.map((r) => `<div class="ditem ${r.image ? '' : 'text'}">${r.image ? `<figure><img src="${img(r.image)}"${r.pos ? ` style="object-position:${esc(r.pos)}"` : ''}></figure>` : ''}<div class="dt"><h3>${esc(r.title)}</h3>${r.why ? `<p>${esc(r.why)}</p>` : ''}</div></div>`).join('')}
-  </div>
-  ${foot(kase, asset, i, total)}
-</section>`,
+</section>`;
+  },
 
   deck: (kase, slide, i, total, img, asset) => `
-<section class="slide feed dk">
+<section class="slide feed dk ${slide.image ? '' : 'noimg'}">
   ${top()}
   <div class="dkt">
     <div class="eb">${esc(slide.kicker)}</div>
     <h1>${esc(slide.title)}</h1>
     ${slide.text ? `<p>${esc(slide.text)}</p>` : ''}
   </div>
-  <div class="dkv"><img src="${img(slide.image)}"></div>
+  ${slide.image ? `<div class="dkv"><img src="${img(slide.image)}"></div>` : ''}
   ${foot(kase, asset, i, total)}
 </section>`,
 
@@ -526,14 +547,21 @@ const SLIDES = {
   ${foot(kase, asset, i, total)}
 </section>`,
 
+  quote: (kase, slide, i, total, img, asset) => `
+<section class="slide feed qslide">
+  ${top()}
+  <div class="qbody"><div class="qmark">“</div><blockquote>${esc(slide.text)}</blockquote><div class="qby">${esc(slide.by)}</div></div>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
   ba: (kase, slide, i, total, img, asset) => `
 <section class="slide feed">
   ${top()}
   ${kick(slide)}
   <div class="ba">
     <h1>${esc(slide.title)}</h1>
-    <div class="col"><h2>Before</h2><ul>${slide.before.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
-    <div class="col after"><h2>After</h2><ul>${slide.after.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="col"><h2>${esc(slide.beforeLabel ?? 'Before')}</h2><ul>${slide.before.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="col after"><h2>${esc(slide.afterLabel ?? 'After')}</h2><ul>${slide.after.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div>
   </div>
   ${foot(kase, asset, i, total)}
 </section>`,
@@ -620,9 +648,31 @@ const MONO = `
 .bp-tabs span.on { background: #08090b; }
 `;
 
+
+// MCM Private Care's locked look (mcmprivatecare.com/system): Inter only (no serif, no mono),
+// navy with a soft gold glow, gold letter-spaced eyebrows, a gold pill for the call button.
+const MCM = `
+:root { --grad: linear-gradient(135deg, #d4ad5e, #C4963C, #9c7528); --display: 'Inter', system-ui, sans-serif; }
+* { font-family: 'Inter', system-ui, sans-serif !important; }
+.slide { background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(196, 150, 60, 0.22), transparent 70%), linear-gradient(180deg, #1f3157, #1B2A4A 45%, #111c33); }
+.slide::before { display: none; }
+h1, .prod, .dk h1, .heng h1.prod { font-weight: 800 !important; letter-spacing: -0.02em !important; }
+.grad { background: none; -webkit-background-clip: initial; color: #d4ad5e; }
+.kick, .eb, .heb, .qby { color: #C4963C !important; letter-spacing: 0.28em !important; }
+.badge { color: #C4963C; background: rgba(255, 255, 255, 0.04); border: 1.5px solid rgba(196, 150, 60, 0.45); }
+.dhbtn { border-radius: 999px; color: #1B2A4A; text-shadow: none; text-transform: none; letter-spacing: 0; font-weight: 800; background: linear-gradient(135deg, #d4ad5e, #C4963C 55%, #9c7528); box-shadow: 0 18px 40px rgba(196, 150, 60, 0.35); }
+.dhbtn::after { display: none; }
+.final .fbody .mono { color: #C4963C; }
+.final .fbody h1 { font-size: 66px; }
+.block, .col, .card, .tcard, .ditem, .tl { background: rgba(255, 255, 255, 0.04) !important; border-color: rgba(255, 255, 255, 0.12) !important; }
+.ba .col.after { border-color: rgba(196, 150, 60, 0.5) !important; }
+.foot .brand img { height: 30px; }
+.heng.over .bgm::after { background: linear-gradient(180deg, rgba(17, 28, 51, 0.1) 0%, rgba(17, 28, 51, 0.05) 30%, rgba(27, 42, 74, 0.75) 55%, #1B2A4A 76%, #111c33 100%) !important; }
+`;
+
 const doc = (kase, body, fontsCss, asset) => `<!doctype html><html><head><meta charset="utf-8">
 <link href="${fontsCss}" rel="stylesheet">
-<style>${CSS}${brandCss(kase, asset)}${kase.palette === 'mono' ? MONO : ''}</style></head><body>${body}</body></html>`;
+<style>${CSS}${brandCss(kase, asset)}${kase.palette === 'mono' ? MONO : ''}${kase.palette === 'mcm' ? MCM : ''}</style></head><body>${body}</body></html>`;
 
 // Returns [{ name, html }], one HTML document per output image.
 // img(id) -> URL of a shot; asset(path) -> URL of a brand file; fontsCss -> URL of fonts/fonts.css.

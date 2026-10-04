@@ -1,0 +1,131 @@
+{
+  "id": "mcm-dementia-care-karen-w",
+  "url": "https://mcmprivatecare.com/case-studies/dementia-care-karen-w",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "Both My Parents Had Dementia. For Nine Years, MCM Always Came Through.",
+  "krs": [
+    {
+      "value": "~9 yrs",
+      "label": "With MCM"
+    },
+    {
+      "value": "Both parents",
+      "label": "Dementia"
+    },
+    {
+      "value": "Overnight",
+      "label": "Sitters & hospital"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [
+    {
+      "id": "cover",
+      "src": "../source/mcm-dementia-care-karen-w/cover.jpg"
+    },
+    {
+      "id": "beat-1",
+      "src": "../source/mcm-dementia-care-karen-w/beat-1.jpg"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "Both My Parents Had Dementia. For Nine Years, MCM Always Came Through.",
+      "stats": [
+        {
+          "value": "~9 yrs",
+          "label": "With MCM",
+          "source": "testimonial"
+        },
+        {
+          "value": "Both parents",
+          "label": "Dementia",
+          "source": "testimonial"
+        },
+        {
+          "value": "Overnight",
+          "label": "Sitters & hospital",
+          "source": "testimonial"
+        }
+      ],
+      "marquee": "cover",
+      "textBottom": true
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "Karen W.",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "Two parents with dementia who didn't think they needed help.",
+        "2 parents · Both with dementia",
+        "Skeptical · Until they met the caregivers"
+      ],
+      "after": [
+        "Care that scaled across every stage, all the way through.",
+        "Watchful eye · Errands and small tasks early on",
+        "One-on-one · Support at their assisted living facility",
+        "Overnight · Sitters in their last stages"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 01 / 04",
+      "title": "The care started gentle and grew with them.",
+      "text": "Early on it was light: \"to keep a watchful eye on them and help with small tasks such as going to the grocery store.\"",
+      "image": "beat-1"
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 02 / 04",
+      "title": "It scaled as their parents declined.",
+      "text": "\"As their health declined, we relied on the caregivers for added support at their assisted living facility.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 03 / 04",
+      "title": "They were never alone at the end.",
+      "text": "\"In their last stages of life, we used caregivers to do the overnight shift as sitters...",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 04 / 04",
+      "title": "MCM showed up everywhere they needed.",
+      "text": "\"We needed overnight sitters, we needed people in the hospital, and MCM always came through.\"",
+      "image": null
+    },
+    {
+      "type": "quote",
+      "text": "I would just like to say how wonderful MCM has been for my parents... I highly recommend them for all of your needs for elderly parents.",
+      "by": "Karen W. · about nine years with MCM"
+    },
+    {
+      "type": "cta",
+      "title": "Caring for a parent, or both, through dementia?"
+    }
+  ]
+}

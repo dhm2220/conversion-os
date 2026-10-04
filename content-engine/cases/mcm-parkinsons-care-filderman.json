@@ -1,0 +1,126 @@
+{
+  "id": "mcm-parkinsons-care-filderman",
+  "url": "https://mcmprivatecare.com/case-studies/parkinsons-care-filderman",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "I Cannot Picture Life Without My Caregiver. She's Better Than Family.",
+  "krs": [
+    {
+      "value": "11 yrs",
+      "label": "With MCM"
+    },
+    {
+      "value": "Parkinson's",
+      "label": "Husband's diagnosis"
+    },
+    {
+      "value": "Companion",
+      "label": "Now her own care"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [
+    {
+      "id": "cover",
+      "src": "../source/mcm-parkinsons-care-filderman/cover.jpg"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "I Cannot Picture Life Without My Caregiver. She's Better Than Family.",
+      "stats": [
+        {
+          "value": "11 yrs",
+          "label": "With MCM",
+          "source": "testimonial"
+        },
+        {
+          "value": "Parkinson's",
+          "label": "Husband's diagnosis",
+          "source": "testimonial"
+        },
+        {
+          "value": "Companion",
+          "label": "Now her own care",
+          "source": "testimonial"
+        }
+      ],
+      "marquee": "cover",
+      "textBottom": true
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "Phyliss Filderman",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "Phyliss cared for her husband alone, and letting anyone else in felt impossible.",
+        "10 years · Rarely left the house except for the doctor",
+        "Married · Totally and completely attached"
+      ],
+      "after": [
+        "The team cared for her husband and, she says, looked after her too.",
+        "Never alone · Someone always there",
+        "Always covered · A substitute every time"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 01 / 04",
+      "title": "She was carrying her husband's care alone.",
+      "text": "Letting MCM in was, in her words, \"very strange for me,\" but the team eased that, even caring for her while the men cared for her husband at night.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 02 / 04",
+      "title": "Every caregiver earned her trust.",
+      "text": "\"All of the people were more than qualified and everyone that helped my husband, I would recommend individually, that's how competent they were.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 03 / 04",
+      "title": "The relationship outlasted her husband.",
+      "text": "When he died two years ago, Phyliss refused to lose the caregiver she'd come to love.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 04 / 04",
+      "title": "They stayed close after the loss.",
+      "text": "\"When I lost my husband, they came to the funeral cemetery.",
+      "image": null
+    },
+    {
+      "type": "quote",
+      "text": "Having this nurse from Medical Consultants has been like my mother giving birth to my sister, although she takes better care and is more loving than my sister. I could not picture my life without her. She's better than family at times, so I consider her my family.",
+      "by": "Phyliss Filderman · Philadelphia · became a client herself after her husband's passing"
+    },
+    {
+      "type": "cta",
+      "title": "Caring for a spouse with Parkinson's or another progressive condition?"
+    }
+  ]
+}
