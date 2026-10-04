@@ -5,7 +5,6 @@
   "publicDir": "~/0-hr/apps/portal/public",
   "playbook": "https://differenthunger.com/p/lateral-fullfillment-case-study",
   "cover": "/showcase/lateral-cover.jpg",
-  "transformImage": "playbook/02.png",
   "work": [
     {
       "kicker": "The work \u00b7 website on every device",
@@ -15,13 +14,12 @@
       ]
     },
     {
-      "kicker": "The work \u00b7 guide pages",
+      "kicker": "The work \u00b7 the live site",
       "images": [
-        "playbook/04.png",
-        "playbook/05.png",
-        "playbook/06.png"
-      ],
-      "row": true
+        "v/site-02.png",
+        "v/site-05.png",
+        "v/site-07.png"
+      ]
     }
   ],
   "marquee": "marquee.png",
@@ -46,7 +44,7 @@
   ],
   "stepVisuals": {
     "Brand Foundation": "v/brand-guide.png",
-    "UX & Design System": "v/wireframes.png",
+    "UX & Design System": "v/site-slide-21.png@center",
     "Conversion Infrastructure": "v/funnel.png"
   }
 }

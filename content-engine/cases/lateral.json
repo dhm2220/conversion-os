@@ -129,10 +129,6 @@
     {
       "id": "marquee",
       "src": "../source/lateral/marquee.png"
-    },
-    {
-      "id": "transformation",
-      "src": "../source/lateral/transformation.png"
     }
   ],
   "carousel": [
@@ -147,11 +143,18 @@
       ]
     },
     {
-      "type": "section",
+      "type": "ba",
       "icon": "shift",
       "kicker": "The transformation",
-      "images": [
-        "transformation"
+      "title": "Lateral Fulfillment’s Transformation",
+      "before": [
+        "needed to build a high-converting, premium brand to attract top-tier ecommerce partners in the U.S.",
+        "needed clarity in messaging, credibility in presentation, and a complete go-to-market system that could generate and close deals"
+      ],
+      "after": [
+        "Premium online presence to build credibility with partners and investors",
+        "Full-funnel lead generation assets to educate and convert cold prospects",
+        "Sales-ready infrastructure with demo and appointment flow"
       ]
     },
     {
@@ -189,7 +192,8 @@
         {
           "title": "UX & Design System",
           "image": "step-2",
-          "fill": true
+          "fill": true,
+          "pos": "center"
         },
         {
           "title": "Conversion Infrastructure",
@@ -236,13 +240,13 @@
     {
       "type": "section",
       "icon": "image",
-      "kicker": "The work · guide pages",
+      "kicker": "The work · the live site",
       "images": [
         "work-2-1",
         "work-2-2",
         "work-2-3"
       ],
-      "row": true
+      "row": false
     },
     {
       "type": "cta",
