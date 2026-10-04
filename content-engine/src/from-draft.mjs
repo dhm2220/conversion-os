@@ -84,7 +84,24 @@ const carousel = [
     { icon: 'warning', title: 'Problem', text: block('problem').body },
     { icon: 'bulb', title: 'Solution', text: solution.body },
   ].filter((b) => b.text) },
-  steps.length && { type: 'built', icon: 'build', kicker: 'What we built', steps: steps.slice(0, 6) },
+  // With the client's project deck ("deckSlides"), the build is told the deck's way: its process
+  // slide as the overview, then one slide per deliverable (the deck's eyebrow, headline and line,
+  // over the deck's own visual for it).
+  ...(spec.deckSlides
+    ? [
+        spec.deckProcess && { type: 'section', icon: 'build', kicker: 'What we built', images: [shot('deck-process', spec.deckProcess)] },
+        ...spec.deckSlides.map((x, n, all) => ({
+          type: 'deck', kicker: `${x.eyebrow} · ${String(n + 1).padStart(2, '0')} / ${String(all.length).padStart(2, '0')}`,
+          title: x.title, text: x.text, image: shot(`deck-${n + 1}`, x.image),
+        })),
+      ]
+    : [steps.length && { type: 'built', icon: 'build', kicker: 'What we built', steps: steps.slice(0, 6) }]),
+  // One breakdown slide per deliverable (spec "deepDives"): each item with its visual and its why.
+  ...(spec.deepDives ?? []).map((dd, k, all) => ({
+    type: 'deep', icon: 'build', kicker: `What we built · ${String(k + 1).padStart(2, '0')} / ${String(all.length).padStart(2, '0')}`,
+    title: dd.step, when: dd.when,
+    rows: dd.rows.map((r, n) => { const [f, pos] = (r.image ?? '').split('@'); return { title: r.title, why: r.why, image: f ? shot(`deep-${k + 1}-${n + 1}`, f) : null, ...(pos && { pos }) }; }),
+  })),
   ...work.map((w) => ({ type: 'section', icon: 'image', kicker: w.kicker ?? 'The work', images: w.images, row: !!w.row })),
   quotes.length && { type: 'proof', icon: 'quote', kicker: 'Social proof', quotes: quotes.slice(0, 2) },
   { type: 'cta', title: spec.ctaTitle ?? 'Ready to Be the Next Success Story?' },
@@ -104,7 +121,7 @@ const kase = {
   id,
   variant: 'engineering',
   // Enough real deliverables to show: black/white slides, the work carries the color.
-  palette: spec.palette ?? (work.reduce((n, w) => n + w.images.length, 0) + (cover ? 1 : 0) >= 3 ? 'mono' : 'brand'),
+  palette: spec.palette ?? (work.reduce((n, w) => n + w.images.length, 0) + (spec.deckSlides?.length ?? 0) + (cover ? 1 : 0) >= 3 ? 'mono' : 'brand'),
   url: spec.playbook,
   ownBrand: true,
   brand: { bg: '#08090b', logo: '../source/brand/dh-logo-dark.png', displayFont: '../source/brand/blanc-bold.woff2', displayFontLight: '../source/brand/blanc-ultralight.woff2' },

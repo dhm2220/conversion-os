@@ -91,44 +91,72 @@
       "screen": 14
     },
     {
-      "id": "step-1",
-      "src": "../source/lateral/step-1.png"
-    },
-    {
-      "id": "step-2",
-      "src": "../source/lateral/step-2.png"
-    },
-    {
-      "id": "step-3",
-      "src": "../source/lateral/step-3.png"
-    },
-    {
-      "id": "work-1-1",
-      "src": "../source/lateral/work-1-1.png"
-    },
-    {
-      "id": "work-1-2",
-      "src": "../source/lateral/work-1-2.png"
-    },
-    {
-      "id": "work-2-1",
-      "src": "../source/lateral/work-2-1.png"
-    },
-    {
-      "id": "work-2-2",
-      "src": "../source/lateral/work-2-2.png"
-    },
-    {
-      "id": "work-2-3",
-      "src": "../source/lateral/work-2-3.png"
-    },
-    {
       "id": "cover",
       "src": "../source/lateral/cover.jpg"
     },
     {
       "id": "marquee",
       "src": "../source/lateral/marquee.png"
+    },
+    {
+      "id": "deck-process",
+      "src": "../source/lateral/deck-process.png"
+    },
+    {
+      "id": "deck-1",
+      "src": "../source/lateral/deck-1.png"
+    },
+    {
+      "id": "deck-2",
+      "src": "../source/lateral/deck-2.png"
+    },
+    {
+      "id": "deck-3",
+      "src": "../source/lateral/deck-3.png"
+    },
+    {
+      "id": "deck-4",
+      "src": "../source/lateral/deck-4.png"
+    },
+    {
+      "id": "deck-5",
+      "src": "../source/lateral/deck-5.png"
+    },
+    {
+      "id": "deck-6",
+      "src": "../source/lateral/deck-6.png"
+    },
+    {
+      "id": "deck-7",
+      "src": "../source/lateral/deck-7.png"
+    },
+    {
+      "id": "deck-8",
+      "src": "../source/lateral/deck-8.png"
+    },
+    {
+      "id": "deck-9",
+      "src": "../source/lateral/deck-9.png"
+    },
+    {
+      "id": "deck-10",
+      "src": "../source/lateral/deck-10.png"
+    },
+    {
+      "id": "deck-11",
+      "src": "../source/lateral/deck-11.png"
+    },
+    {
+      "id": "deck-12",
+      "src": "../source/lateral/deck-12.png"
+    },
+    {
+      "id": "deck-13",
+      "src": "../source/lateral/deck-13.png"
+    },
+    {
+      "id": "deck-14",
+      "src": "../source/lateral/deck-14.png"
     }
   ],
   "carousel": [
@@ -180,73 +208,110 @@
       ]
     },
     {
-      "type": "built",
+      "type": "section",
       "icon": "build",
       "kicker": "What we built",
-      "steps": [
-        {
-          "title": "Brand Foundation",
-          "image": "step-1",
-          "fill": true
-        },
-        {
-          "title": "UX & Design System",
-          "image": "step-2",
-          "fill": true,
-          "pos": "center"
-        },
-        {
-          "title": "Conversion Infrastructure",
-          "image": "step-3",
-          "fill": true
-        },
-        {
-          "title": "Deploy Tech Stack",
-          "stack": [
-            {
-              "name": "Google Slides",
-              "role": "Website Strategy"
-            },
-            {
-              "name": "Webflow",
-              "role": "Website Builder & Host"
-            },
-            {
-              "name": "Google Analytics",
-              "role": "Analytics"
-            },
-            {
-              "name": "HubSpot",
-              "role": "Calendar Booking"
-            },
-            {
-              "name": "Gmail",
-              "role": "Lead Magnet Delivery"
-            }
-          ]
-        }
+      "images": [
+        "deck-process"
       ]
     },
     {
-      "type": "section",
-      "icon": "image",
-      "kicker": "The work · website on every device",
-      "images": [
-        "work-1-1",
-        "work-1-2"
-      ],
-      "row": false
+      "type": "deck",
+      "kicker": "Market Research & Persona Definition · 01 / 14",
+      "title": "Target Personas for Strategic Positioning",
+      "text": "We created detailed target personas to guide Lateral Fulfillment’s positioning, messaging and go to market efforts.",
+      "image": "deck-1"
     },
     {
-      "type": "section",
-      "icon": "image",
-      "kicker": "The work · the live site",
-      "images": [
-        "work-2-1",
-        "work-2-2",
-        "work-2-3"
-      ],
-      "row": false
+      "type": "deck",
+      "kicker": "Lateral Fulfillment Positioning · 02 / 14",
+      "title": "Brand Positioning & Messaging",
+      "text": "",
+      "image": "deck-2"
+    },
+    {
+      "type": "deck",
+      "kicker": "User Experience · 03 / 14",
+      "title": "Compelling Copy & User Friendly Wireframes",
+      "text": "Clear and compelling copy was created to what Lateral Fulfillment does, how it works and their unique advantage, supported by user-friendly wireframes.",
+      "image": "deck-3"
+    },
+    {
+      "type": "deck",
+      "kicker": "Visual Design · 04 / 14",
+      "title": "Custom Branded Icons & Illustrations",
+      "text": "We designed custom line icons and isometric illustrations that visually represented Lateral’s key service offerings, adding brand consistency and visual appeal to the website.",
+      "image": "deck-4"
+    },
+    {
+      "type": "deck",
+      "kicker": "Visual Design · 05 / 14",
+      "title": "Illustrating the Fulfillment Process",
+      "text": "A custom isometric graphic that visually simplifies Lateral’s Section 321 fulfillment process, helping users understand complex logistics with ease.",
+      "image": "deck-5"
+    },
+    {
+      "type": "deck",
+      "kicker": "Website Design · 06 / 14",
+      "title": "Smart Design for an Enhanced User Experience",
+      "text": "We designed website pages that highlight Lateral Fulfillment’s smarter approach and deliver a delightful user experience that included a dark / light mode toggle throughout the entire website.",
+      "image": "deck-6"
+    },
+    {
+      "type": "deck",
+      "kicker": "Animations & Interactions · 07 / 14",
+      "title": "Interactive Animations to Boost Exploration",
+      "text": "We integrated animations and interactive objects associated with logistics like globes, freight containers and packages throughout the website to enhance user experience and encourage deeper exploration.",
+      "image": "deck-7"
+    },
+    {
+      "type": "deck",
+      "kicker": "Website Development · 08 / 14",
+      "title": "Mobile Friendly, Responsive Web Development",
+      "text": "The website is responsive and optimized for mobile users, providing a seamless experience across all devices.",
+      "image": "deck-8"
+    },
+    {
+      "type": "deck",
+      "kicker": "Explainer Video · 09 / 14",
+      "title": "The Smarter Way to Fulfill Explainer Video",
+      "text": "We created a mobile-optimized video that breaks down the complex fulfillment process in a clear, engaging way, showcasing Lateral’s brand positioning.",
+      "image": "deck-9"
+    },
+    {
+      "type": "deck",
+      "kicker": "Product Demo · 10 / 14",
+      "title": "Interactive Product Demo for Building Trust",
+      "text": "A hands-on product demo that demonstrates how Lateral’s fulfillment program works, building trust and credibility with potential partners.",
+      "image": "deck-10"
+    },
+    {
+      "type": "deck",
+      "kicker": "Educational Guides and Resources · 11 / 14",
+      "title": "Educational Guides Optimized for Conversion",
+      "text": "We developed educational guides for each stage of the funnel to educate DTC brand decision makers that logically lead them to the next stage of the funnel.",
+      "image": "deck-11"
+    },
+    {
+      "type": "deck",
+      "kicker": "Lead Generation · 12 / 14",
+      "title": "3 Step Lead Generation Funnel",
+      "text": "We created a simple, effective lead generation funnel to capture website visitors and convert them into leads. We used Make.com as an interim solution to deliver the emails while HubSpot was being setup.",
+      "image": "deck-12"
+    },
+    {
+      "type": "deck",
+      "kicker": "Sales Funnel · 13 / 14",
+      "title": "Three-Step Sales Funnel for Consultations",
+      "text": "We created a 3 page sales funnel to pre-qualify leads and schedule consultations:",
+      "image": "deck-13"
+    },
+    {
+      "type": "deck",
+      "kicker": "Tech Stack · 14 / 14",
+      "title": "Tech Stack Setup for Website Functionality",
+      "text": "",
+      "image": "deck-14"
     },
     {
       "type": "cta",

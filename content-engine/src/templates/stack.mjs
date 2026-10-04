@@ -271,6 +271,32 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .heng.over .copy { position: relative; padding: 70px 56px 0; display: flex; flex-direction: column; align-items: center; }
 .heng.over h1.prod { padding: 0; font-size: 72px; }
 
+
+/* deliverable breakdown: every item is a card, its visual on top, the item and its why under it */
+.deep .dhead { position: relative; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: 18px 56px 0; }
+.deep .dhead h1 { font-size: 58px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; }
+.deep .when { flex: none; padding: 8px 16px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--text) 25%, transparent); font-family: var(--display); font-weight: 200; font-size: 20px; color: color-mix(in srgb, var(--text) 75%, transparent); }
+.deep .dgrid { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 18px; padding: 22px 44px 20px; }
+.deep .dgrid.n3 > :first-child { grid-column: span 2; }
+.deep .ditem { min-height: 0; display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 22px; background: var(--panel); overflow: hidden; }
+.deep .ditem figure { flex: 1; min-height: 0; background: #000; }
+.deep .ditem figure img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.deep .ditem .dt { flex: none; padding: 16px 20px 18px; }
+.deep .ditem h3 { font-family: var(--display); font-weight: 700; font-size: 25px; line-height: 1.15; }
+.deep .ditem p { margin-top: 6px; font-size: 18px; line-height: 1.4; color: color-mix(in srgb, var(--text) 70%, transparent); }
+.deep .ditem.text { justify-content: center; }
+.deep .ditem.text .dt { padding: 26px 28px; }
+.deep .ditem.text h3 { font-size: 30px; }
+
+
+/* one deliverable, the project deck's way: eyebrow, headline, what we did, then the deck's visual */
+.dk .dkt { position: relative; padding: 34px 60px 0; }
+.dk .eb { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in srgb, var(--text) 60%, transparent); }
+.dk h1 { margin-top: 16px; font-size: 60px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; }
+.dk p { margin-top: 18px; max-width: 900px; font-size: 25px; line-height: 1.5; color: color-mix(in srgb, var(--text) 72%, transparent); }
+.dk .dkv { position: relative; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 26px 40px 22px; }
+.dk .dkv img { display: block; max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 18px; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55); }
+
 /* phone screens (maps) */
 .phone { position: relative; overflow: hidden; background: #000; }
 .phone img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
@@ -455,6 +481,29 @@ const SLIDES = {
     <div class="hcards">${slide.cards.map(card).join('')}</div>
     ${slide.image ? `<div class="hero"><img src="${img(slide.image)}"></div>` : ''}
   </div>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
+  deep: (kase, slide, i, total, img, asset) => `
+<section class="slide feed deep">
+  ${top()}
+  ${kick(slide)}
+  <div class="dhead"><h1>${esc(slide.title)}</h1>${slide.when ? `<span class="when">${esc(slide.when)}</span>` : ''}</div>
+  <div class="dgrid n${slide.rows.length}">
+    ${slide.rows.map((r) => `<div class="ditem ${r.image ? '' : 'text'}">${r.image ? `<figure><img src="${img(r.image)}"${r.pos ? ` style="object-position:${esc(r.pos)}"` : ''}></figure>` : ''}<div class="dt"><h3>${esc(r.title)}</h3>${r.why ? `<p>${esc(r.why)}</p>` : ''}</div></div>`).join('')}
+  </div>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
+  deck: (kase, slide, i, total, img, asset) => `
+<section class="slide feed dk">
+  ${top()}
+  <div class="dkt">
+    <div class="eb">${esc(slide.kicker)}</div>
+    <h1>${esc(slide.title)}</h1>
+    ${slide.text ? `<p>${esc(slide.text)}</p>` : ''}
+  </div>
+  <div class="dkv"><img src="${img(slide.image)}"></div>
   ${foot(kase, asset, i, total)}
 </section>`,
 
