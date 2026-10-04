@@ -18,7 +18,7 @@ const esc = (s = '') =>
 
 // Wrap the money/time figures in a headline in the brand gradient.
 const accent = (s) =>
-  esc(s).replace(/(\$[\d.,]+[KMB]?\+?|\d+\s(?:Days?|days?|Months?))/g, '<span class="grad">$1</span>');
+  esc(s).replace(/(\$[\d.,]+(?:\s(?:million|billion)|[KMB]\+?|\+)?|\d+\s(?:Days?|days?|Months?))/g, '<span class="grad">$1</span>');
 
 // Line icons (24px grid, stroked), one per kind of section.
 const ICONS = {
