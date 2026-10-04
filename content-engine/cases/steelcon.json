@@ -169,21 +169,21 @@
     {
       "type": "context",
       "icon": "info",
-      "kicker": "Problem → solution",
+      "kicker": "Business - Problem - Solution",
       "blocks": [
         {
           "icon": "persona",
-          "title": "About SteelCon",
+          "title": "Business",
           "text": "SteelCon is an innovative family-owned steel engineering and manufacturing firm based in Canada. Their product SinBeam is up to 30% lighter weight than traditional steel allowing for higher cost effectiveness and faster project implementation while minimizing the carbon footprint of commercial development projects."
         },
         {
           "icon": "warning",
-          "title": "The challenge",
+          "title": "Problem",
           "text": "Despite having a revolutionary industry and world-changing product, SteelCon was struggling to generate new business outside of referrals from their immediate, local network."
         },
         {
           "icon": "bulb",
-          "title": "The solution",
+          "title": "Solution",
           "text": "We did our initial research to develop and implement a go to market and lead generation strategy that allowed them to expand and grow their client base in Canada and the USA."
         }
       ]
@@ -260,7 +260,32 @@
         },
         {
           "title": "Deploy tech stack",
-          "image": "w-stack"
+          "stack": [
+            {
+              "name": "Google Slides",
+              "role": "Campaign blueprint"
+            },
+            {
+              "name": "Expandi",
+              "role": "List building"
+            },
+            {
+              "name": "Snov.io",
+              "role": "Enrichment"
+            },
+            {
+              "name": "Google Sheets",
+              "role": "Targeting list"
+            },
+            {
+              "name": "Gmail",
+              "role": "Sending inboxes"
+            },
+            {
+              "name": "lemlist",
+              "role": "Outreach sequences"
+            }
+          ]
         }
       ]
     },
@@ -378,6 +403,11 @@
           "sub": "From one developer intro"
         }
       ]
+    },
+    {
+      "type": "cta",
+      "title": "Ready to be the next success story?",
+      "sub": "Comment or DM “SEQUENCE” and we’ll send you the exact outreach sequence behind SteelCon’s $10M+ pipeline."
     }
   ],
   "storyMap": [

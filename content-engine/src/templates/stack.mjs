@@ -140,6 +140,24 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .bp-rows span { font-size: 15.5px; font-weight: 600; line-height: 1.3; }
 .step .dhbtn { font-size: 15px; padding: 12px 16px; letter-spacing: 0.08em; }
 
+/* step visuals spaced evenly (thumbnail, caption, CTA) */
+.step figure.even { justify-content: space-evenly; }
+.step figure.even .dhbtn { font-size: 20px; padding: 18px 24px; letter-spacing: 0.08em; }
+/* tech stack tree */
+.tstack { list-style: none; flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding: 4px 0 4px 26px; border-left: 2px solid color-mix(in srgb, var(--text) 30%, transparent); margin-left: 8px; }
+.tstack li { position: relative; display: flex; align-items: center; gap: 12px; padding: 7px 12px; border: 1px solid color-mix(in srgb, var(--text) 18%, transparent); border-radius: 12px; background: color-mix(in srgb, var(--text) 6%, transparent); }
+.tstack li::before { content: ''; position: absolute; left: -28px; top: 50%; width: 26px; border-top: 2px solid color-mix(in srgb, var(--text) 30%, transparent); }
+.tstack .ti { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; background: var(--grad); font-weight: 800; font-size: 16px; }
+.tstack b { display: block; font-size: 17px; }
+.tstack span { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+/* final CTA */
+.final .fbody { position: relative; flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 44px; padding: 0 64px; }
+.final .fbody h1 { font-size: 88px; }
+.final .fbody p { font-size: 32px; line-height: 1.4; color: color-mix(in srgb, var(--text) 78%, transparent); max-width: 900px; }
+.final .fbtn .dhbtn { font-size: 34px; padding: 30px 44px; border-radius: 16px; }
+.final .fbody .mono { font-size: 24px; color: var(--text); letter-spacing: 0.14em; }
+
 /* tease */
 .tease h1 { position: relative; padding: 22px 64px 0; font-size: 56px; }
 .tease .media img { -webkit-mask-image: linear-gradient(#000 45%, transparent 92%); mask-image: linear-gradient(#000 45%, transparent 92%); }
@@ -211,10 +229,10 @@ const top = (kase, i, total) => `
     <div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div>
   </div>`;
 
-const foot = (kase, asset, i, total, swipe) => `
+const foot = (kase, asset, i, total, last = false) => `
   <div class="foot">
     <div class="brand">${brandMark(kase, asset)}</div>
-    <div class="nav"><div class="swipe">${swipe}</div><div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div></div>
+    ${last ? '' : `<div class="nav"><div class="swipe"><b>Swipe →</b></div><div class="bar"><i style="width:${((i + 1) / total) * 100}%"></i></div></div>`}
   </div>`;
 
 const kick = (slide) => `<div class="kick"><span class="badge">${icon(slide.icon)}</span>${esc(slide.kicker)}</div>`;
@@ -251,6 +269,9 @@ const card = (c) => `<div class="card ${c.wide ? 'w2' : ''} ${c.side ? 'side' : 
 const blueprint = (t) => `<div class="bp"><div class="bp-tabs">${t.tabs.map((x, n) => `<span class="${n === t.active ? 'on' : ''}">${esc(x)}</span>`).join('')}</div>
   <div class="bp-rows">${t.fields.map((f) => `<div><b>${esc(f.label)}</b><span>${esc(f.value)}</span></div>`).join('')}</div></div>`;
 
+// The page's tech-stack tree, every tool lit (the page dims the last ones until they scroll in).
+const stackList = (items) => `<ul class="tstack">${items.map((t) => `<li><span class="ti">${esc(t.name[0])}</span><div><b>${esc(t.name)}</b><span>${esc(t.role)}</span></div></li>`).join('')}</ul>`;
+
 const SLIDES = {
   hook: (kase, slide, i, total, img, asset) => `
 <section class="slide feed hook">
@@ -259,7 +280,7 @@ const SLIDES = {
   <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
   <div class="stats">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}${slide.oneLiner ? `<div class="one"><p>${accent(slide.oneLiner)}</p></div>` : ''}</div>
   <div class="gift">${icon('gift', 52)}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${cta(kase)}</div>
-  ${foot(kase, asset, i, total, '<b>Swipe →</b> the whole case study')}
+  ${foot(kase, asset, i, total)}
 </section>`,
 
   section: (kase, slide, i, total, img, asset) => `
@@ -267,7 +288,7 @@ const SLIDES = {
   ${top(kase, i, total, asset)}
   ${kick(slide)}
   ${media(slide, img)}
-  ${foot(kase, asset, i, total, '<b>Swipe →</b> what happens next')}
+  ${foot(kase, asset, i, total)}
 </section>`,
 
   context: (kase, slide, i, total, img, asset) => `
@@ -279,7 +300,7 @@ const SLIDES = {
       .map((b) => `<div class="block ${b.icon === 'warning' ? 'warn' : ''}"><span class="badge">${icon(b.icon, 32)}</span><div><h2>${esc(b.title)}</h2><p>${esc(b.text)}</p></div></div>`)
       .join('')}
   </div>
-  ${foot(kase, asset, i, total, '<b>Swipe →</b> what happens next')}
+  ${foot(kase, asset, i, total)}
 </section>`,
 
   proof: (kase, slide, i, total, img, asset) => `
@@ -292,7 +313,7 @@ const SLIDES = {
         <div class="who"><img src="${img(q.avatar)}"><div><b>${esc(q.name)}</b><span>${esc(q.role)}</span></div></div></div>`)
       .join('')}
   </div>
-  ${foot(kase, asset, i, total, '<b>Swipe →</b> what we built')}
+  ${foot(kase, asset, i, total)}
 </section>`,
 
   built: (kase, slide, i, total, img, asset) => `
@@ -302,10 +323,10 @@ const SLIDES = {
   <div class="steps">
     ${slide.steps
       .map((s, n) => `<div class="step"><h2><span class="grad">${String(n + 1).padStart(2, '0')}</span>${esc(s.title)}</h2>
-        ${s.tile ? blueprint(s.tile) : `<figure><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
+        ${s.tile ? blueprint(s.tile) : s.stack ? stackList(s.stack) : `<figure class="${s.cta ? 'even' : ''}"><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
       .join('')}
   </div>
-  ${foot(kase, asset, i, total, '<b>Swipe →</b> get the sequence')}
+  ${foot(kase, asset, i, total)}
 </section>`,
 
   tease: (kase, slide, i, total, img, asset) => `
@@ -315,7 +336,7 @@ const SLIDES = {
   <h1>${accent(slide.title)}</h1>
   <div class="unlock">${cta(kase)}</div>
   ${media(slide, img)}
-  ${foot(kase, asset, i, total, '<b>Swipe →</b> every number')}
+  ${foot(kase, asset, i, total)}
 </section>`,
 
   // Title top left, logo bottom left, CTA bottom right.
@@ -323,7 +344,20 @@ const SLIDES = {
 <section class="slide feed wall">
   <div class="top"><h1 class="wtitle">${esc(slide.title)}</h1><div class="count"><b>${String(i + 1).padStart(2, '0')}</b> / ${String(total).padStart(2, '0')}</div></div>
   <div class="grid4">${slide.cards.map(card).join('')}</div>
-  <div class="go"><div class="sign"><div class="brand">${brandMark(kase, asset)}</div><div class="mono">${esc(kase.ctaDomain)}</div></div>${cta(kase)}</div>
+  ${foot(kase, asset, i, total)}
+</section>`,
+
+  // Last slide: one question, one button.
+  cta: (kase, slide, i, total, img, asset) => `
+<section class="slide feed final">
+  ${top(kase, i, total)}
+  <div class="fbody">
+    <h1>${accent(slide.title)}</h1>
+    ${slide.sub ? `<p>${esc(slide.sub)}</p>` : ''}
+    <div class="fbtn">${cta(kase)}</div>
+    <div class="mono">${esc(kase.ctaDomain)}</div>
+  </div>
+  ${foot(kase, asset, i, total, true)}
 </section>`,
 };
 
