@@ -155,7 +155,8 @@
         "stat-first-lead",
         "stat-leads",
         "stat-pipeline"
-      ]
+      ],
+      "oneLiner": "A Canada-based steel manufacturer built a $10M+ pipeline in 26 days."
     },
     {
       "type": "section",
@@ -219,12 +220,43 @@
         },
         {
           "title": "Campaign strategy blueprint",
-          "image": "w-blueprint"
+          "tile": {
+            "tabs": [
+              "Strategy",
+              "Messaging",
+              "Targeting",
+              "Creative"
+            ],
+            "active": 0,
+            "fields": [
+              {
+                "label": "Objective",
+                "value": "Sales"
+              },
+              {
+                "label": "Target KPI",
+                "value": "$10,000,000 new business (1–10 deals)"
+              },
+              {
+                "label": "Funnel",
+                "value": "Outreach + content + retargeting → appointment → offer & follow-up"
+              },
+              {
+                "label": "Channels",
+                "value": "LinkedIn · Email · Facebook"
+              },
+              {
+                "label": "Advantage",
+                "value": "Speed, cost, quality"
+              }
+            ]
+          }
         },
         {
           "title": "Campaign deliverables",
           "image": "w-deliverables",
-          "caption": "SteelCon Sales Outreach Sequence"
+          "caption": "SteelCon Sales Outreach Sequence",
+          "cta": true
         },
         {
           "title": "Deploy tech stack",

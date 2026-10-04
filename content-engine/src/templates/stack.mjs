@@ -88,9 +88,10 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .pill b { color: var(--text); font-weight: 600; }
 .stats { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1.1fr 1fr; grid-template-rows: 1fr 1fr; gap: 20px; padding: 26px 48px; }
 .stats figure { min-height: 0; overflow: hidden; border-radius: 26px; }
-.stats figure:nth-child(3) { grid-column: 2; grid-row: 1 / 3; display: flex; align-items: center; }
-.stats img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; mix-blend-mode: lighten; }
-.stats figure:nth-child(3) img { height: auto; }
+.stats figure:nth-child(3) { grid-column: 2; grid-row: 1; }
+.stats img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; mix-blend-mode: lighten; }
+.stats .one { grid-column: 2; grid-row: 2; display: flex; align-items: center; padding: 26px 30px; border-radius: 26px; border: 1px solid var(--line); background: var(--panel);
+  font-family: var(--display); font-size: 34px; line-height: 1.2; }
 .gift { position: relative; display: flex; align-items: center; gap: 22px; margin: 0 48px 26px; padding: 22px 24px; border-radius: 22px;
   background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--grad) border-box; border: 2px solid transparent; }
 .gift > svg { flex: none; color: var(--accent-b); }
@@ -125,10 +126,22 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 .step img { display: block; max-width: 100%; max-height: 100%; min-height: 0; object-fit: contain; mix-blend-mode: lighten; border-radius: 14px; }
 .step figcaption { font-family: var(--display); font-size: 22px; text-align: center; }
 
+/* blueprint tile: light, like the Google Slides deck it comes from */
+.bp { flex: 1; min-height: 0; display: flex; flex-direction: column; border-radius: 14px; overflow: hidden; background: #fbf7f8; color: #1a1416; }
+.bp-tabs { display: flex; background: #f1e3e7; }
+.bp-tabs span { flex: 1; padding: 9px 4px; text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #8a6b74; }
+.bp-tabs span.on { background: var(--accent-b); color: #fff; font-weight: 700; }
+.bp-rows { flex: 1; display: flex; flex-direction: column; justify-content: space-around; padding: 6px 14px; }
+.bp-rows div { display: grid; grid-template-columns: 112px 1fr; gap: 10px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid #eadde1; }
+.bp-rows div:last-child { border-bottom: 0; }
+.bp-rows b { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: #9b7c85; }
+.bp-rows span { font-size: 15.5px; font-weight: 600; line-height: 1.3; }
+.step .dhbtn { font-size: 15px; padding: 12px 16px; letter-spacing: 0.08em; }
+
 /* tease */
 .tease h1 { position: relative; padding: 22px 64px 0; font-size: 56px; }
 .tease .media img { -webkit-mask-image: linear-gradient(#000 45%, transparent 92%); mask-image: linear-gradient(#000 45%, transparent 92%); }
-.unlock { position: relative; align-self: center; margin: -40px 0 36px; }
+.unlock { position: relative; align-self: center; margin: 34px 0 0; }
 
 /* wall: full-bleed bento of stat cards in the page's own card style (big gradient number,
    a title with the time frame, a small chart drawn from the case numbers) */
@@ -229,13 +242,18 @@ const VIZ = {
 };
 const card = (c) => `<div class="card ${c.wide ? 'w2' : ''} ${c.side ? 'side' : ''}"><div class="ch"><div class="v grad">${esc(c.value)}</div><div class="t">${esc(c.title)}</div>${c.sub ? `<div class="s">${esc(c.sub)}</div>` : ''}</div>${c.viz ? `<div class="viz">${VIZ[c.viz](c)}</div>` : ''}</div>`;
 
+// A filled-out page of the campaign blueprint (Google Slides), redrawn flat: the section tabs
+// along the top, then its fields as label / value rows.
+const blueprint = (t) => `<div class="bp"><div class="bp-tabs">${t.tabs.map((x, n) => `<span class="${n === t.active ? 'on' : ''}">${esc(x)}</span>`).join('')}</div>
+  <div class="bp-rows">${t.fields.map((f) => `<div><b>${esc(f.label)}</b><span>${esc(f.value)}</span></div>`).join('')}</div></div>`;
+
 const SLIDES = {
   hook: (kase, slide, i, total, img, asset) => `
 <section class="slide feed hook">
   ${top(kase, i, total, asset)}
   <img class="headline" src="${img(slide.headline)}">
   <div class="pill">${kase.context.map((c) => `<span>${esc(c.label)} <b>${esc(c.value)}</b></span>`).join('')}</div>
-  <div class="stats">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}</div>
+  <div class="stats">${slide.stats.map((id) => `<figure><img src="${img(id)}"></figure>`).join('')}${slide.oneLiner ? `<div class="one"><p>${accent(slide.oneLiner)}</p></div>` : ''}</div>
   <div class="gift">${icon('gift', 52)}<div class="what"><small>Free gift</small>${esc(kase.cta.gift)}</div>${cta(kase)}</div>
   ${foot(i, total, '<b>Swipe →</b> the whole case study')}
 </section>`,
@@ -280,7 +298,7 @@ const SLIDES = {
   <div class="steps">
     ${slide.steps
       .map((s, n) => `<div class="step"><h2><span class="grad">${String(n + 1).padStart(2, '0')}</span>${esc(s.title)}</h2>
-        <figure><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}</figure></div>`)
+        ${s.tile ? blueprint(s.tile) : `<figure><img src="${img(s.image)}">${s.caption ? `<figcaption>${esc(s.caption)}</figcaption>` : ''}${s.cta ? cta(kase) : ''}</figure>`}</div>`)
       .join('')}
   </div>
   ${foot(i, total, '<b>Swipe →</b> get the sequence')}
@@ -291,8 +309,8 @@ const SLIDES = {
   ${top(kase, i, total, asset)}
   ${kick(slide)}
   <h1>${accent(slide.title)}</h1>
-  ${media(slide, img)}
   <div class="unlock">${cta(kase)}</div>
+  ${media(slide, img)}
   ${foot(i, total, '<b>Swipe →</b> every number')}
 </section>`,
 
