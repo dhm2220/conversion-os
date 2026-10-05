@@ -1,0 +1,10 @@
+{
+  "about": "Every Different Hunger / 0 Hour Studio case the pipeline runs (npm run studio). mode: page = growth, from the live short-form page; draft = engineering, from the case-study draft + spec; hand = a hand-tuned case file (still QA-gated).",
+  "cases": [
+    { "id": "steelcon", "variant": "growth", "mode": "hand" },
+    { "id": "ansel", "variant": "growth", "mode": "page", "url": "https://0hr.app/case-studies/ansel" },
+    { "id": "new-equity", "variant": "growth", "mode": "page", "url": "https://0hr.app/case-studies/new-equity" },
+    { "id": "dream-payments", "variant": "engineering", "mode": "draft" },
+    { "id": "lateral", "variant": "engineering", "mode": "draft" }
+  ]
+}

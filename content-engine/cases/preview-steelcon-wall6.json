@@ -1,0 +1,233 @@
+{
+  "id": "preview-steelcon-wall6",
+  "brand": {
+    "bg": "#08090b",
+    "logo": "../source/brand/dh-logo-dark.png",
+    "displayFont": "../source/brand/blanc-bold.woff2",
+    "displayFontLight": "../source/brand/blanc-ultralight.woff2"
+  },
+  "industry": "Manufacturing",
+  "headline": "How SteelCon Built a $10M+ Pipeline in 26 Days",
+  "krs": [
+    {
+      "value": "$10M+",
+      "label": "Pipeline value"
+    },
+    {
+      "value": "2 days",
+      "label": "To first lead"
+    },
+    {
+      "value": "12+",
+      "label": "Qualified leads"
+    }
+  ],
+  "liveUrl": "https://differenthunger.com/p/manufacturing-lead-generation-case-study-steelcon",
+  "ctaDomain": "differenthunger.com",
+  "source": "Content Management OS \u00b7 Case Studies tab (SteelCon)",
+  "video": "../source/steelcon-scroll.mov",
+  "crop": {
+    "top": 100,
+    "bottom": 80
+  },
+  "shots": [
+    {
+      "id": "hero",
+      "t": 0.5
+    },
+    {
+      "id": "leads",
+      "t": 1.25
+    },
+    {
+      "id": "pipeline",
+      "t": 1.5
+    },
+    {
+      "id": "bonus",
+      "t": 2.0
+    },
+    {
+      "id": "modal",
+      "t": 3.5
+    },
+    {
+      "id": "before",
+      "t": 4.0
+    },
+    {
+      "id": "after",
+      "t": 4.5
+    },
+    {
+      "id": "problem",
+      "t": 4.75
+    },
+    {
+      "id": "solution",
+      "t": 5.25
+    },
+    {
+      "id": "research",
+      "t": 5.75
+    },
+    {
+      "id": "strategy",
+      "t": 6.25
+    },
+    {
+      "id": "deliverables",
+      "t": 6.5
+    },
+    {
+      "id": "tech-stack",
+      "t": 7.25
+    },
+    {
+      "id": "results",
+      "t": 8.0
+    },
+    {
+      "id": "launch",
+      "t": 8.5
+    },
+    {
+      "id": "first-lead",
+      "t": 9.0
+    },
+    {
+      "id": "pipeline-proof",
+      "t": 9.5
+    },
+    {
+      "id": "start-now",
+      "t": 10.5
+    },
+    {
+      "id": "headline",
+      "src": "../source/steelcon/headline.jpg"
+    },
+    {
+      "id": "stat-first-lead",
+      "src": "../source/steelcon/stat-first-lead.jpg"
+    },
+    {
+      "id": "stat-leads",
+      "src": "../source/steelcon/stat-leads.jpg"
+    },
+    {
+      "id": "stat-pipeline",
+      "src": "../source/steelcon/stat-pipeline.jpg"
+    },
+    {
+      "id": "before-after",
+      "src": "../source/steelcon/before-after.jpg"
+    },
+    {
+      "id": "avatar-bill",
+      "src": "../source/steelcon/avatar-bill.jpg"
+    },
+    {
+      "id": "w-research",
+      "src": "../source/steelcon/w-research.jpg"
+    },
+    {
+      "id": "w-blueprint",
+      "src": "../source/steelcon/w-blueprint.jpg"
+    },
+    {
+      "id": "w-deliverables",
+      "src": "../source/steelcon/w-deliverables.jpg"
+    },
+    {
+      "id": "w-stack",
+      "src": "../source/steelcon/w-stack.jpg"
+    },
+    {
+      "id": "upgrade",
+      "src": "../source/steelcon/upgrade.jpg"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "wall",
+      "title": "Campaign Results",
+      "cards": [
+        {
+          "value": "$10M+",
+          "title": "Pipeline in 26 days",
+          "wide": true,
+          "viz": "line",
+          "from": "Launch",
+          "to": "Day 26"
+        },
+        {
+          "value": "2",
+          "title": "Days to first lead",
+          "viz": "progress",
+          "from": "Launch",
+          "to": "Lead #1"
+        },
+        {
+          "value": "13",
+          "title": "Interested leads",
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Email 1",
+              "n": 7
+            },
+            {
+              "label": "Email 2",
+              "n": 5
+            },
+            {
+              "label": "Email 3",
+              "n": 1
+            }
+          ]
+        },
+        {
+          "value": "70%",
+          "title": "Open rate",
+          "viz": "bench",
+          "actual": 70,
+          "standard": 50
+        },
+        {
+          "value": "14%",
+          "title": "Reply rate",
+          "viz": "bench",
+          "actual": 14,
+          "standard": 8
+        },
+        {
+          "value": "3 jobs",
+          "title": "Priced, each 7+ figures",
+          "sub": "From one developer intro",
+          "full": true
+        }
+      ]
+    }
+  ],
+  "storyMap": [],
+  "context": [
+    {
+      "label": "Industry",
+      "value": "Manufacturing"
+    },
+    {
+      "label": "Location",
+      "value": "Canada"
+    },
+    {
+      "label": "Employees",
+      "value": "500\u20131,000"
+    }
+  ],
+  "cta": {
+    "keyword": "SEQUENCE",
+    "gift": "The exact outreach sequence behind this $10M+ pipeline"
+  },
+  "scope": []
+}

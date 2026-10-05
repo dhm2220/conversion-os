@@ -1,0 +1,116 @@
+{
+  "id": "lateral",
+  "title": "How to Create Your Content, Funnel and Website from 0 to Launch without Hiring in Under 3 Months",
+  "draft": "~/0-hr/tools/case-study-gen/out/lateral/draft.json",
+  "publicDir": "~/0-hr/apps/portal/public",
+  "playbook": "https://differenthunger.com/p/lateral-fullfillment-case-study",
+  "cover": "/showcase/lateral-cover.jpg",
+  "marquee": "marquee.png",
+  "marqueeTiles": [
+    "https://0hr.app/showcase/templates/lateral/01.webp",
+    "https://0hr.app/showcase/templates/lateral/slide-09.webp",
+    "https://0hr.app/system/presentation/lateral-mobile-trio.png",
+    "https://0hr.app/showcase/templates/lateral/02.webp",
+    "https://0hr.app/system/presentation/lateral-device-showcase.png",
+    "https://0hr.app/playbooks/lateral/06.png",
+    "https://0hr.app/showcase/templates/lateral/03.webp",
+    "https://0hr.app/showcase/templates/lateral/slide-21.webp",
+    "https://0hr.app/showcase/sites/lateral--presales.webp",
+    "https://0hr.app/showcase/templates/lateral/05.webp",
+    "https://0hr.app/system/presentation/lateral-page-scroll.png",
+    "https://0hr.app/showcase/hero/acq-case-lateral-cover.webp",
+    "https://0hr.app/showcase/templates/lateral/06.webp",
+    "https://0hr.app/system/presentation/lateral-screen-grid.png",
+    "https://0hr.app/playbooks/lateral/05.png",
+    "https://0hr.app/showcase/templates/lateral/07.webp",
+    "https://0hr.app/showcase/templates/lateral/slide-30.webp"
+  ],
+  "deckSource": "Lateral project presentation (human-designed, Figma \u2192 reference-library/briefs/client-project-presentation/svg). Eyebrow, headline and \"what we did\" line transcribed word for word from each title card; visual = the deck slide that follows it. Usage Guidelines (client instructions) left out.",
+  "deckProcess": "deck/slide-03.png",
+  "deckSlides": [
+    {
+      "eyebrow": "Market Research & Persona Definition",
+      "title": "Target Personas for Strategic Positioning",
+      "text": "We created detailed target personas to guide Lateral Fulfillment\u2019s positioning, messaging and go to market efforts.",
+      "image": "deck/slide-06.png"
+    },
+    {
+      "eyebrow": "Lateral Fulfillment Positioning",
+      "title": "Brand Positioning & Messaging",
+      "text": "",
+      "image": "deck/slide-07.png"
+    },
+    {
+      "eyebrow": "User Experience",
+      "title": "Compelling Copy & User Friendly Wireframes",
+      "text": "Clear and compelling copy was created to what Lateral Fulfillment does, how it works and their unique advantage, supported by user-friendly wireframes.",
+      "image": "deck/slide-11.png"
+    },
+    {
+      "eyebrow": "Visual Design",
+      "title": "Custom Branded Icons & Illustrations",
+      "text": "We designed custom line icons and isometric illustrations that visually represented Lateral\u2019s key service offerings, adding brand consistency and visual appeal to the website.",
+      "image": "deck/slide-14.png"
+    },
+    {
+      "eyebrow": "Visual Design",
+      "title": "Illustrating the Fulfillment Process",
+      "text": "A custom isometric graphic that visually simplifies Lateral\u2019s Section 321 fulfillment process, helping users understand complex logistics with ease.",
+      "image": "deck/slide-16.png"
+    },
+    {
+      "eyebrow": "Website Design",
+      "title": "Smart Design for an Enhanced User Experience",
+      "text": "We designed website pages that highlight Lateral Fulfillment\u2019s smarter approach and deliver a delightful user experience that included a dark / light mode toggle throughout the entire website.",
+      "image": "deck/slide-18.png"
+    },
+    {
+      "eyebrow": "Animations & Interactions",
+      "title": "Interactive Animations to Boost Exploration",
+      "text": "We integrated animations and interactive objects associated with logistics like globes, freight containers and packages throughout the website to enhance user experience and encourage deeper exploration.",
+      "image": "deck/slide-21.png"
+    },
+    {
+      "eyebrow": "Website Development",
+      "title": "Mobile Friendly, Responsive Web Development",
+      "text": "The website is responsive and optimized for mobile users, providing a seamless experience across all devices.",
+      "image": "deck/slide-23.png"
+    },
+    {
+      "eyebrow": "Explainer Video",
+      "title": "The Smarter Way to Fulfill Explainer Video",
+      "text": "We created a mobile-optimized video that breaks down the complex fulfillment process in a clear, engaging way, showcasing Lateral\u2019s brand positioning.",
+      "image": "deck/slide-26.png"
+    },
+    {
+      "eyebrow": "Product Demo",
+      "title": "Interactive Product Demo for Building Trust",
+      "text": "A hands-on product demo that demonstrates how Lateral\u2019s fulfillment program works, building trust and credibility with potential partners.",
+      "image": "deck/slide-28.png"
+    },
+    {
+      "eyebrow": "Educational Guides and Resources",
+      "title": "Educational Guides Optimized for Conversion",
+      "text": "We developed educational guides for each stage of the funnel to educate DTC brand decision makers that logically lead them to the next stage of the funnel.",
+      "image": "deck/slide-32.png"
+    },
+    {
+      "eyebrow": "Lead Generation",
+      "title": "3 Step Lead Generation Funnel",
+      "text": "We created a simple, effective lead generation funnel to capture website visitors and convert them into leads. We used Make.com as an interim solution to deliver the emails while HubSpot was being setup.",
+      "image": "deck/slide-34.png"
+    },
+    {
+      "eyebrow": "Sales Funnel",
+      "title": "Three-Step Sales Funnel for Consultations",
+      "text": "We created a 3 page sales funnel to pre-qualify leads and schedule consultations:",
+      "image": "deck/slide-36.png"
+    },
+    {
+      "eyebrow": "Tech Stack",
+      "title": "Tech Stack Setup for Website Functionality",
+      "text": "",
+      "image": "deck/slide-38.png"
+    }
+  ]
+}

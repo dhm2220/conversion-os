@@ -1,0 +1,127 @@
+{
+  "id": "mcm-companion-care-sari-r",
+  "url": "https://mcmprivatecare.com/case-studies/companion-care-sari-r",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "After Dad Passed, MCM's Caregivers Became the People We Counted On for Mom.",
+  "krs": [
+    {
+      "value": "4 yrs",
+      "label": "With MCM"
+    },
+    {
+      "value": "Mom",
+      "label": "After Dad passed"
+    },
+    {
+      "value": "Companion",
+      "label": "In-home care"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [
+    {
+      "id": "cover",
+      "src": "../source/mcm-companion-care-sari-r/cover.jpg"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "After Dad Passed, MCM's Caregivers Became the People We Counted On for Mom.",
+      "stats": [
+        {
+          "value": "4 yrs",
+          "label": "With MCM",
+          "source": "testimonial"
+        },
+        {
+          "value": "Mom",
+          "label": "After Dad passed",
+          "source": "testimonial"
+        },
+        {
+          "value": "Companion",
+          "label": "In-home care",
+          "source": "testimonial"
+        }
+      ],
+      "marquee": "cover",
+      "textBottom": true
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "Sari R.",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "After losing Dad, the family needed help caring for Mom.",
+        "After Dad · The family needed support for Mom",
+        "Multiple · Caregivers brought in for her care"
+      ],
+      "after": [
+        "Caregivers who became people the family genuinely loves.",
+        "Stellar · The caregivers Sari describes",
+        "Charlene & Precious · Two they came to love",
+        "Responsive · Scheduling staff at every step"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 01 / 04",
+      "title": "They stepped in at a hard moment.",
+      "text": "After Sari's father passed, the family needed care for her mother, and MCM brought in the people to provide it.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 02 / 04",
+      "title": "The caregivers were the difference.",
+      "text": "\"The caregivers have been stellar and we have really enjoyed working with Charlene and with Precious.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 03 / 04",
+      "title": "The whole team was responsive.",
+      "text": "\"I also wanted to thank the staff that works on scheduling...",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why MCM mattered · 04 / 04",
+      "title": "Years in, they're still grateful.",
+      "text": "Nearly four years on, Sari is \"very, very satisfied and so appreciative of Steve and Andrea.\"",
+      "image": null
+    },
+    {
+      "type": "quote",
+      "text": "We've been very, very satisfied and are so appreciative of Steve and Andrea... everyone's been extremely well responsive and helped us in every step of the way. Thank you so much.",
+      "by": "Sari R. · about four years with MCM"
+    },
+    {
+      "type": "cta",
+      "title": "Caring for a parent after losing the other?"
+    }
+  ]
+}

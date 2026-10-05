@@ -1,0 +1,119 @@
+{
+  "id": "mcm-choosing-home-care-smith",
+  "url": "https://mcmprivatecare.com/case-studies/choosing-home-care-smith",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "I Audited Three Agencies on a Spreadsheet. My Skeptical Dad Called MCM \"His Buddy.\"",
+  "krs": [
+    {
+      "value": "4 yrs",
+      "label": "With MCM"
+    },
+    {
+      "value": "Both parents",
+      "label": "Lost the same year"
+    },
+    {
+      "value": "24/7",
+      "label": "In-home care"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "I Audited Three Agencies on a Spreadsheet. My Skeptical Dad Called MCM \"His Buddy.\"",
+      "stats": [
+        {
+          "value": "4 yrs",
+          "label": "With MCM",
+          "source": "testimonial"
+        },
+        {
+          "value": "Both parents",
+          "label": "Lost the same year",
+          "source": "testimonial"
+        },
+        {
+          "value": "24/7",
+          "label": "In-home care",
+          "source": "testimonial"
+        }
+      ]
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "Amy Smith",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "Amy ran a full comparison of agencies while caring for both dying parents.",
+        "3 agencies · Worked with",
+        "Spreadsheet · Audited features across many options"
+      ],
+      "after": [
+        "MCM met the family where they were, and won over a father who wanted no help at all.",
+        "\"His buddy\" · What Dad came to call his aide",
+        "Home safety check · Before Dad came home"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why she chose MCM · 01 / 04",
+      "title": "She did the homework, and MCM stood out.",
+      "text": "\"I'm super organized and made my own spreadsheets for tracking medicines & daily routines.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why she chose MCM · 02 / 04",
+      "title": "Her skeptical dad came around completely.",
+      "text": "By the end, \"he was calling his aide 'his buddy'...",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why she chose MCM · 03 / 04",
+      "title": "They handled the details, including safety.",
+      "text": "Before her dad came home, \"Steve did a home safety inspection before Dad came home to ensure Dad was safe at home.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why she chose MCM · 04 / 04",
+      "title": "They eased the hardest path.",
+      "text": "\"I was truly touched by all of the heart that went into...",
+      "image": null
+    },
+    {
+      "type": "quote",
+      "text": "Don't wait to call; don't bother researching competitors; there's no one like them in town. Trust me, I did the research; I have the spreadsheets to prove it; I would call them in an instant if I ever needed help for a loved one.",
+      "by": "Amy Smith"
+    },
+    {
+      "type": "cta",
+      "title": "Comparing agencies for a parent who needs care?"
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "id": "ansel",
+  "url": "https://0hr.app/case-studies/ansel",
+  "ownBrand": true,
+  "brand": {
+    "bg": "#08090b",
+    "logo": "../source/brand/dh-logo-dark.png",
+    "displayFont": "../source/brand/blanc-bold.woff2",
+    "displayFontLight": "../source/brand/blanc-ultralight.woff2"
+  },
+  "source": "Live page https://0hr.app/case-studies/ansel, captured 2026-10-05. All slide copy is the page's own text.",
+  "industry": "Advertising",
+  "headline": "Ansel Generated 27 Leads and Closed a $5.5K Client in 3 Weeks",
+  "krs": [],
+  "ctaDomain": "differenthunger.com",
+  "context": [
+    {
+      "label": "Industry",
+      "value": "Advertising"
+    },
+    {
+      "label": "Location",
+      "value": "USA"
+    },
+    {
+      "label": "Type",
+      "value": "Agency"
+    },
+    {
+      "label": "Employees",
+      "value": "2–10"
+    }
+  ],
+  "scope": [
+    "Lead Generation",
+    "Client Acquisition"
+  ],
+  "cta": {
+    "gift": "Get the Exact LinkedIn Profile + Outreach Message Used",
+    "button": "GET INSTANT ACCESS",
+    "finalButton": "▶ START NOW"
+  },
+  "shots": [
+    {
+      "id": "screen-01",
+      "screen": 1
+    },
+    {
+      "id": "screen-02",
+      "screen": 2
+    },
+    {
+      "id": "screen-03",
+      "screen": 3
+    },
+    {
+      "id": "screen-05",
+      "screen": 5
+    },
+    {
+      "id": "screen-06",
+      "screen": 6
+    },
+    {
+      "id": "screen-07",
+      "screen": 7
+    },
+    {
+      "id": "screen-08",
+      "screen": 8
+    },
+    {
+      "id": "screen-09",
+      "screen": 9
+    },
+    {
+      "id": "screen-10",
+      "screen": 10
+    },
+    {
+      "id": "screen-12",
+      "screen": 12
+    },
+    {
+      "id": "screen-13",
+      "screen": 13
+    },
+    {
+      "id": "screen-14",
+      "screen": 14
+    },
+    {
+      "id": "stat-1",
+      "src": "../source/ansel/stat-1.png"
+    },
+    {
+      "id": "stat-2",
+      "src": "../source/ansel/stat-2.png"
+    },
+    {
+      "id": "stat-3",
+      "src": "../source/ansel/stat-3.png"
+    },
+    {
+      "id": "headline",
+      "src": "../source/ansel/headline.png"
+    },
+    {
+      "id": "transformation",
+      "src": "../source/ansel/transformation.png"
+    },
+    {
+      "id": "avatar-1",
+      "src": "../source/ansel/avatar-1.png"
+    },
+    {
+      "id": "built-1",
+      "src": "../source/ansel/built-1.png"
+    },
+    {
+      "id": "built-3",
+      "src": "../source/ansel/built-3.png"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hook",
+      "headline": "headline",
+      "stats": [
+        "stat-1",
+        "stat-2",
+        "stat-3"
+      ]
+    },
+    {
+      "type": "section",
+      "icon": "shift",
+      "kicker": "The transformation",
+      "images": [
+        "transformation"
+      ]
+    },
+    {
+      "type": "context",
+      "icon": "info",
+      "kicker": "Business - Problem - Solution",
+      "blocks": [
+        {
+          "icon": "persona",
+          "title": "Business",
+          "text": "Ansel was a conscious advertising agency that partners with eco-friendly, purpose driven apparel brands such as O'Neill, United by Blue, and more to create and scale profitable advertising campaigns."
+        },
+        {
+          "icon": "warning",
+          "title": "Problem",
+          "text": "Like many advertising and marketing agencies, the executive team of Ansel was too busy creating and fulfilling profitable advertising campaigns for clients to create their own internal lead generation campaigns."
+        },
+        {
+          "icon": "bulb",
+          "title": "Solution",
+          "text": "Ansel realized they needed a lead generation system that predictably generated quality leads and sales appointments. Instead of going through the painful process of doing this themselves, they decided to partner with us."
+        }
+      ]
+    },
+    {
+      "type": "proof",
+      "icon": "quote",
+      "kicker": "Social proof",
+      "quotes": [
+        {
+          "logo": "Ansel",
+          "text": "“I'm stoked to get this going man, tired of clicking all day.”",
+          "name": "John Lim",
+          "role": "Co-founder, Ansel",
+          "avatar": "avatar-1"
+        }
+      ]
+    },
+    {
+      "type": "built",
+      "icon": "build",
+      "kicker": "What we built",
+      "steps": [
+        {
+          "title": "Research & Targeting",
+          "image": "built-1"
+        },
+        {
+          "title": "Campaign Deliverables",
+          "image": "built-3"
+        }
+      ]
+    },
+    {
+      "type": "tease",
+      "icon": "gift",
+      "kicker": "Bonus content",
+      "title": "Get the LinkedIn Profile + Outreach Message that Ansel Used to Generate 27 Leads and Close a $5.5K Client in 3 Weeks",
+      "images": []
+    },
+    {
+      "type": "cta",
+      "title": "Ready to Be the Next Success Story?"
+    }
+  ],
+  "storyMap": [
+    "screen-01",
+    "screen-02",
+    "screen-03",
+    "screen-05",
+    "screen-06",
+    "screen-07",
+    "screen-08",
+    "screen-09",
+    "screen-10",
+    "screen-12",
+    "screen-13",
+    "screen-14"
+  ]
+}
