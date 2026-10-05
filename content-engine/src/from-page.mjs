@@ -139,6 +139,8 @@ const endY = await page.evaluate(() => {
   const more = [...document.querySelectorAll('section')].find((s) => /More Success Stories/.test(s.innerText));
   return more ? more.getBoundingClientRect().top + window.scrollY : document.documentElement.scrollHeight;
 });
+// The page's own text, saved as this case's source: the QA gate checks every slide line against it.
+writeFileSync(join(srcDir, 'source.txt'), await page.evaluate(() => document.body.innerText));
 await browser.close();
 const usable = Math.max(1, Math.floor(endY / STRIDE));
 const pick = Array.from({ length: Math.min(12, usable) }, (_, n) => 1 + Math.round((n * (usable - 1)) / Math.max(1, Math.min(12, usable) - 1)));
@@ -157,7 +159,8 @@ const carousel = [
   blocks.length && { type: 'context', icon: 'info', kicker: 'Business - Problem - Solution', blocks },
   quotes.length && { type: 'proof', icon: 'quote', kicker: 'Social proof', quotes },
   steps.length && { type: 'built', icon: 'build', kicker: 'What we built', steps: steps.slice(0, 4) },
-  giftLong && deliverables && { type: 'tease', icon: 'gift', kicker: 'Bonus content', title: giftLong, images: [deliverables] },
+  // The bonus doc already shows in What we built, so the tease is the offer line and its button.
+  giftLong && { type: 'tease', icon: 'gift', kicker: 'Bonus content', title: giftLong, images: [] },
   finalTitle && { type: 'cta', title: finalTitle },
 ].filter(Boolean);
 

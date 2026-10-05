@@ -167,6 +167,10 @@ h1 { font-family: var(--display); font-weight: 700; letter-spacing: -0.02em; lin
 
 /* tease */
 .tease h1 { position: relative; padding: 22px 64px 0; font-size: 56px; }
+.tease.noimg { justify-content: flex-start; }
+.tease.noimg h1 { margin-top: auto; font-size: 76px; }
+.tease.noimg .unlock { margin-bottom: auto; margin-top: 44px; }
+.tease.noimg .foot { margin-top: 0; }
 .tease .media img { -webkit-mask-image: linear-gradient(#000 45%, transparent 92%); mask-image: linear-gradient(#000 45%, transparent 92%); }
 .unlock { position: relative; align-self: flex-start; margin: 34px 64px 0; }
 .unlock .dhbtn { font-size: 34px; padding: 30px 44px; border-radius: 16px; }
@@ -477,12 +481,12 @@ const SLIDES = {
 </section>`,
 
   tease: (kase, slide, i, total, img, asset) => `
-<section class="slide feed tease">
+<section class="slide feed tease ${slide.images?.length ? '' : 'noimg'}">
   ${top(kase, i, total, asset)}
   ${kick(slide)}
   <h1>${accent(slide.title)}</h1>
   <div class="unlock">${cta(kase)}</div>
-  ${media(slide, img)}
+  ${slide.images?.length ? media(slide, img) : ''}
   ${foot(kase, asset, i, total)}
 </section>`,
 

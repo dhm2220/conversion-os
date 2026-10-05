@@ -216,47 +216,6 @@
       ]
     },
     {
-      "type": "built",
-      "icon": "build",
-      "kicker": "What we built",
-      "steps": [
-        {
-          "title": "Discovery",
-          "image": "step-1",
-          "fill": true
-        },
-        {
-          "title": "UX",
-          "image": "step-2",
-          "fill": true
-        },
-        {
-          "title": "Design",
-          "image": "step-3",
-          "fill": true
-        },
-        {
-          "title": "Deploy Tech Stack",
-          "stack": [
-            {
-              "name": "Google Docs",
-              "role": "Project Specs"
-            },
-            {
-              "name": "Google Drive",
-              "role": "Design Deliverables"
-            }
-          ]
-        },
-        {
-          "title": "Development",
-          "image": "step-5",
-          "fill": true,
-          "pos": "center 40%"
-        }
-      ]
-    },
-    {
       "type": "deck",
       "kicker": "6 days after sign-up · 01 / 05",
       "title": "Discovery",

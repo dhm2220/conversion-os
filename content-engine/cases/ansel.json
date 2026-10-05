@@ -8,7 +8,7 @@
     "displayFont": "../source/brand/blanc-bold.woff2",
     "displayFontLight": "../source/brand/blanc-ultralight.woff2"
   },
-  "source": "Live page https://0hr.app/case-studies/ansel, captured 2026-10-04. All slide copy is the page's own text.",
+  "source": "Live page https://0hr.app/case-studies/ansel, captured 2026-10-05. All slide copy is the page's own text.",
   "industry": "Advertising",
   "headline": "Ansel Generated 27 Leads and Closed a $5.5K Client in 3 Weeks",
   "krs": [],
@@ -196,9 +196,7 @@
       "icon": "gift",
       "kicker": "Bonus content",
       "title": "Get the LinkedIn Profile + Outreach Message that Ansel Used to Generate 27 Leads and Close a $5.5K Client in 3 Weeks",
-      "images": [
-        "built-3"
-      ]
+      "images": []
     },
     {
       "type": "cta",

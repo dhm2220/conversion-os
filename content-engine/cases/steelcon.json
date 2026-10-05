@@ -24,7 +24,7 @@
   ],
   "liveUrl": "https://differenthunger.com/p/manufacturing-lead-generation-case-study-steelcon",
   "ctaDomain": "differenthunger.com",
-  "source": "Content Management OS \u00b7 Case Studies tab (SteelCon)",
+  "source": "Content Management OS \u00b7 Case Studies tab (SteelCon) + the live page 0hr.app/case-studies/steelcon (every slide line checked by src/qa.mjs)",
   "video": "../source/steelcon-scroll.mov",
   "crop": {
     "top": 100,
@@ -156,8 +156,7 @@
         "stat-first-lead",
         "stat-leads",
         "stat-pipeline"
-      ],
-      "oneLiner": "A Canada-based steel manufacturer built a $10M+ pipeline in 26 days."
+      ]
     },
     {
       "type": "section",
@@ -294,7 +293,7 @@
       "type": "tease",
       "icon": "gift",
       "kicker": "Free content upgrade",
-      "title": "Want to see the exact sequence we created that built a $10 million pipeline for SteelCon in 26 days?",
+      "title": "Get the SteelCon Sales Outreach Sequence that SteelCon Used to Build a $10M+ Pipeline in 26 Days",
       "images": [
         "upgrade"
       ]
@@ -305,110 +304,43 @@
       "cards": [
         {
           "value": "$10M+",
-          "title": "Pipeline in 26 days",
-          "wide": true,
+          "title": "Pipeline in 26 Days",
           "viz": "line",
           "from": "Launch",
-          "to": "Day 26"
+          "to": "Day 26",
+          "wide": true
         },
         {
           "value": "2",
-          "title": "Days to first lead",
+          "title": "Days to First Lead",
           "viz": "progress",
           "from": "Launch",
           "to": "Lead #1"
         },
         {
           "value": "13",
-          "title": "Interested leads",
-          "viz": "bars",
-          "rows": [
-            {
-              "label": "Email 1",
-              "n": 7
-            },
-            {
-              "label": "Email 2",
-              "n": 5
-            },
-            {
-              "label": "Email 3",
-              "n": 1
-            }
-          ]
-        },
-        {
-          "value": "70%",
-          "title": "Open rate",
-          "viz": "bench",
-          "actual": 70,
-          "standard": 50
-        },
-        {
-          "value": "14%",
-          "title": "Reply rate",
-          "viz": "bench",
-          "actual": 14,
-          "standard": 8
-        },
-        {
-          "value": "2,497",
-          "title": "Decision-makers targeted",
-          "viz": "chips",
-          "items": [
-            "B2B",
-            "USA & Canada",
-            "C-Level & VP"
-          ]
-        },
-        {
-          "value": "508 \u2192 13",
-          "title": "Emails sent, down to interested leads",
-          "wide": true,
-          "viz": "bars",
-          "rows": [
-            {
-              "label": "Sent",
-              "n": 508
-            },
-            {
-              "label": "Opened",
-              "n": 350
-            },
-            {
-              "label": "Replied",
-              "n": 52
-            },
-            {
-              "label": "Interested",
-              "n": 13
-            }
-          ],
-          "side": true
-        },
-        {
-          "value": "30%",
-          "title": "Interested \u2192 qualified",
-          "viz": "bench",
-          "actual": 30,
-          "standard": 15
+          "title": "Interested Leads in 26 Days",
+          "sub": "13 interested leads from 534 contacted in the 26-day trial (Day 59\u201385)"
         },
         {
           "value": "12+",
-          "title": "Qualified leads",
-          "sub": "Proposals worth over 8 figures"
+          "title": "Generated More Than 12 Qualified Leads",
+          "sub": "Leading to Proposals and Sales Opportunities Worth Over 8-Figures"
+        },
+        {
+          "value": "2,497",
+          "title": "List Size"
         },
         {
           "value": "3 jobs",
-          "title": "Priced, each 7+ figures",
-          "sub": "From one developer intro"
+          "title": "Pricing 3 jobs, each worth 7+ figures",
+          "full": true
         }
       ]
     },
     {
       "type": "cta",
-      "title": "Ready to be the next success story?",
-      "sub": "Comment or DM \u201cSEQUENCE\u201d and we\u2019ll send you the exact outreach sequence behind SteelCon\u2019s $10M+ pipeline."
+      "title": "Ready to Be the Next Success Story?"
     }
   ],
   "storyMap": [
@@ -440,8 +372,9 @@
     }
   ],
   "cta": {
-    "keyword": "SEQUENCE",
-    "gift": "The exact outreach sequence behind this $10M+ pipeline"
+    "gift": "Get the Exact SteelCon Sales Outreach Sequence Used",
+    "button": "GET INSTANT ACCESS",
+    "finalButton": "START NOW"
   },
   "scope": []
 }

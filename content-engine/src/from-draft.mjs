@@ -73,7 +73,8 @@ const cover = spec.cover ? shot('cover', spec.cover) : null;
 const carousel = [
   // A spec "marquee" (made by marquee-shot.mjs from the site's 3D marquee) replaces the stat cards:
   // the hook shows the work, not the data.
-  spec.marquee
+  // Locked rule: the cover is a marquee only with 12+ unique work tiles; otherwise stat cards + hero.
+  spec.marquee && new Set(spec.marqueeTiles ?? []).size >= 12
     ? { type: 'hookEng', title: spec.title, marquee: shot('marquee', spec.marquee), scope: d.scope ?? [] }
     : { type: 'hookEng', title: spec.title, cards: cards.slice(0, 2), image: cover, scope: d.scope ?? [] },
   spec.transformImage
@@ -92,7 +93,7 @@ const carousel = [
         // Overview: the deck's process slide when there is one, else the build-steps grid.
         spec.deckProcess
           ? { type: 'section', icon: 'build', kicker: 'What we built', images: [shot('deck-process', spec.deckProcess)] }
-          : steps.length && { type: 'built', icon: 'build', kicker: 'What we built', steps: steps.slice(0, 6) },
+          : null, // the deliverable slides are the build; a steps grid would repeat their visuals
         ...spec.deckSlides.map((x, n, all) => ({
           type: 'deck', kicker: `${x.eyebrow} · ${String(n + 1).padStart(2, '0')} / ${String(all.length).padStart(2, '0')}`,
           title: x.title, text: x.text, image: shot(`deck-${n + 1}`, x.image),
