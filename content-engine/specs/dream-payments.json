@@ -1,0 +1,47 @@
+{
+  "id": "dream-payments",
+  "title": "Dream Payments Redesigned Their Brand & Product UX and Raised $11.9M",
+  "draft": "~/0-hr/tools/case-study-gen/out/dream-payments/draft.json",
+  "publicDir": "~/0-hr/apps/portal/public",
+  "playbook": "https://differenthunger.com/p/financial-services-website-design-case-study-dream-payments",
+  "cover": "/showcase/dream-payments-work.jpg",
+  "stepVisuals": {
+    "Discovery": "v/persona.jpg",
+    "UX": "v/how-it-works.jpg",
+    "Design": "v/site.jpg",
+    "Development": "v/pages.jpg@center 40%"
+  },
+  "deckSource": "Pattern = Lateral deck title card (eyebrow \u00b7 headline \u00b7 one line \u00b7 visual). Copy word for word from the source-traced draft: headline = step / milestone title, line = its item, eyebrow = its \"when\" or \"Brand Engineering\" (solution body).",
+  "deckSlides": [
+    {
+      "eyebrow": "6 days after sign-up",
+      "title": "Discovery",
+      "text": "We kicked off the engagement by understanding Dream's current UX, brand challenges, and market expansion goals.",
+      "image": "v/persona.jpg"
+    },
+    {
+      "eyebrow": "About 13 weeks after sign-up",
+      "title": "Overhaul of Their Product UX",
+      "text": "We designed a user experience flow that aligned with U.S. market expectations and clearly communicated Dream's value to new users and stakeholders.",
+      "image": "v/webapp.jpg"
+    },
+    {
+      "eyebrow": "Brand Engineering",
+      "title": "Design",
+      "text": "We applied a modern, premium visual identity across all core assets",
+      "image": "v/pos.jpg"
+    },
+    {
+      "eyebrow": "About 29 weeks after sign-up",
+      "title": "Full Website Redesign",
+      "text": "U.S. website kicked off on Day 151; final U.S. site designs and the Canada site UI guide delivered on Day 204",
+      "image": "v/site.jpg"
+    },
+    {
+      "eyebrow": "Brand Engineering",
+      "title": "Development",
+      "text": "All approved designs were handed off for development to ensure continuity and performance across platforms.",
+      "image": "v/pages.jpg"
+    }
+  ]
+}

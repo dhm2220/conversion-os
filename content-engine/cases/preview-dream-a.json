@@ -1,0 +1,320 @@
+{
+  "id": "preview-dream-a",
+  "variant": "engineering",
+  "palette": "mono",
+  "url": "https://differenthunger.com/p/financial-services-website-design-case-study-dream-payments",
+  "ownBrand": true,
+  "brand": {
+    "bg": "#08090b",
+    "logo": "../source/brand/dh-logo-dark.png",
+    "displayFont": "../source/brand/blanc-bold.woff2",
+    "displayFontLight": "../source/brand/blanc-ultralight.woff2"
+  },
+  "source": "Draft ~/0-hr/tools/case-study-gen/out/dream-payments/draft.json (source-traced) · playbook https://differenthunger.com/p/financial-services-website-design-case-study-dream-payments · title = published tile title.",
+  "industry": "FinTech",
+  "headline": "Dream Payments Redesigned Their Brand & Product UX and Raised $11.9M",
+  "krs": [],
+  "ctaDomain": "differenthunger.com",
+  "context": [
+    {
+      "label": "Location",
+      "value": "Canada"
+    },
+    {
+      "label": "Industry",
+      "value": "FinTech"
+    },
+    {
+      "label": "Stage",
+      "value": "7 Figures"
+    },
+    {
+      "label": "Employees",
+      "value": "11–50"
+    }
+  ],
+  "cta": {
+    "button": "START NOW",
+    "finalButton": "START NOW"
+  },
+  "shots": [
+    {
+      "id": "screen-01",
+      "screen": 1
+    },
+    {
+      "id": "screen-02",
+      "screen": 2
+    },
+    {
+      "id": "screen-04",
+      "screen": 4
+    },
+    {
+      "id": "screen-05",
+      "screen": 5
+    },
+    {
+      "id": "screen-06",
+      "screen": 6
+    },
+    {
+      "id": "screen-08",
+      "screen": 8
+    },
+    {
+      "id": "screen-09",
+      "screen": 9
+    },
+    {
+      "id": "screen-11",
+      "screen": 11
+    },
+    {
+      "id": "screen-12",
+      "screen": 12
+    },
+    {
+      "id": "screen-13",
+      "screen": 13
+    },
+    {
+      "id": "screen-15",
+      "screen": 15
+    },
+    {
+      "id": "screen-16",
+      "screen": 16
+    },
+    {
+      "id": "avatar-1",
+      "src": "../source/preview-dream-a/avatar-1.jpg"
+    },
+    {
+      "id": "avatar-2",
+      "src": "../source/preview-dream-a/avatar-2.jpg"
+    },
+    {
+      "id": "work-1-1",
+      "src": "../source/preview-dream-a/work-1-1.jpg"
+    },
+    {
+      "id": "work-1-2",
+      "src": "../source/preview-dream-a/work-1-2.jpg"
+    },
+    {
+      "id": "work-2-1",
+      "src": "../source/preview-dream-a/work-2-1.jpg"
+    },
+    {
+      "id": "work-2-2",
+      "src": "../source/preview-dream-a/work-2-2.jpg"
+    },
+    {
+      "id": "work-3-1",
+      "src": "../source/preview-dream-a/work-3-1.jpg"
+    },
+    {
+      "id": "work-3-2",
+      "src": "../source/preview-dream-a/work-3-2.jpg"
+    },
+    {
+      "id": "cover",
+      "src": "../source/preview-dream-a/cover.jpg"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "title": "Dream Payments Redesigned Their Brand & Product UX and Raised $11.9M",
+      "cards": [
+        {
+          "value": "6",
+          "title": "Days to Kickoff",
+          "viz": "progress",
+          "from": "Sign-Up",
+          "to": "Kickoff"
+        },
+        {
+          "value": "10",
+          "title": "Projects in 6 Months",
+          "viz": "bars",
+          "rows": [
+            {
+              "label": "Web",
+              "n": 3
+            },
+            {
+              "label": "Portals",
+              "n": 3
+            },
+            {
+              "label": "Product UX",
+              "n": 3
+            },
+            {
+              "label": "Print",
+              "n": 1
+            }
+          ]
+        }
+      ],
+      "image": "cover",
+      "scope": [
+        "Web Design",
+        "Product UX"
+      ]
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "The transformation",
+      "title": "Dream Payments’s Transformation",
+      "before": [
+        "their brand identity, website, and product UX weren't built to support enterprise-level growth",
+        "These touchpoints didn't reflect the premium positioning expected in the highly competitive U.S. fintech space",
+        "Uncertainty about finding a team that could deliver high-quality work across multiple fintech-focused projects"
+      ],
+      "after": [
+        "executed close to a dozen projects for Dream Payments",
+        "Premium, modern digital presence aligned with their U.S. expansion goals",
+        "Delivered nearly a dozen major projects in 6 months across brand, product UX, and web design"
+      ]
+    },
+    {
+      "type": "context",
+      "icon": "info",
+      "kicker": "Business - Problem - Solution",
+      "blocks": [
+        {
+          "icon": "persona",
+          "title": "Business",
+          "text": "Dream Payment is a fast-growing fintech company originally headquartered in Canada. As a Series A venture, they were expanding into the U.S. market with plans to compete at the enterprise level."
+        },
+        {
+          "icon": "warning",
+          "title": "Problem",
+          "text": "As Dream Payment expanded beyond Canada into the U.S. market, they encountered a critical roadblock: their brand identity, website, and product UX weren't built to support enterprise-level growth. These touchpoints didn't reflect the premium positioning expected in the highly competitive U.S. fintech space."
+        },
+        {
+          "icon": "bulb",
+          "title": "Solution",
+          "text": "The transformation was executed through our Brand Engineering process, which was designed to operate autonomously with minimal lift from their internal team."
+        }
+      ]
+    },
+    {
+      "type": "built",
+      "icon": "build",
+      "kicker": "What we built",
+      "steps": [
+        {
+          "title": "Discovery",
+          "items": [
+            "We kicked off the engagement by understanding Dream's current UX, brand challenges, and market expansion goals."
+          ]
+        },
+        {
+          "title": "UX",
+          "items": [
+            "We designed a user experience flow that aligned with U.S. market expectations and clearly communicated Dream's value to new users and stakeholders."
+          ]
+        },
+        {
+          "title": "Design",
+          "items": [
+            "We applied a modern, premium visual identity across all core assets"
+          ]
+        },
+        {
+          "title": "Deploy Tech Stack",
+          "stack": [
+            {
+              "name": "Google Docs",
+              "role": "Project Specs"
+            },
+            {
+              "name": "Google Drive",
+              "role": "Design Deliverables"
+            }
+          ]
+        },
+        {
+          "title": "Development",
+          "items": [
+            "All approved designs were handed off for development to ensure continuity and performance across platforms."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "icon": "image",
+      "kicker": "The work · website",
+      "images": [
+        "work-1-1",
+        "work-1-2"
+      ],
+      "row": false
+    },
+    {
+      "type": "section",
+      "icon": "image",
+      "kicker": "The work · product",
+      "images": [
+        "work-2-1",
+        "work-2-2"
+      ],
+      "row": false
+    },
+    {
+      "type": "section",
+      "icon": "image",
+      "kicker": "The work · persona + UX",
+      "images": [
+        "work-3-1",
+        "work-3-2"
+      ],
+      "row": true
+    },
+    {
+      "type": "proof",
+      "icon": "quote",
+      "kicker": "Social proof",
+      "quotes": [
+        {
+          "logo": "Dream Payments",
+          "text": "“Matt [and DH Creative] are a talented creative team also strong from a technical perspective. After our Series A, they executed on a dozen web, product & UX design projects with exceptional results. I've happily made several referrals on their behalf.”",
+          "name": "Christian Ali",
+          "role": "Former CMO, Dream Payments",
+          "avatar": "avatar-1"
+        },
+        {
+          "logo": "Dream Payments",
+          "text": "“[Matt] has a talented and creative team that have worked on a number of different projects for Dream [and] they have a great methodology that ensures results.”",
+          "name": "Christian Ali",
+          "role": "Former CMO, Dream Payments",
+          "avatar": "avatar-2"
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Ready to Be the Next Success Story?"
+    }
+  ],
+  "storyMap": [
+    "screen-01",
+    "screen-02",
+    "screen-04",
+    "screen-05",
+    "screen-06",
+    "screen-08",
+    "screen-09",
+    "screen-11",
+    "screen-12",
+    "screen-13",
+    "screen-15",
+    "screen-16"
+  ]
+}

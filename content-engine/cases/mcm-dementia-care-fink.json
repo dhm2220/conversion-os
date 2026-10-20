@@ -1,0 +1,119 @@
+{
+  "id": "mcm-dementia-care-fink",
+  "url": "https://mcmprivatecare.com/case-studies/dementia-care-fink",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "After a Couple of Agencies Failed Both Parents, We Finally Slept at Night.",
+  "krs": [
+    {
+      "value": "3 yrs",
+      "label": "With MCM"
+    },
+    {
+      "value": "Dementia",
+      "label": "Parents, 87 & 93"
+    },
+    {
+      "value": "24/7",
+      "label": "In-home care"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "After a Couple of Agencies Failed Both Parents, We Finally Slept at Night.",
+      "stats": [
+        {
+          "value": "3 yrs",
+          "label": "With MCM",
+          "source": "testimonial"
+        },
+        {
+          "value": "Dementia",
+          "label": "Parents, 87 & 93",
+          "source": "testimonial"
+        },
+        {
+          "value": "24/7",
+          "label": "In-home care",
+          "source": "testimonial"
+        }
+      ]
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "David Fink",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "The family tried other agencies first, and still couldn't rest.",
+        "87 & 93 · Two parents needing care",
+        "Couple of agencies · Over the last few years"
+      ],
+      "after": [
+        "The switch finally let the family sleep.",
+        "Daily care · The care they desperately needed",
+        "Medication · Administered and monitored"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they switched · 01 / 04",
+      "title": "Other agencies left them struggling.",
+      "text": "Two parents, two sets of needs, and a couple of agencies over the years that never got it right.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they switched · 02 / 04",
+      "title": "MCM let them rest for the first time.",
+      "text": "They were \"finally able to sleep at night knowing my parents are finally receiving the in-home care on a daily basis they desperately needed.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they switched · 03 / 04",
+      "title": "The care covered the whole picture.",
+      "text": "Not just presence, but oversight: \"From their unwavering compassion to the monitoring of their daily life to the administration and monitoring of their medications.\"",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they switched · 04 / 04",
+      "title": "MCM went past what they hoped for.",
+      "text": "In David's words, MCM \"not only met our expectations but exceeded them beyond our wildest dreams.\"",
+      "image": null
+    },
+    {
+      "type": "quote",
+      "text": "Thank you Medical Consulting and Management for making the life of my parents the best it could be under the most difficult of circumstances!",
+      "by": "David Fink"
+    },
+    {
+      "type": "cta",
+      "title": "Tried an agency that isn't working for your parent?"
+    }
+  ]
+}

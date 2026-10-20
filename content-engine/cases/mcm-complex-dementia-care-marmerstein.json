@@ -1,0 +1,146 @@
+{
+  "id": "mcm-complex-dementia-care-marmerstein",
+  "url": "https://mcmprivatecare.com/case-studies/complex-dementia-care-marmerstein",
+  "ownBrand": true,
+  "palette": "mcm",
+  "brand": {
+    "name": "MCM",
+    "sub": "Private Care",
+    "bg": "#1B2A4A",
+    "text": "#ffffff",
+    "muted": "rgba(255,255,255,0.62)",
+    "accentA": "#C4963C",
+    "accentB": "#d4ad5e",
+    "logo": "../source/mcm/mcm-logo-white.png"
+  },
+  "source": "mcm-live app/case-studies/_lib/posts.ts + cases.ts (locked, verbatim). Photos: mcm-live/public/case-studies.",
+  "industry": "Home Care",
+  "headline": "My Wife Got Violent and the Police Got Involved. Then We Found MCM.",
+  "krs": [
+    {
+      "value": "7 yrs",
+      "label": "With MCM"
+    },
+    {
+      "value": "Dementia",
+      "label": "Wife, Ann"
+    },
+    {
+      "value": "24/7",
+      "label": "In-home care"
+    }
+  ],
+  "ctaDomain": "mcmprivatecare.com",
+  "context": [],
+  "cta": {
+    "button": "Call MCM at 240-789-4890",
+    "finalButton": "Call MCM at 240-789-4890"
+  },
+  "shots": [
+    {
+      "id": "cover",
+      "src": "../source/mcm-complex-dementia-care-marmerstein/cover.jpg"
+    },
+    {
+      "id": "beat-1",
+      "src": "../source/mcm-complex-dementia-care-marmerstein/beat-1.jpg"
+    },
+    {
+      "id": "beat-2",
+      "src": "../source/mcm-complex-dementia-care-marmerstein/beat-2.jpg"
+    },
+    {
+      "id": "beat-5",
+      "src": "../source/mcm-complex-dementia-care-marmerstein/beat-5.jpg"
+    }
+  ],
+  "carousel": [
+    {
+      "type": "hookEng",
+      "eyebrow": "Family Story",
+      "title": "My Wife Got Violent and the Police Got Involved. Then We Found MCM.",
+      "stats": [
+        {
+          "value": "7 yrs",
+          "label": "With MCM",
+          "source": "testimonial"
+        },
+        {
+          "value": "Dementia",
+          "label": "Wife, Ann",
+          "source": "testimonial"
+        },
+        {
+          "value": "24/7",
+          "label": "In-home care",
+          "source": "testimonial"
+        }
+      ],
+      "marquee": "cover",
+      "textBottom": true
+    },
+    {
+      "type": "ba",
+      "icon": "shift",
+      "kicker": "What changed",
+      "title": "Stan & Daniel Marmorstein",
+      "beforeLabel": "Before MCM",
+      "afterLabel": "With MCM",
+      "before": [
+        "Ann's dementia escalated into a crisis the family could not manage alone.",
+        "Police · Special crisis unit called",
+        "911 · Found unresponsive",
+        "ER · Sent to the hospital"
+      ],
+      "after": [
+        "MCM took the case, kept Ann home, and showed up at every emergency since.",
+        "2019 · Home every year since",
+        "24/7 · One-on-one care at home"
+      ]
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they needed MCM · 01 / 05",
+      "title": "The crisis was more than the family could handle alone.",
+      "text": "Ann's dementia turned into a behavioral emergency.",
+      "image": "beat-1"
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they needed MCM · 02 / 05",
+      "title": "They needed a team that wouldn't leave at the hard part.",
+      "text": "When Stan had to call 911 and Ann was unresponsive, MCM didn't clock out.",
+      "image": "beat-2"
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they needed MCM · 03 / 05",
+      "title": "They wanted Ann home, not in a short-staffed facility.",
+      "text": "\"Absolutely she can stay at home for the rest of her life.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they needed MCM · 04 / 05",
+      "title": "They got caregivers who stayed.",
+      "text": "Over the years a small, steady team stayed with them, Rowena then Margaret, supported by son Dan on overnight care and a nurse practitioner visiting monthly.",
+      "image": null
+    },
+    {
+      "type": "deck",
+      "kicker": "Why they needed MCM · 05 / 05",
+      "title": "A son who came home to help.",
+      "text": "Daniel Marmorstein moved back from Los Angeles thirteen years ago to work at NIH, right as his mother began to decline.",
+      "image": "beat-5"
+    },
+    {
+      "type": "quote",
+      "text": "If we need you, you're there. It doesn't matter when it is — weekend, late at night. You're always there. I don't know how to say how valuable that is.",
+      "by": "Daniel Marmorstein · son · the Marmorstein family, client since 2019"
+    },
+    {
+      "type": "cta",
+      "title": "Caring for a loved one whose dementia has become more than you can manage alone?"
+    }
+  ]
+}
